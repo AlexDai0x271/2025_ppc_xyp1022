@@ -1,0 +1,181 @@
+LwIP-api/sockets.o: C:/PPC/project_0721/LwIP/src/api/sockets.c \
+ C:/PPC/project_0721/LwIP/src/include/lwip/opt.h \
+ C:/PPC/project_0721/xyp1022_project/projects/lwipopts.h \
+ C:/PPC/project_0721/xyp1022_project/board/xyp1022.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h \
+ C:/PPC/project_0721/xyp1022_project/projects/FreeRTOSConfig.h \
+ C:/PPC/project_0721/xyp1022_project/board/XYP1022.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/projdefs.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/portable.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portmacro.h \
+ C:/PPC/project_0721/xyp1022_project/libs/xprintf.h \
+ C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/semphr.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/task.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/list.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/debug.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/arch.h \
+ C:/PPC/project_0721/xyp1022_project/projects/arch/cc.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/sockets.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/ip_addr.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/def.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/ip4_addr.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/ip6_addr.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/def.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/netif.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/err.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/pbuf.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/stats.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/mem.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/memp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/priv/memp_std.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/priv/memp_priv.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/priv/mem_priv.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/inet.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/errno.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/priv/sockets_priv.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/sys.h \
+ C:/PPC/project_0721/xyp1022_project/projects/arch/sys_arch.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/api.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/netbuf.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/igmp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/tcp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/tcpbase.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/ip.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/ip4.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/prot/ip4.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/ip6.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/prot/ip.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/icmp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/prot/icmp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/raw.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/udp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/prot/udp.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/priv/tcpip_priv.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/tcpip.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/timeouts.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/mld6.h
+
+C:/PPC/project_0721/LwIP/src/include/lwip/opt.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/lwipopts.h:
+
+C:/PPC/project_0721/xyp1022_project/board/xyp1022.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/FreeRTOSConfig.h:
+
+C:/PPC/project_0721/xyp1022_project/board/XYP1022.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/projdefs.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/portable.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portmacro.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/xprintf.h:
+
+C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/semphr.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/task.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/list.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/debug.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/arch.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/arch/cc.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/sockets.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/ip_addr.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/def.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/ip4_addr.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/ip6_addr.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/def.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/netif.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/err.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/pbuf.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/stats.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/mem.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/memp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/priv/memp_std.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/priv/memp_priv.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/priv/mem_priv.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/inet.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/errno.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/priv/sockets_priv.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/sys.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/arch/sys_arch.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/api.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/netbuf.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/igmp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/tcp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/tcpbase.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/ip.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/ip4.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/prot/ip4.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/ip6.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/prot/ip.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/icmp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/prot/icmp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/raw.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/udp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/prot/udp.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/priv/tcpip_priv.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/tcpip.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/timeouts.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/mld6.h:

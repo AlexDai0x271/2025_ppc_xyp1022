@@ -1,0 +1,7 @@
+Sources/delay.o: C:/PPC/project_0721/xyp1022_project/ppc_driver/delay.c \
+ C:/PPC/project_0721/xyp1022_project/board/XYP1022.h \
+ C:/PPC/project_0721/xyp1022_project/ppc_driver/sysclock.h
+
+C:/PPC/project_0721/xyp1022_project/board/XYP1022.h:
+
+C:/PPC/project_0721/xyp1022_project/ppc_driver/sysclock.h:

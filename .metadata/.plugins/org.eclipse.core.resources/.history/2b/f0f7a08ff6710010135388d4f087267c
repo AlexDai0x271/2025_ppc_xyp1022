@@ -1,0 +1,204 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(BOARD)/board_init.c" \
+"$(PPC_DRIVER)/delay.c" \
+"$(DRIVER)/drv_gmac.c" \
+"$(DRIVER)/drv_gmac_crc.c" \
+"$(DRIVER)/drv_gmac_phy.c" \
+"$(DRIVER)/drv_uart.c" \
+"$(SOURCES)/dspi.c" \
+"$(PROJECTS)/ethernetif.c" \
+"$(SOURCES)/iic_test.c" \
+"$(PROJECTS)/iperf.c" \
+"$(PROJECTS)/main.c" \
+"$(PPC_DRIVER)/sysclock.c" \
+
+C_SRCS += \
+$(BOARD)/board_init.c \
+$(PPC_DRIVER)/delay.c \
+$(DRIVER)/drv_gmac.c \
+$(DRIVER)/drv_gmac_crc.c \
+$(DRIVER)/drv_gmac_phy.c \
+$(DRIVER)/drv_uart.c \
+$(SOURCES)/dspi.c \
+$(PROJECTS)/ethernetif.c \
+$(SOURCES)/iic_test.c \
+$(PROJECTS)/iperf.c \
+$(PROJECTS)/main.c \
+$(PPC_DRIVER)/sysclock.c \
+
+OBJS += \
+./Sources/board_init.o \
+./Sources/delay.o \
+./Sources/drv_gmac.o \
+./Sources/drv_gmac_crc.o \
+./Sources/drv_gmac_phy.o \
+./Sources/drv_uart.o \
+./Sources/dspi.o \
+./Sources/ethernetif.o \
+./Sources/iic_test.o \
+./Sources/iperf.o \
+./Sources/main.o \
+./Sources/sysclock.o \
+
+C_DEPS += \
+./Sources/board_init.d \
+./Sources/delay.d \
+./Sources/drv_gmac.d \
+./Sources/drv_gmac_crc.d \
+./Sources/drv_gmac_phy.d \
+./Sources/drv_uart.d \
+./Sources/dspi.d \
+./Sources/ethernetif.d \
+./Sources/iic_test.d \
+./Sources/iperf.d \
+./Sources/main.d \
+./Sources/sysclock.d \
+
+OBJS_QUOTED += \
+"./Sources/board_init.o" \
+"./Sources/delay.o" \
+"./Sources/drv_gmac.o" \
+"./Sources/drv_gmac_crc.o" \
+"./Sources/drv_gmac_phy.o" \
+"./Sources/drv_uart.o" \
+"./Sources/dspi.o" \
+"./Sources/ethernetif.o" \
+"./Sources/iic_test.o" \
+"./Sources/iperf.o" \
+"./Sources/main.o" \
+"./Sources/sysclock.o" \
+
+OBJS_OS_FORMAT += \
+./Sources/board_init.o \
+./Sources/delay.o \
+./Sources/drv_gmac.o \
+./Sources/drv_gmac_crc.o \
+./Sources/drv_gmac_phy.o \
+./Sources/drv_uart.o \
+./Sources/dspi.o \
+./Sources/ethernetif.o \
+./Sources/iic_test.o \
+./Sources/iperf.o \
+./Sources/main.o \
+./Sources/sysclock.o \
+
+C_DEPS_QUOTED += \
+"./Sources/board_init.d" \
+"./Sources/delay.d" \
+"./Sources/drv_gmac.d" \
+"./Sources/drv_gmac_crc.d" \
+"./Sources/drv_gmac_phy.d" \
+"./Sources/drv_uart.d" \
+"./Sources/dspi.d" \
+"./Sources/ethernetif.d" \
+"./Sources/iic_test.d" \
+"./Sources/iperf.d" \
+"./Sources/main.d" \
+"./Sources/sysclock.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Sources/board_init.o: $(BOARD)/board_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #31 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/board_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/board_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/delay.o: $(PPC_DRIVER)/delay.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #32 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/delay.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/delay.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/drv_gmac.o: $(DRIVER)/drv_gmac.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #33 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/drv_gmac.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/drv_gmac.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/drv_gmac_crc.o: $(DRIVER)/drv_gmac_crc.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #34 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/drv_gmac_crc.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/drv_gmac_crc.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/drv_gmac_phy.o: $(DRIVER)/drv_gmac_phy.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #35 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/drv_gmac_phy.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/drv_gmac_phy.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/drv_uart.o: $(DRIVER)/drv_uart.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #36 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/drv_uart.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/drv_uart.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/dspi.o: $(SOURCES)/dspi.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #37 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/dspi.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/dspi.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/ethernetif.o: $(PROJECTS)/ethernetif.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #38 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/ethernetif.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/ethernetif.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/iic_test.o: $(SOURCES)/iic_test.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #39 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/iic_test.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/iic_test.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/iperf.o: $(PROJECTS)/iperf.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #40 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/iperf.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/iperf.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/main.o: $(PROJECTS)/main.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #41 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/main.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/sysclock.o: $(PPC_DRIVER)/sysclock.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #42 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Sources/sysclock.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Sources/sysclock.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

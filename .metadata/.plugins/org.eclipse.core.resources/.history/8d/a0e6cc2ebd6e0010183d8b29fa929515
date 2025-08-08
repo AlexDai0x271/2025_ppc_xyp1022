@@ -1,0 +1,159 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(API)/api_lib.c" \
+"$(API)/api_msg.c" \
+"$(API)/err.c" \
+"$(API)/if_api.c" \
+"$(API)/netbuf.c" \
+"$(API)/netdb.c" \
+"$(API)/netifapi.c" \
+"$(API)/sockets.c" \
+"$(API)/tcpip.c" \
+
+C_SRCS += \
+$(API)/api_lib.c \
+$(API)/api_msg.c \
+$(API)/err.c \
+$(API)/if_api.c \
+$(API)/netbuf.c \
+$(API)/netdb.c \
+$(API)/netifapi.c \
+$(API)/sockets.c \
+$(API)/tcpip.c \
+
+OBJS += \
+./LwIP-api/api_lib.o \
+./LwIP-api/api_msg.o \
+./LwIP-api/err.o \
+./LwIP-api/if_api.o \
+./LwIP-api/netbuf.o \
+./LwIP-api/netdb.o \
+./LwIP-api/netifapi.o \
+./LwIP-api/sockets.o \
+./LwIP-api/tcpip.o \
+
+C_DEPS += \
+./LwIP-api/api_lib.d \
+./LwIP-api/api_msg.d \
+./LwIP-api/err.d \
+./LwIP-api/if_api.d \
+./LwIP-api/netbuf.d \
+./LwIP-api/netdb.d \
+./LwIP-api/netifapi.d \
+./LwIP-api/sockets.d \
+./LwIP-api/tcpip.d \
+
+OBJS_QUOTED += \
+"./LwIP-api/api_lib.o" \
+"./LwIP-api/api_msg.o" \
+"./LwIP-api/err.o" \
+"./LwIP-api/if_api.o" \
+"./LwIP-api/netbuf.o" \
+"./LwIP-api/netdb.o" \
+"./LwIP-api/netifapi.o" \
+"./LwIP-api/sockets.o" \
+"./LwIP-api/tcpip.o" \
+
+OBJS_OS_FORMAT += \
+./LwIP-api/api_lib.o \
+./LwIP-api/api_msg.o \
+./LwIP-api/err.o \
+./LwIP-api/if_api.o \
+./LwIP-api/netbuf.o \
+./LwIP-api/netdb.o \
+./LwIP-api/netifapi.o \
+./LwIP-api/sockets.o \
+./LwIP-api/tcpip.o \
+
+C_DEPS_QUOTED += \
+"./LwIP-api/api_lib.d" \
+"./LwIP-api/api_msg.d" \
+"./LwIP-api/err.d" \
+"./LwIP-api/if_api.d" \
+"./LwIP-api/netbuf.d" \
+"./LwIP-api/netdb.d" \
+"./LwIP-api/netifapi.d" \
+"./LwIP-api/sockets.d" \
+"./LwIP-api/tcpip.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+LwIP-api/api_lib.o: $(API)/api_lib.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #74 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/api_lib.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/api_lib.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/api_msg.o: $(API)/api_msg.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #75 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/api_msg.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/api_msg.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/err.o: $(API)/err.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #76 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/err.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/err.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/if_api.o: $(API)/if_api.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #77 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/if_api.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/if_api.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/netbuf.o: $(API)/netbuf.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #78 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/netbuf.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/netbuf.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/netdb.o: $(API)/netdb.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #79 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/netdb.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/netdb.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/netifapi.o: $(API)/netifapi.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #80 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/netifapi.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/netifapi.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/sockets.o: $(API)/sockets.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #81 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/sockets.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/sockets.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-api/tcpip.o: $(API)/tcpip.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #82 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-api/tcpip.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-api/tcpip.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

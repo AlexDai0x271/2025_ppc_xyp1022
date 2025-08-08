@@ -1,0 +1,144 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(IPV4)/autoip.c" \
+"$(IPV4)/dhcp.c" \
+"$(IPV4)/etharp.c" \
+"$(IPV4)/icmp.c" \
+"$(IPV4)/igmp.c" \
+"$(IPV4)/ip4.c" \
+"$(IPV4)/ip4_addr.c" \
+"$(IPV4)/ip4_frag.c" \
+
+C_SRCS += \
+$(IPV4)/autoip.c \
+$(IPV4)/dhcp.c \
+$(IPV4)/etharp.c \
+$(IPV4)/icmp.c \
+$(IPV4)/igmp.c \
+$(IPV4)/ip4.c \
+$(IPV4)/ip4_addr.c \
+$(IPV4)/ip4_frag.c \
+
+OBJS += \
+./LwIP-ipv4/autoip.o \
+./LwIP-ipv4/dhcp.o \
+./LwIP-ipv4/etharp.o \
+./LwIP-ipv4/icmp.o \
+./LwIP-ipv4/igmp.o \
+./LwIP-ipv4/ip4.o \
+./LwIP-ipv4/ip4_addr.o \
+./LwIP-ipv4/ip4_frag.o \
+
+C_DEPS += \
+./LwIP-ipv4/autoip.d \
+./LwIP-ipv4/dhcp.d \
+./LwIP-ipv4/etharp.d \
+./LwIP-ipv4/icmp.d \
+./LwIP-ipv4/igmp.d \
+./LwIP-ipv4/ip4.d \
+./LwIP-ipv4/ip4_addr.d \
+./LwIP-ipv4/ip4_frag.d \
+
+OBJS_QUOTED += \
+"./LwIP-ipv4/autoip.o" \
+"./LwIP-ipv4/dhcp.o" \
+"./LwIP-ipv4/etharp.o" \
+"./LwIP-ipv4/icmp.o" \
+"./LwIP-ipv4/igmp.o" \
+"./LwIP-ipv4/ip4.o" \
+"./LwIP-ipv4/ip4_addr.o" \
+"./LwIP-ipv4/ip4_frag.o" \
+
+OBJS_OS_FORMAT += \
+./LwIP-ipv4/autoip.o \
+./LwIP-ipv4/dhcp.o \
+./LwIP-ipv4/etharp.o \
+./LwIP-ipv4/icmp.o \
+./LwIP-ipv4/igmp.o \
+./LwIP-ipv4/ip4.o \
+./LwIP-ipv4/ip4_addr.o \
+./LwIP-ipv4/ip4_frag.o \
+
+C_DEPS_QUOTED += \
+"./LwIP-ipv4/autoip.d" \
+"./LwIP-ipv4/dhcp.d" \
+"./LwIP-ipv4/etharp.d" \
+"./LwIP-ipv4/icmp.d" \
+"./LwIP-ipv4/igmp.d" \
+"./LwIP-ipv4/ip4.d" \
+"./LwIP-ipv4/ip4_addr.d" \
+"./LwIP-ipv4/ip4_frag.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+LwIP-ipv4/autoip.o: $(IPV4)/autoip.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #46 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/autoip.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/autoip.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/dhcp.o: $(IPV4)/dhcp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #47 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/dhcp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/dhcp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/etharp.o: $(IPV4)/etharp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #48 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/etharp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/etharp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/icmp.o: $(IPV4)/icmp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #49 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/icmp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/icmp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/igmp.o: $(IPV4)/igmp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #50 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/igmp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/igmp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/ip4.o: $(IPV4)/ip4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #51 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/ip4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/ip4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/ip4_addr.o: $(IPV4)/ip4_addr.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #52 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/ip4_addr.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/ip4_addr.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-ipv4/ip4_frag.o: $(IPV4)/ip4_frag.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #53 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-ipv4/ip4_frag.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-ipv4/ip4_frag.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

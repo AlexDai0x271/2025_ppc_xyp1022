@@ -1,0 +1,13 @@
+# gitignore
+
+*.o
+*.i
+
+projects/*
+!projects/.gitignore
+!projects/Makefile
+!projects/*.h
+!projects/*.c
+!projects/*.S
+!projects/*.md
+!projects/*/

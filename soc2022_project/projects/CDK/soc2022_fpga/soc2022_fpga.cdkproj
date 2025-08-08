@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Name="soc2022_fpga" Version="1" Language="C" Type="Simple">
+  <Description>This a E906FD project for SoC2022 FPGA.</Description>
+  <Dependencies Name="Debug"/>
+  <VendorInfo>
+    <VendorName>new_soc_project_c_simple_e906fd</VendorName>
+  </VendorInfo>
+  <ToolsConfig>
+    <Compiler>
+      <Name>XTGccElfNewlib</Name>
+      <Version>latest</Version>
+    </Compiler>
+  </ToolsConfig>
+  <MonitorProgress>
+    <DebugLaunch>40</DebugLaunch>
+  </MonitorProgress>
+  <VirtualDirectory Name="board">
+    <File Name="../../../board/board_init.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../board/link.ld">
+      <FileOption/>
+    </File>
+    <File Name="../../../board/XYR3201.h">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="csi_core">
+    <File Name="../../../csi_core/core_rv32.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_core/csi_core.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_core/csi_rv32_gcc.h">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="csi_driver">
+    <File Name="../../../csi_driver/delay.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_driver/isr.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_driver/sysclock.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_driver/sysclock.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_driver/system.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_driver/trap_c.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="csi_startup">
+    <File Name="../../../csi_startup/startup.S">
+      <FileOption/>
+    </File>
+    <File Name="../../../csi_startup/vectors.S">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="driver">
+    <File Name="../../../driver/drv_spi.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_spi.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_timer.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_timer.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_uart.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_uart.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_common.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_i2c.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_pwm.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_qspi.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_wdt.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_i2c.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_pwm.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_qspi.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_wdt.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gpio.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gpio.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_epwm.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_epwm.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_smc.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_smc.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_amc.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_amc.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_can.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_can.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_dma.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_dma.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gmac.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gmac.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gmac_crc.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gmac_phy.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gmac_crc.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_gmac_phy.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_srio.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_srio.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_astimer.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_astimer.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_flash.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../driver/drv_flash.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="libs">
+    <File Name="../../../libs/xprintf.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../libs/xprintf.h">
+      <FileOption/>
+    </File>
+    <File Name="../../../libs/xshell.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../libs/xshell_command.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="projects">
+    <File Name="../../main.c">
+      <FileOption/>
+    </File>
+    <File Name="../../FreeRTOSConfig.h">
+      <FileOption/>
+    </File>
+    <VirtualDirectory Name="configs">
+      <File Name="../../configs/csi_config.h">
+        <FileOption/>
+      </File>
+    </VirtualDirectory>
+    <File Name="../../ethernetif.c">
+      <FileOption/>
+    </File>
+    <File Name="../../iperf.c">
+      <FileOption/>
+    </File>
+    <File Name="../../lwipopts.h">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="FreeRTOS-Kernel">
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/croutine.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/event_groups.c">
+      <FileOption/>
+    </File>
+    <VirtualDirectory Name="include">
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/atomic.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/croutine.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/event_groups.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/list.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/message_buffer.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/mpu_prototypes.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/portable.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/projdefs.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/queue.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/semphr.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/StackMacros.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/stack_macros.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/stream_buffer.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/task.h">
+        <FileOption/>
+      </File>
+      <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/include/timers.h">
+        <FileOption/>
+      </File>
+    </VirtualDirectory>
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/list.c">
+      <FileOption/>
+    </File>
+    <VirtualDirectory Name="portable">
+      <VirtualDirectory Name="GCC">
+        <VirtualDirectory Name="RISC-V">
+          <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/portable/GCC/RISC-V/port.c">
+            <FileOption/>
+          </File>
+          <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/portable/GCC/RISC-V/portASM.S">
+            <FileOption/>
+          </File>
+          <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/portable/GCC/RISC-V/portmacro.h">
+            <FileOption/>
+          </File>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="MemMang">
+        <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/portable/MemMang/heap_4.c">
+          <FileOption/>
+        </File>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/queue.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/stream_buffer.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/tasks.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../FreeRTOS/FreeRTOS-Kernel/timers.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="LwIP-api">
+    <File Name="../../../../LwIP/src/api/api_lib.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/api_msg.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/err.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/if_api.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/netbuf.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/netdb.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/netifapi.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/sockets.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/api/tcpip.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="Lwip-arch">
+    <File Name="../../arch/sys_arch.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="LwIP-core">
+    <File Name="../../../../LwIP/src/core/altcp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/altcp_alloc.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/altcp_tcp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/def.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/dns.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/inet_chksum.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/init.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ip.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/mem.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/memp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/netif.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/pbuf.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/raw.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/stats.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/sys.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/tcp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/tcp_in.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/tcp_out.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/timeouts.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/udp.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="LwIP-ipv4">
+    <File Name="../../../../LwIP/src/core/ipv4/autoip.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/dhcp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/etharp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/icmp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/igmp.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/ip4.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/ip4_addr.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/core/ipv4/ip4_frag.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <VirtualDirectory Name="LwIP-netif">
+    <File Name="../../../../LwIP/src/netif/bridgeif.c">
+      <FileOption/>
+    </File>
+    <File Name="../../../../LwIP/src/netif/ethernet.c">
+      <FileOption/>
+    </File>
+  </VirtualDirectory>
+  <BuildConfigs>
+    <BuildConfig Name="BuildSet">
+      <Target>
+        <ROMBank Selected="1">
+          <ROM1>
+            <InUse>no</InUse>
+            <Start>0x0</Start>
+            <Size>0x20000</Size>
+          </ROM1>
+          <ROM2>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM2>
+          <ROM3>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM3>
+          <ROM4>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM4>
+          <ROM5>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+          </ROM5>
+        </ROMBank>
+        <RAMBank>
+          <RAM1>
+            <InUse>yes</InUse>
+            <Start>0x10000000</Start>
+            <Size>0x80000</Size>
+            <Init>yes</Init>
+          </RAM1>
+          <RAM2>
+            <InUse>no</InUse>
+            <Start>0x50000000</Start>
+            <Size>0x800000</Size>
+            <Init>yes</Init>
+          </RAM2>
+          <RAM3>
+            <InUse>no</InUse>
+            <Start>0x60000000</Start>
+            <Size>0x20000</Size>
+            <Init>yes</Init>
+          </RAM3>
+          <RAM4>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+            <Init>yes</Init>
+          </RAM4>
+          <RAM5>
+            <InUse>no</InUse>
+            <Start/>
+            <Size/>
+            <Init>yes</Init>
+          </RAM5>
+        </RAMBank>
+        <CPU>e906fd</CPU>
+        <UseMiniLib>yes</UseMiniLib>
+        <Endian>little</Endian>
+        <UseHardFloat>no</UseHardFloat>
+        <UseEnhancedLRW>no</UseEnhancedLRW>
+        <UseContinueBuild>no</UseContinueBuild>
+        <UseSemiHost>no</UseSemiHost>
+      </Target>
+      <Output>
+        <OutputName>$(ProjectName)</OutputName>
+        <Type>Executable</Type>
+        <CreateHexFile>yes</CreateHexFile>
+        <CreateBinFile>yes</CreateBinFile>
+        <Preprocessor>no</Preprocessor>
+        <Disassmeble>yes</Disassmeble>
+        <CallGraph>no</CallGraph>
+        <Map>yes</Map>
+      </Output>
+      <User>
+        <BeforeCompile>
+          <RunUserProg>no</RunUserProg>
+          <UserProgName/>
+        </BeforeCompile>
+        <BeforeMake>
+          <RunUserProg>no</RunUserProg>
+          <UserProgName/>
+        </BeforeMake>
+        <AfterMake>
+          <RunUserProg>no</RunUserProg>
+          <UserProgName/>
+        </AfterMake>
+        <Tools/>
+      </User>
+      <Compiler>
+        <Define>USE_OS_FREERTOS</Define>
+        <Undefine/>
+        <Optim>None (-O0)</Optim>
+        <DebugLevel>Maximum (-g3)</DebugLevel>
+        <IncludePath>$(ProjectPath)/../../../../FreeRTOS/FreeRTOS-Kernel/include;$(ProjectPath)/../../../../FreeRTOS/FreeRTOS-Kernel/portable/GCC/RISC-V;$(ProjectPath)/../../../../LwIP/src/include;$(ProjectPath)/../../../board;$(ProjectPath)/../../../csi_core;$(ProjectPath)/../../../csi_driver;$(ProjectPath)/../../../driver;$(ProjectPath)/../../../libs;$(ProjectPath)/../../../projects;$(ProjectPath)/../../configs</IncludePath>
+        <OtherFlags/>
+        <Verbose>no</Verbose>
+        <Ansi>no</Ansi>
+        <Syntax>no</Syntax>
+        <Pedantic>no</Pedantic>
+        <PedanticErr>no</PedanticErr>
+        <InhibitWarn>no</InhibitWarn>
+        <AllWarn>yes</AllWarn>
+        <WarnErr>no</WarnErr>
+        <OneElfS>no</OneElfS>
+        <OneElfSPerData>no</OneElfSPerData>
+        <Fstrict>no</Fstrict>
+      </Compiler>
+      <Asm>
+        <Define>dUSE_OS_FREERTOS; DEMO_ALL</Define>
+        <Undefine/>
+        <IncludePath>$(ProjectPath)/../../../../FreeRTOS/FreeRTOS-Kernel/include;$(ProjectPath)/../../../../FreeRTOS/FreeRTOS-Kernel/portable/GCC/RISC-V;$(ProjectPath)/../../../board;$(ProjectPath)/../../../csi_core;$(ProjectPath)/../../../csi_driver;$(ProjectPath)/../../../driver;$(ProjectPath)/../../../libs;$(ProjectPath)/../../../projects;$(ProjectPath)/../../configs</IncludePath>
+        <OtherFlags/>
+        <DebugLevel>gdwarf2</DebugLevel>
+      </Asm>
+      <Linker>
+        <Garbage>yes</Garbage>
+        <Garbage2>yes</Garbage2>
+        <LDFile>$(ProjectPath)/../../../board/link.ld</LDFile>
+        <LibName>m c gcc</LibName>
+        <LibPath/>
+        <OtherFlags>-Wl,--no-whole-archive -Wl,-zmax-page-size=1024</OtherFlags>
+        <AutoLDFile>no</AutoLDFile>
+        <LinkType/>
+        <IncludeAllLibs>no</IncludeAllLibs>
+      </Linker>
+      <Debug>
+        <LoadApplicationAtStartup>yes</LoadApplicationAtStartup>
+        <Connector>Remote ICE</Connector>
+        <StopAt>yes</StopAt>
+        <StopAtText>main</StopAtText>
+        <InitFile/>
+        <PreInit/>
+        <AfterLoadFile/>
+        <AutoRun>yes</AutoRun>
+        <ResetType>Hard Reset</ResetType>
+        <SoftResetVal>0</SoftResetVal>
+        <ResetAfterLoad>yes</ResetAfterLoad>
+        <AfterResetFile/>
+        <Dumpcore>no</Dumpcore>
+        <DumpcoreText/>
+        <ConfigICE>
+          <IP>localhost</IP>
+          <PORT>1025</PORT>
+          <CPUNumber>0</CPUNumber>
+          <Clock>12000</Clock>
+          <Delay>10</Delay>
+          <NResetDelay>100</NResetDelay>
+          <WaitReset>50</WaitReset>
+          <DDC>yes</DDC>
+          <TRST>no</TRST>
+          <DebugPrint>no</DebugPrint>
+          <Connect>Normal</Connect>
+          <ResetType>Soft Reset</ResetType>
+          <SoftResetVal>0</SoftResetVal>
+          <RTOSType>Bare Metal</RTOSType>
+          <DownloadToFlash>no</DownloadToFlash>
+          <ResetAfterConnect>yes</ResetAfterConnect>
+          <GDBName/>
+          <GDBServerType>Local</GDBServerType>
+          <OtherFlags/>
+          <ICEEnablePCSampling>no</ICEEnablePCSampling>
+          <ICESamplingFreq>1000</ICESamplingFreq>
+          <RemoteICEEnablePCSampling>no</RemoteICEEnablePCSampling>
+          <RemoteICESamplingPort>1026</RemoteICESamplingPort>
+          <Version>latest</Version>
+          <SupportRemoteICEAsyncDebug>no</SupportRemoteICEAsyncDebug>
+        </ConfigICE>
+        <ConfigSIM>
+          <SIMTarget/>
+          <OtherFlags/>
+          <NoGraphic>yes</NoGraphic>
+          <Log>no</Log>
+          <SimTrace>no</SimTrace>
+          <Version>latest</Version>
+        </ConfigSIM>
+        <ConfigOpenOCD>
+          <OpenOCDExecutablePath/>
+          <OpenOCDTelnetPortEnable>no</OpenOCDTelnetPortEnable>
+          <OpenOCDTelnetPort>4444</OpenOCDTelnetPort>
+          <OpenOCDTclPortEnable>no</OpenOCDTclPortEnable>
+          <OpenOCDTclPort>6666</OpenOCDTclPort>
+          <OpenOCDConfigOptions/>
+          <OpenOCDTimeout>5000</OpenOCDTimeout>
+          <PluginID>openocd-sifive</PluginID>
+          <Version>latest</Version>
+        </ConfigOpenOCD>
+      </Debug>
+      <Flash>
+        <InitFile/>
+        <PreInit/>
+        <Erase>Erase Sectors</Erase>
+        <Algorithms Path=""/>
+        <Program>no</Program>
+        <Verify>no</Verify>
+        <ResetAndRun>no</ResetAndRun>
+        <ResetType>Soft Reset</ResetType>
+        <SoftResetVal/>
+        <External>no</External>
+        <Command/>
+        <Arguments/>
+      </Flash>
+    </BuildConfig>
+  </BuildConfigs>
+  <DebugSessions>
+    <watchExpressions>_s_last_tx_descriptor:0;_s_tx_descriptor:0;GDMA0:0;GMAC0:0;SMC0:1;SPI0:1</watchExpressions>
+    <memoryExpressions>;;;</memoryExpressions>
+    <statistics>E0011100;1;32;10;MHZ;E0011104</statistics>
+    <peripheralTabs/>
+    <WatchDisplayFormat>1</WatchDisplayFormat>
+    <LocalDisplayFormat>0</LocalDisplayFormat>
+    <debugLayout/>
+    <memoryTabColSizeExpressions>100:8;100:8;100:8;100:8;</memoryTabColSizeExpressions>
+  </DebugSessions>
+</Project>

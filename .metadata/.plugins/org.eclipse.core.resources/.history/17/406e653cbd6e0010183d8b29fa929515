@@ -1,0 +1,26 @@
+ThirdLib-Sources/dwc_mmc.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Sources/dwc_mmc.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/uart.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/gpio.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sd_mmc_card.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/dwc_mmc.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sd_mmc_card.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/uart.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/gpio.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sd_mmc_card.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/dwc_mmc.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sd_mmc_card.h:

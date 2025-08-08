@@ -1,0 +1,10 @@
+FatFS/ff.o: C:/A_MAZHI/xyp1022_project/libs/ff15/source/ff.c \
+ C:/A_MAZHI/xyp1022_project/libs/ff15/source/ff.h \
+ C:/A_MAZHI/xyp1022_project/libs/ff15/source/ffconf.h \
+ C:/A_MAZHI/xyp1022_project/libs/ff15/source/diskio.h
+
+C:/A_MAZHI/xyp1022_project/libs/ff15/source/ff.h:
+
+C:/A_MAZHI/xyp1022_project/libs/ff15/source/ffconf.h:
+
+C:/A_MAZHI/xyp1022_project/libs/ff15/source/diskio.h:

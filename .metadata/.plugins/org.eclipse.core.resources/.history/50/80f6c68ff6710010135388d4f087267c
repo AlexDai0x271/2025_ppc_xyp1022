@@ -1,0 +1,29 @@
+ThirdLib-Sources/mmc_basic.o: \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/Sources/mmc_basic.c \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/e500mc_asm.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/ppclib.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/uart.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/gpio.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/sd_mmc_card.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/dwc_mmc.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/sd_mmc_card.h
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/e500mc_asm.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/ppclib.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/uart.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/gpio.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/sd_mmc_card.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/dwc_mmc.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/sd_mmc_card.h:

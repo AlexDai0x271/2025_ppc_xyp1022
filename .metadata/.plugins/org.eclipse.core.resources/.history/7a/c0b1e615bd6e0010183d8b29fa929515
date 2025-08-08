@@ -1,0 +1,234 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(SOURCES)/acu.c" \
+"$(SOURCES)/axi_law_init.c" \
+"$(SOURCES)/axidma_test.c" \
+"$(SOURCES)/cc_law_init.c" \
+"$(SOURCES)/dwc_mmc.c" \
+"$(SOURCES)/ebc.c" \
+"$(SOURCES)/exp_default.c" \
+"$(SOURCES)/interrupt.c" \
+"$(SOURCES)/mmc_basic.c" \
+"$(SOURCES)/mmu.c" \
+"$(SOURCES)/mpic_init.c" \
+"$(SOURCES)/pamu_init.c" \
+"$(SOURCES)/spsFlash.c" \
+"$(SOURCES)/sst_flash.c" \
+
+C_SRCS += \
+$(SOURCES)/acu.c \
+$(SOURCES)/axi_law_init.c \
+$(SOURCES)/axidma_test.c \
+$(SOURCES)/cc_law_init.c \
+$(SOURCES)/dwc_mmc.c \
+$(SOURCES)/ebc.c \
+$(SOURCES)/exp_default.c \
+$(SOURCES)/interrupt.c \
+$(SOURCES)/mmc_basic.c \
+$(SOURCES)/mmu.c \
+$(SOURCES)/mpic_init.c \
+$(SOURCES)/pamu_init.c \
+$(SOURCES)/spsFlash.c \
+$(SOURCES)/sst_flash.c \
+
+OBJS += \
+./ThirdLib-Sources/acu.o \
+./ThirdLib-Sources/axi_law_init.o \
+./ThirdLib-Sources/axidma_test.o \
+./ThirdLib-Sources/cc_law_init.o \
+./ThirdLib-Sources/dwc_mmc.o \
+./ThirdLib-Sources/ebc.o \
+./ThirdLib-Sources/exp_default.o \
+./ThirdLib-Sources/interrupt.o \
+./ThirdLib-Sources/mmc_basic.o \
+./ThirdLib-Sources/mmu.o \
+./ThirdLib-Sources/mpic_init.o \
+./ThirdLib-Sources/pamu_init.o \
+./ThirdLib-Sources/spsFlash.o \
+./ThirdLib-Sources/sst_flash.o \
+
+C_DEPS += \
+./ThirdLib-Sources/acu.d \
+./ThirdLib-Sources/axi_law_init.d \
+./ThirdLib-Sources/axidma_test.d \
+./ThirdLib-Sources/cc_law_init.d \
+./ThirdLib-Sources/dwc_mmc.d \
+./ThirdLib-Sources/ebc.d \
+./ThirdLib-Sources/exp_default.d \
+./ThirdLib-Sources/interrupt.d \
+./ThirdLib-Sources/mmc_basic.d \
+./ThirdLib-Sources/mmu.d \
+./ThirdLib-Sources/mpic_init.d \
+./ThirdLib-Sources/pamu_init.d \
+./ThirdLib-Sources/spsFlash.d \
+./ThirdLib-Sources/sst_flash.d \
+
+OBJS_QUOTED += \
+"./ThirdLib-Sources/acu.o" \
+"./ThirdLib-Sources/axi_law_init.o" \
+"./ThirdLib-Sources/axidma_test.o" \
+"./ThirdLib-Sources/cc_law_init.o" \
+"./ThirdLib-Sources/dwc_mmc.o" \
+"./ThirdLib-Sources/ebc.o" \
+"./ThirdLib-Sources/exp_default.o" \
+"./ThirdLib-Sources/interrupt.o" \
+"./ThirdLib-Sources/mmc_basic.o" \
+"./ThirdLib-Sources/mmu.o" \
+"./ThirdLib-Sources/mpic_init.o" \
+"./ThirdLib-Sources/pamu_init.o" \
+"./ThirdLib-Sources/spsFlash.o" \
+"./ThirdLib-Sources/sst_flash.o" \
+
+OBJS_OS_FORMAT += \
+./ThirdLib-Sources/acu.o \
+./ThirdLib-Sources/axi_law_init.o \
+./ThirdLib-Sources/axidma_test.o \
+./ThirdLib-Sources/cc_law_init.o \
+./ThirdLib-Sources/dwc_mmc.o \
+./ThirdLib-Sources/ebc.o \
+./ThirdLib-Sources/exp_default.o \
+./ThirdLib-Sources/interrupt.o \
+./ThirdLib-Sources/mmc_basic.o \
+./ThirdLib-Sources/mmu.o \
+./ThirdLib-Sources/mpic_init.o \
+./ThirdLib-Sources/pamu_init.o \
+./ThirdLib-Sources/spsFlash.o \
+./ThirdLib-Sources/sst_flash.o \
+
+C_DEPS_QUOTED += \
+"./ThirdLib-Sources/acu.d" \
+"./ThirdLib-Sources/axi_law_init.d" \
+"./ThirdLib-Sources/axidma_test.d" \
+"./ThirdLib-Sources/cc_law_init.d" \
+"./ThirdLib-Sources/dwc_mmc.d" \
+"./ThirdLib-Sources/ebc.d" \
+"./ThirdLib-Sources/exp_default.d" \
+"./ThirdLib-Sources/interrupt.d" \
+"./ThirdLib-Sources/mmc_basic.d" \
+"./ThirdLib-Sources/mmu.d" \
+"./ThirdLib-Sources/mpic_init.d" \
+"./ThirdLib-Sources/pamu_init.d" \
+"./ThirdLib-Sources/spsFlash.d" \
+"./ThirdLib-Sources/sst_flash.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+ThirdLib-Sources/acu.o: $(SOURCES)/acu.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #11 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/acu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/acu.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/axi_law_init.o: $(SOURCES)/axi_law_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #12 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/axi_law_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/axi_law_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/axidma_test.o: $(SOURCES)/axidma_test.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #13 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/axidma_test.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/axidma_test.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/cc_law_init.o: $(SOURCES)/cc_law_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #14 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/cc_law_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/cc_law_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/dwc_mmc.o: $(SOURCES)/dwc_mmc.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #15 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/dwc_mmc.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/dwc_mmc.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/ebc.o: $(SOURCES)/ebc.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #16 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/ebc.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/ebc.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/exp_default.o: $(SOURCES)/exp_default.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #17 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/exp_default.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/exp_default.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/interrupt.o: $(SOURCES)/interrupt.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #18 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/interrupt.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/interrupt.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/mmc_basic.o: $(SOURCES)/mmc_basic.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #19 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/mmc_basic.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/mmc_basic.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/mmu.o: $(SOURCES)/mmu.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #20 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/mmu.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/mmu.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/mpic_init.o: $(SOURCES)/mpic_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #21 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/mpic_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/mpic_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/pamu_init.o: $(SOURCES)/pamu_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #22 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/pamu_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/pamu_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/spsFlash.o: $(SOURCES)/spsFlash.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #23 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/spsFlash.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/spsFlash.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib-Sources/sst_flash.o: $(SOURCES)/sst_flash.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #24 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib-Sources/sst_flash.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib-Sources/sst_flash.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

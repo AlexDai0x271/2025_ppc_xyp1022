@@ -1,0 +1,20 @@
+Utilities-Coremark/core_portme.o: \
+ C:/PPC/project_0721/xyp1022_project/libs/coremark/core_portme.c \
+ C:/PPC/project_0721/xyp1022_project/libs/coremark/coremark.h \
+ C:/PPC/project_0721/xyp1022_project/libs/coremark/core_portme.h \
+ C:/PPC/project_0721/xyp1022_project/libs/xprintf.h \
+ C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h \
+ C:/PPC/project_0721/xyp1022_project/board/XYP1022.h \
+ C:/PPC/project_0721/xyp1022_project/ppc_driver/sysclock.h
+
+C:/PPC/project_0721/xyp1022_project/libs/coremark/coremark.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/coremark/core_portme.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/xprintf.h:
+
+C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h:
+
+C:/PPC/project_0721/xyp1022_project/board/XYP1022.h:
+
+C:/PPC/project_0721/xyp1022_project/ppc_driver/sysclock.h:

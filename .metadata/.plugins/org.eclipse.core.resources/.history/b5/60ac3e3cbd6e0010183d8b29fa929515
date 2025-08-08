@@ -1,0 +1,2 @@
+FreeRTOS/portASM.o: \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portASM.S

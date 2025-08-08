@@ -1,0 +1,39 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(ARCH)/sys_arch.c" \
+
+C_SRCS += \
+$(ARCH)/sys_arch.c \
+
+OBJS += \
+./Lwip-arch/sys_arch.o \
+
+C_DEPS += \
+./Lwip-arch/sys_arch.d \
+
+OBJS_QUOTED += \
+"./Lwip-arch/sys_arch.o" \
+
+OBJS_OS_FORMAT += \
+./Lwip-arch/sys_arch.o \
+
+C_DEPS_QUOTED += \
+"./Lwip-arch/sys_arch.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Lwip-arch/sys_arch.o: $(ARCH)/sys_arch.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #43 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Lwip-arch/sys_arch.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Lwip-arch/sys_arch.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

@@ -1,0 +1,11 @@
+ThirdLib-Sources/sst_flash.o: \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/Sources/sst_flash.c \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/sst_flash.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/ebc.h
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/sst_flash.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/ebc.h:

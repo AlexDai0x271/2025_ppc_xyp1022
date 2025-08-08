@@ -1,0 +1,54 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(NETIF)/bridgeif.c" \
+"$(NETIF)/ethernet.c" \
+
+C_SRCS += \
+$(NETIF)/bridgeif.c \
+$(NETIF)/ethernet.c \
+
+OBJS += \
+./LwIP-netif/bridgeif.o \
+./LwIP-netif/ethernet.o \
+
+C_DEPS += \
+./LwIP-netif/bridgeif.d \
+./LwIP-netif/ethernet.d \
+
+OBJS_QUOTED += \
+"./LwIP-netif/bridgeif.o" \
+"./LwIP-netif/ethernet.o" \
+
+OBJS_OS_FORMAT += \
+./LwIP-netif/bridgeif.o \
+./LwIP-netif/ethernet.o \
+
+C_DEPS_QUOTED += \
+"./LwIP-netif/bridgeif.d" \
+"./LwIP-netif/ethernet.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+LwIP-netif/bridgeif.o: $(NETIF)/bridgeif.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #44 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-netif/bridgeif.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-netif/bridgeif.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-netif/ethernet.o: $(NETIF)/ethernet.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #45 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-netif/ethernet.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-netif/ethernet.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

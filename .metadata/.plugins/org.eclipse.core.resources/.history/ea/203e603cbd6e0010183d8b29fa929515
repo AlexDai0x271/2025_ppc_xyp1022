@@ -1,0 +1,113 @@
+ThirdLib/cpr_init.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Lib/cpr_init.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/environment.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/iomacros.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/types_local.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mpic.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/cpr.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/cpc.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ccm.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ccm_axi.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ccm_cc.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/axi_law.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pamu.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/axidma.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ebc.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/acu.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/xgmii.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pcie.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/usb30.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/rio.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/uart.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/iic.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sfm.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/gpio.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ssi.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mpu.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/secmon.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/vd.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/td.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ld_reg.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pgd.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/fd.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mesh.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pcix_regs.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sd_mmc_card.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/dwc_mmc.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/environment.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/iomacros.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/types_local.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mpic.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/cpr.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/cpc.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ccm.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ccm_axi.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ccm_cc.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/axi_law.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pamu.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/axidma.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ebc.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/acu.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/xgmii.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pcie.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/usb30.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/rio.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/uart.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/iic.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sfm.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/gpio.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ssi.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mpu.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/secmon.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/vd.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/td.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ld_reg.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pgd.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/fd.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mesh.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/pcix_regs.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sd_mmc_card.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/dwc_mmc.h:

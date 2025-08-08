@@ -1,0 +1,35 @@
+////////////////////////////////////////////////////////////////////
+//   Memory configuration file for T1042RDB
+////////////////////////////////////////////////////////////////////
+//
+//	
+//   Memory Map
+//
+//   0x00000000  0x7FFFFFFF  DDR          2G
+//   0xE0000000	 0xEFFFFFFF  NOR        256M		 
+//   0xF0000000	 0xF03FFFFF  DCSR         4M
+//   0xFE000000  0xFEFFFFFF  CCSR Space  16M
+//   0xFF800000  0xFF8FFFFF  NAND         1M
+//   0xFFDF0000  0xFFDF0FFF  CPLD         4K
+//   0xFFFFF000  0xFFFFFFFF  Boot Page    4K (valid only after reset)
+//
+////////////////////////////////////////////////////////////////////
+
+
+//reservedchar 0xBA
+
+// Translate virtual addresses to corresponding physical cacheable (p:) or cache-inhibited (i:) addresses
+
+//reserved v:0x0000000 v:0x40000000
+translate v:0x00000000 i:0x00000000 0x40000000
+
+translate v:0x40000000 i:0x40000000 0x40000000
+
+translate v:0x80000000 i:0x80000000 0x40000000
+
+translate v:0xE0000000 i:0x4E0000000 0x10000000
+
+translate v:0xF0000000 i:0x4F0000000 0x10000000
+// Request that elf file downloaded to be subjected to address translation.
+AutoEnableTranslations	true
+

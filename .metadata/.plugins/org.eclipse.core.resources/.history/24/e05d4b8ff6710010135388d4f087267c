@@ -1,0 +1,324 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(CORE)/altcp.c" \
+"$(CORE)/altcp_alloc.c" \
+"$(CORE)/altcp_tcp.c" \
+"$(CORE)/def.c" \
+"$(CORE)/dns.c" \
+"$(CORE)/inet_chksum.c" \
+"$(CORE)/init.c" \
+"$(CORE)/ip.c" \
+"$(CORE)/mem.c" \
+"$(CORE)/memp.c" \
+"$(CORE)/netif.c" \
+"$(CORE)/pbuf.c" \
+"$(CORE)/raw.c" \
+"$(CORE)/stats.c" \
+"$(CORE)/sys.c" \
+"$(CORE)/tcp.c" \
+"$(CORE)/tcp_in.c" \
+"$(CORE)/tcp_out.c" \
+"$(CORE)/timeouts.c" \
+"$(CORE)/udp.c" \
+
+C_SRCS += \
+$(CORE)/altcp.c \
+$(CORE)/altcp_alloc.c \
+$(CORE)/altcp_tcp.c \
+$(CORE)/def.c \
+$(CORE)/dns.c \
+$(CORE)/inet_chksum.c \
+$(CORE)/init.c \
+$(CORE)/ip.c \
+$(CORE)/mem.c \
+$(CORE)/memp.c \
+$(CORE)/netif.c \
+$(CORE)/pbuf.c \
+$(CORE)/raw.c \
+$(CORE)/stats.c \
+$(CORE)/sys.c \
+$(CORE)/tcp.c \
+$(CORE)/tcp_in.c \
+$(CORE)/tcp_out.c \
+$(CORE)/timeouts.c \
+$(CORE)/udp.c \
+
+OBJS += \
+./LwIP-core/altcp.o \
+./LwIP-core/altcp_alloc.o \
+./LwIP-core/altcp_tcp.o \
+./LwIP-core/def.o \
+./LwIP-core/dns.o \
+./LwIP-core/inet_chksum.o \
+./LwIP-core/init.o \
+./LwIP-core/ip.o \
+./LwIP-core/mem.o \
+./LwIP-core/memp.o \
+./LwIP-core/netif.o \
+./LwIP-core/pbuf.o \
+./LwIP-core/raw.o \
+./LwIP-core/stats.o \
+./LwIP-core/sys.o \
+./LwIP-core/tcp.o \
+./LwIP-core/tcp_in.o \
+./LwIP-core/tcp_out.o \
+./LwIP-core/timeouts.o \
+./LwIP-core/udp.o \
+
+C_DEPS += \
+./LwIP-core/altcp.d \
+./LwIP-core/altcp_alloc.d \
+./LwIP-core/altcp_tcp.d \
+./LwIP-core/def.d \
+./LwIP-core/dns.d \
+./LwIP-core/inet_chksum.d \
+./LwIP-core/init.d \
+./LwIP-core/ip.d \
+./LwIP-core/mem.d \
+./LwIP-core/memp.d \
+./LwIP-core/netif.d \
+./LwIP-core/pbuf.d \
+./LwIP-core/raw.d \
+./LwIP-core/stats.d \
+./LwIP-core/sys.d \
+./LwIP-core/tcp.d \
+./LwIP-core/tcp_in.d \
+./LwIP-core/tcp_out.d \
+./LwIP-core/timeouts.d \
+./LwIP-core/udp.d \
+
+OBJS_QUOTED += \
+"./LwIP-core/altcp.o" \
+"./LwIP-core/altcp_alloc.o" \
+"./LwIP-core/altcp_tcp.o" \
+"./LwIP-core/def.o" \
+"./LwIP-core/dns.o" \
+"./LwIP-core/inet_chksum.o" \
+"./LwIP-core/init.o" \
+"./LwIP-core/ip.o" \
+"./LwIP-core/mem.o" \
+"./LwIP-core/memp.o" \
+"./LwIP-core/netif.o" \
+"./LwIP-core/pbuf.o" \
+"./LwIP-core/raw.o" \
+"./LwIP-core/stats.o" \
+"./LwIP-core/sys.o" \
+"./LwIP-core/tcp.o" \
+"./LwIP-core/tcp_in.o" \
+"./LwIP-core/tcp_out.o" \
+"./LwIP-core/timeouts.o" \
+"./LwIP-core/udp.o" \
+
+OBJS_OS_FORMAT += \
+./LwIP-core/altcp.o \
+./LwIP-core/altcp_alloc.o \
+./LwIP-core/altcp_tcp.o \
+./LwIP-core/def.o \
+./LwIP-core/dns.o \
+./LwIP-core/inet_chksum.o \
+./LwIP-core/init.o \
+./LwIP-core/ip.o \
+./LwIP-core/mem.o \
+./LwIP-core/memp.o \
+./LwIP-core/netif.o \
+./LwIP-core/pbuf.o \
+./LwIP-core/raw.o \
+./LwIP-core/stats.o \
+./LwIP-core/sys.o \
+./LwIP-core/tcp.o \
+./LwIP-core/tcp_in.o \
+./LwIP-core/tcp_out.o \
+./LwIP-core/timeouts.o \
+./LwIP-core/udp.o \
+
+C_DEPS_QUOTED += \
+"./LwIP-core/altcp.d" \
+"./LwIP-core/altcp_alloc.d" \
+"./LwIP-core/altcp_tcp.d" \
+"./LwIP-core/def.d" \
+"./LwIP-core/dns.d" \
+"./LwIP-core/inet_chksum.d" \
+"./LwIP-core/init.d" \
+"./LwIP-core/ip.d" \
+"./LwIP-core/mem.d" \
+"./LwIP-core/memp.d" \
+"./LwIP-core/netif.d" \
+"./LwIP-core/pbuf.d" \
+"./LwIP-core/raw.d" \
+"./LwIP-core/stats.d" \
+"./LwIP-core/sys.d" \
+"./LwIP-core/tcp.d" \
+"./LwIP-core/tcp_in.d" \
+"./LwIP-core/tcp_out.d" \
+"./LwIP-core/timeouts.d" \
+"./LwIP-core/udp.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+LwIP-core/altcp.o: $(CORE)/altcp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #54 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/altcp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/altcp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/altcp_alloc.o: $(CORE)/altcp_alloc.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #55 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/altcp_alloc.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/altcp_alloc.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/altcp_tcp.o: $(CORE)/altcp_tcp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #56 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/altcp_tcp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/altcp_tcp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/def.o: $(CORE)/def.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #57 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/def.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/def.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/dns.o: $(CORE)/dns.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #58 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/dns.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/dns.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/inet_chksum.o: $(CORE)/inet_chksum.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #59 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/inet_chksum.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/inet_chksum.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/init.o: $(CORE)/init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #60 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/ip.o: $(CORE)/ip.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #61 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/ip.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/ip.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/mem.o: $(CORE)/mem.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #62 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/mem.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/mem.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/memp.o: $(CORE)/memp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #63 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/memp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/memp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/netif.o: $(CORE)/netif.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #64 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/netif.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/netif.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/pbuf.o: $(CORE)/pbuf.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #65 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/pbuf.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/pbuf.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/raw.o: $(CORE)/raw.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #66 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/raw.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/raw.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/stats.o: $(CORE)/stats.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #67 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/stats.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/stats.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/sys.o: $(CORE)/sys.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #68 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/sys.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/sys.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/tcp.o: $(CORE)/tcp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #69 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/tcp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/tcp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/tcp_in.o: $(CORE)/tcp_in.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #70 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/tcp_in.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/tcp_in.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/tcp_out.o: $(CORE)/tcp_out.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #71 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/tcp_out.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/tcp_out.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/timeouts.o: $(CORE)/timeouts.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #72 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/timeouts.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/timeouts.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+LwIP-core/udp.o: $(CORE)/udp.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #73 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"LwIP-core/udp.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"LwIP-core/udp.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

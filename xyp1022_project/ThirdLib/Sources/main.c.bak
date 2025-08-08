@@ -1,0 +1,642 @@
+//////////////////////////
+//	Project Stationery  //
+//////////////////////////
+
+#include <stdio.h>
+#include "e500mc.h"
+#include "e500mc_asm.h"
+#include "common.h"
+#include "ppctimer.h"
+#include "uart.h"
+#include "mpic.h"
+#include "gpio.h"
+
+#define L1CSR0 1010
+#define L1CSR1 1011
+
+#define L2CSR0 1017
+#define L2CSR1 1018
+
+#define SRAM_TEST			0
+#define DDR_TEST			0
+#define DDR_TEST2			0
+#define UART_TEST			0			
+#define CPU_32_BIT_MODE		0
+#define WHETSTONE_TEST		0
+#define DRYSTONE_TEST		0			
+#define COREMARK_TEST		0			
+#define MMU_TEST			0
+#define CACHE_TEST			0
+#define CONSISTENCY_TEST	0
+#define L3_TEST				0
+#define TIME_TEST			0
+#define FP_TEST				0
+#define AXI_DMA_TEST		0
+#define SWITCH_TEST			0
+#define SEC_TEST			0
+#define ARNG_TEST			0
+#define DRNG_TEST			0
+#define WRNG_TEST			0
+#define FUSE_TEST			0	
+#define SECMON_TEST			0
+#define EBC_CLEAR_DOWNLOAD	0
+#define GPIO_M0_M1_TEST		0
+
+#define MPIC_TEST			0
+#define QUICC_TEST			0
+
+
+#define DMA_CoreNet_BUS		0		//if 0, DMA_AXI_BUS
+#define SEC_CoreNet_BUS		1		//if 0, SEC_AXI_BUS
+
+extern void dhry_test ();
+
+void init_cache(void)
+{
+	unsigned int val=0;
+	// flash invalidae the L1 cache
+#if 1
+ __asm__ (	
+	".set L1CSR0, 1010 \n"
+	".set L1CSR1, 1011 \n"		 
+	"xor 4,4,4 \n" 
+	"ori 5,4,0x0102 \n" 
+	// set CFI and CFLC bits
+	"sync \n"
+	"isync \n"
+	"mtspr L1CSR0,5 \n" 
+	"isync \n"
+	"dloop: \n"
+	"mfspr 4,L1CSR0 \n"
+	"and. 4,4,5 \n"
+	"bne dloop \n"
+	"isync \n"
+	 // L1 instruction cache
+	"xor 4,4,4 \n"
+	"ori 5,4,0x0102 \n"
+	"sync \n"
+	"isync \n"
+	"mtspr L1CSR1,5 \n"
+	"isync \n"
+	"iloop : \n"
+	"mfspr 4,L1CSR1 \n"
+	"and. 4,4,5 \n"
+	"bne iloop \n"
+	"isync"
+	);
+#endif
+	
+#if 1
+ // L2 data cache
+ __asm__ (
+".set L2CSR0, 1017 \n"		 
+ "xor 4,4,4 \n" // set r4 to 0
+"ori 5,4,0x0400 \n" // set L2LFC bit
+ "oris 5,5,0x0020 \n" // set L2FI
+ "sync \n"
+ "isync \n" // synchronize setting of L2CSR0
+ "mtspr L2CSR0,5 \n" // flash invalidate L2 cache and locks
+ "isync \n" // synchronize setting of L2CSR0
+ "l2loop: \n"
+ "mfspr 4,L2CSR0 \n" // get current value
+ "and. 5,5,4 \n" // compare to see if complete
+ "bne l2loop"
+		 );
+#endif 
+ 
+ //enable L1 ,L2 
+  MFSPR(val,L1CSR0);
+ 
+ val |= 0x01;
+ 
+ MTSPR(L1CSR0,val);
+  asm("isync");
+ 
+ MFSPR(val,L1CSR1);
+  val |= 0x01;
+  MTSPR(L1CSR1,val);
+  asm("isync"); 
+  
+ //enable L2
+ MFSPR(val,L2CSR0);
+  val |= 0x01;
+  MTSPR(L2CSR0,val);
+  asm("isync");
+   
+}
+
+void check_sram()
+{
+	unsigned int i, val;
+	
+	for(i=0; i<16; i+=4)
+		val = *((volatile unsigned int *)(0xe0010000+i));
+}
+
+void spr_test()
+{
+	unsigned int val;
+	MFSPR(val, TBL);
+	MTSPR(TBL_W, 0xaaaaaaaa);
+	MFSPR(val, TBL);
+	
+	MTSPR(TBU_W, 0x55555555);
+	MFSPR(val, TBU);
+}
+
+void cpu_32_bit_test()
+{
+	unsigned int val, j;
+	volatile long long aa=0, addr;
+	unsigned long bb=0;
+
+	set_e0_tlb(0x103e0000,0xc0000700,0x800000000000000f,0x0000003f,0x00000000,0x00000000);//set ddr0 tlb at entry 62 from 0x0000_0000 to 0x0100_0000, invalid cache
+	/* if CM=0, processor is in 32-bit mode */
+	MFMSR(val);
+	val &= 0x7FFFFFFF;			//into 32 bit mode 
+	MTMSR(val);
+	asm ("msync");
+	asm ("isync");
+	
+	aa = 0x5a5a5a5a5a5a5a5a;	//unsigned long long is 64 bit when CPU 32 or 64 mode
+	bb = 0x6b6b6b6b6b6b6b6b;	//unsigned long is also 64 bit when CPU 32 mode, because of code target mode is 64 bit
+	
+	addr = 0x8000000000000000ull;
+	memset(0, 0, 0x2000);			//clr DDR
+
+	for(j=0; j<0x100; j++)
+		*((volatile unsigned long long *)addr+j) = aa + j;
+	
+	for(j=0; j<0x100; j++)
+		if( *((volatile unsigned long long *)addr+j) != aa + j)
+			while(1);
+	
+	addr += 0x1000;
+	for(j=0; j<0x100; j++)
+		*((volatile unsigned long *)addr+j) = bb + j;
+	
+	for(j=0; j<0x100; j++)
+	if( *((volatile unsigned long *)addr+j) != bb + j)
+		while(1);
+
+}
+
+void dma_axi_bus()
+{
+	unsigned int i;
+	
+	/* DMA0 DMA1 change to AXI_BUS */
+	i = *(volatile unsigned int*)(0xeb009000);
+	*(volatile unsigned int*)(0xeb009000) = i&0xffffff7b;
+	i = *(volatile unsigned int*)(0xeb009000);
+}
+
+void sec_axi_bus()
+{
+	unsigned int i;
+	
+	/* SEC change to AXI_BUS */
+	i = *(volatile unsigned int*)(0xeb009000);
+	*(volatile unsigned int*)(0xeb009000) = i&0xfffffffd;
+	i = *(volatile unsigned int*)(0xeb009000);
+}
+
+void wrng_io_multiplex()
+{
+	unsigned int i;
+	
+	/* SEC change to AXI_BUS */
+	i = *(volatile unsigned int*)(0xeb009028);
+	*(volatile unsigned int*)(0xeb009028) = i|0x7;
+	i = *(volatile unsigned int*)(0xeb009028);
+}
+
+void clock_tb_en()
+{
+	unsigned int val;
+	
+	LDW(val, PCTBEN);
+	val |= 0x01;
+	STW(val, PCTBEN);		
+}
+
+void new_setting()
+{
+	//acu
+	*(volatile unsigned int *)(0xe9541000) = 0;
+	*(volatile unsigned int *)(0xe9200410) = 0;
+	
+	//deco
+	*(volatile unsigned int *)(0xe9205e00) = 1;
+	*(volatile unsigned int *)(0xe9206e00) = 1;
+	*(volatile unsigned int *)(0xe9207e00) = 1;
+	*(volatile unsigned int *)(0xe9208e00) = 1;
+	*(volatile unsigned int *)(0xe9209e00) = 1;
+	*(volatile unsigned int *)(0xe920ae00) = 1;
+	*(volatile unsigned int *)(0xe920be00) = 1;
+	*(volatile unsigned int *)(0xe920ce00) = 1;
+
+}
+
+void GPIO_init( void )
+{
+	unsigned int reg,i;
+	
+	//gpio0/gpio1/gpio15
+	reg = R32( GPIO_M_BASE_ADDR	|GPIO_IOCTL_OFFSET );
+	W32(GPIO_M_BASE_ADDR	|GPIO_IOCTL_OFFSET, reg|(1 <<0)|(1 <<1)|(1 <<15) );
+	
+	reg = R32( GPIO_M_BASE_ADDR	|GPIO_DIR_OFFSET );
+	W32(GPIO_M_BASE_ADDR	|GPIO_DIR_OFFSET,	reg|(1 <<0)|(1 <<1)|(1 <<15) );
+	
+	reg = R32( GPIO_M_BASE_ADDR	|GPIO_OUT_OFFSET );
+	W32(GPIO_M_BASE_ADDR	|GPIO_OUT_OFFSET,	reg|(1 <<0)|(1 <<1)|(1 <<15) );
+	
+}
+
+//MTSPR(spr,data)
+int main_cpu0()
+{
+	int i=0, j;
+	unsigned int val, reg;
+	volatile long long aa=0;
+	unsigned long proc_id=0,atbl,atbu;
+	volatile unsigned int cpu0_jmp_addr,daddr_l,datalen;
+
+	/* Updata MAS7 and Set CIGLSO */
+	MFSPR(i,HID0);
+	i |= 0x90;
+	MTSPR(HID0, i);
+	MSYNC;
+	
+	/* Select core timer base enable */
+	clock_tb_en();
+
+	/* enable int at MSR[EE], also valid CE ME FP */
+	MFMSR(val);
+	val |= 0x2B000;			//enable CE EE ME FP
+	MTMSR(val);
+	asm ("isync");
+	
+	char *p,*p1;
+	TLBSX(0x00000004e007c000);
+	uart0_16750_init(UART_XTAL, 115200);
+	uart_printf_buf("XYP1022 test start. \n");
+
+	/* if ddr_init not done by FPGA, SW init DDR here*/
+//	ddr_init();		
+/*	
+	sram_chk(0x1000000,0x100000);				//DDR check	1M	
+	set_e0_tlb(0x10050000,0xc0000a00,0x00000004,0x0000003f,0x00000000,0x00000000);
+	set_e0_tlb(0x10060000,0xc0000a00,0x40000004,0x4000003f,0x00000000,0x00000000);
+	sram_chk(0x1000000,0x100000);				//DDR check	1M
+*/	
+	/* if DDR not init by both HW and SW, clear DDR tlb */ 
+//	set_e0_tlb(0x10020000,0x40000a00,0x00000004,0x0000003f,0x00000000,0x00000000);
+
+//	MFSPR(i, 0x19D);
+//	L3_init_clr();
+
+//	MTSPR(TBL_W,0);
+//	MTSPR(TBU_W,0);  
+//	MFTB(atbl,TBL);
+	  
+//	MFSPR(atbl,TBU_R);
+//	MFSPR(atbl,TBL_R);
+//	MFSPR(atbl,TBU_R);		
+
+/* mpic reset and init, move to init_chip */
+//	mpic_reset();
+//	mpic_init();
+//	mpic_unmask();
+#if 0
+	/* tmp test */
+	while(1){	
+		set_e0_tlb(0x10200000,0xc0000500,0xe0000004,0xe000003f,0x00000000,0x00000004);
+		
+		invalidate_l1_dcache();
+		invalidate_l1_icache();
+		invalidate_l2_cache();
+		enable_branch();
+		set_msr_ee();
+		enable_l1_dcache();
+		enable_l1_icache();
+		enable_l2_cache();
+	}
+#endif
+
+#if I2C_TEST
+    iic_test();
+#endif
+	
+#if SRAM_TEST
+//	sram_test();						//sram word_halfword_byet test
+	sram_chk(0xe0070000,0x10000);		//SRAM check	256K
+#endif
+	
+#if DDR_TEST
+	set_e0_tlb(0x10050000,0xc0000a00,0x00000004,0x0000003f,0x00000000,0x00000000);
+//	set_e0_tlb(0x10060000,0xc0000a00,0x40000004,0x4000003f,0x00000000,0x00000000);
+	set_e0_tlb(0x10030000,0xc0000500,0xe0000004,0xe000003f,0x00000000,0x00000004);
+		
+	sram_chk(0,0x100000);				//DDR check	1M
+	sram_chk(0x40000000,0x1000000);		//DDR check 10M
+	mem_scan_test(0,0x100000);			//word/half_word/byte
+#endif
+	
+#if DDR_TEST2
+	set_e0_tlb(0x10050000,0xc0000a00,0x00000004,0x0000003f,0x00000000,0x00000000);
+	set_e0_tlb(0x10060000,0xc0000a00,0x40000004,0x4000003f,0x00000000,0x00000000);	
+	set_e0_tlb(0x10030000,0xc0000500,0xe0000004,0xe000003f,0x00000000,0x00000004);
+	
+	sram_chk(0x00000000,0x100000);				//DDR check	1M
+	sram_chk(0x10000000,0x100000);				//DDR check	1M
+	sram_chk(0x20000000,0x100000);				//DDR check	1M
+	sram_chk(0x30000000,0x100000);				//DDR check	1M
+	
+	sram_chk_byte(0x40000000,0x100000);
+	sram_chk_byte(0x50000000,0x100000);
+	sram_chk_byte(0x60000000,0x100000);
+	sram_chk_byte(0x70000000,0x100000);
+//	sram_chk_byte(0x00000000,0x100000);
+//	sram_chk_byte(0x10000000,0x100000);
+//	sram_chk_byte(0x20000000,0x100000);
+//	sram_chk_byte(0x30000000,0x100000);
+	
+//	sram_chk(0x40000000,0x40000000);			//DDR check	1G
+//	sram_chk(0x00000000,0x40000000);			//DDR check	2G
+	
+	set_e0_tlb(0x10050000,0xc0000a00,0x0000000a,0x0000003f,0x00000000,0x00000000); 
+	set_e0_tlb(0x10060000,0xc0000a00,0x4000000a,0x4000003f,0x00000000,0x00000000);	
+
+	sram_chk(0x00000000,0x100000);				//DDR check	1M
+	sram_chk(0x10000000,0x100000);				//DDR check	1M
+	sram_chk(0x20000000,0x100000);				//DDR check	1M
+	sram_chk(0x30000000,0x100000);				//DDR check	1M
+//	sram_chk(0x40000000,0x100000);				//DDR check	1M
+//	sram_chk(0x50000000,0x100000);				//DDR check	1M
+//	sram_chk(0x60000000,0x100000);				//DDR check	1M
+//	sram_chk(0x70000000,0x100000);				//DDR check	1M
+	
+//	sram_chk_byte(0x00000000,0x100000);
+//	sram_chk_byte(0x10000000,0x100000);
+//	sram_chk_byte(0x20000000,0x100000);
+//	sram_chk_byte(0x30000000,0x100000);	
+	sram_chk_byte(0x40000000,0x100000);
+	sram_chk_byte(0x50000000,0x100000);
+	sram_chk_byte(0x60000000,0x100000);
+	sram_chk_byte(0x70000000,0x100000);
+
+	
+//	sram_chk(0x00000000,0x40000000);				//DDR check	1G
+//	sram_chk(0x40000000,0x40000000);				//DDR check	2G
+#endif
+	
+#if UART_TEST
+	unsigned char buf[0x20];
+	for(i=0; i<0x10; i++)
+		buf[i] = uart0_16750_RX();
+	uart_printf_buf(buf);
+//	while(1);
+#endif
+
+#if CPU_32_BIT_MODE
+	cpu_32_bit_test();
+#endif
+	
+#if MMU_TEST
+	mmu_test();
+#endif	
+	
+#if CACHE_TEST	
+	cache_main();
+#endif	
+	
+#if CONSISTENCY_TEST
+//	cache_consistency_test_DMA_CoreNet();
+	cache_consistency_test_DMA_AXI();
+//	cache_consistency_test_Multi_Core();
+#endif
+#if MPIC_TEST	
+	mpic_test();
+#endif
+#if QUICC_TEST
+	quicc_test();
+#endif
+#if L3_TEST
+	L3_cache_count();	
+//	L3_cache_dhry();
+//	L3_sram_test();
+#endif
+
+#if WHETSTONE_TEST
+	whetstone_test();
+#endif 
+
+#if DRYSTONE_TEST
+	/*Cache validated DMIPS_MHZ: 2.95425, DMIPS:-, -O3, FPGA*/
+	/*Cache validated DMIPS_MHZ: 3.14418, DMIPS:-, -O3, CPU:1.33G, EVB*/
+	set_e0_tlb(0x103f0000,0xc0000500,0xe0000004,0xe000003f,0x00000000,0x00000004);//set sram0 tlb at entry 63 from 0xe000_0000 to 0xe010_0000, valid cache
+	set_e0_tlb(0x103d0000,0xc0000100,0xe960800f,0xe960803f,0x00000000,0x00000004);//set uart tlb at entry 61
+//	set_e0_tlb(0x103e0000,0xc0000700,0x00000004,0x0000003f,0x00000000,0x00000000);//set ddr0 tlb at entry 62 from 0x0000_0000 to 0x0100_0000, valid cache
+	//don't re-config ebc register
+	for(i=0; i<0x3c; i++){
+		clr_e0_tlb1_papa(0x10000000+(i<<16));
+	}
+	
+	main_dhry();	
+#endif
+
+#if COREMARK_TEST
+	set_e0_tlb(0x103f0000,0xc0000500,0xe0000004,0xe000003f,0x00000000,0x00000004);//set sram0 tlb at entry 63 from 0xe000_0000 to 0xe010_0000, valid cache
+	set_e0_tlb(0x103d0000,0xc0000100,0xe960800f,0xe960803f,0x00000000,0x00000004);//set uart tlb at entry 61
+	set_e0_tlb(0x103e0000,0xc0000700,0x00000004,0x0000003f,0x00000000,0x00000000);//set ddr0 tlb at entry 62 from 0x0000_0000 to 0x0100_0000, valid cache
+	//don't re-config ebc register
+	for(i=0; i<0x3c; i++){
+		clr_e0_tlb1_papa(0x10000000+(i<<16));
+	}
+	
+	uart_printf("benchmark_____test begin run %d\n");
+	coremark_main();	
+#endif
+
+#if TIME_TEST
+	timer_test();
+#endif
+
+#if AXI_DMA_TEST
+#if DMA_CoreNet_BUS
+	axidma_test();
+#else
+	//DMA_AXI_BUS
+	dma_axi_bus();
+	axidma_test();
+#endif
+#endif
+	
+#if SWITCH_TEST
+//	switch_wr_rd_test();
+//	switch_reg_test();
+//	swicth_mode_test();
+//	swicth_portx_txrx_disable_test();	
+	switch_vlan_test();
+//	switch_state_monitor();
+//	phy_init();		 			 //initialize the ext phy, need DPAA
+//	switch_three_layer_test();	 //can't use
+#endif
+	
+#if ARNG_TEST
+	new_setting();
+	sec_init();
+#if SEC_CoreNet_BUS
+
+#else
+	//SEC_AXI_BUS
+	sec_axi_bus();
+#endif	
+	analog_rng_test_SEC();							//Analog RNG SEC mode
+#endif
+	
+#if DRNG_TEST
+	new_setting();
+	sec_init();
+#if SEC_CoreNet_BUS
+
+#else
+	//SEC_AXI_BUS
+	sec_axi_bus();
+#endif	
+//	digital_rng_test_CPU();
+	digital_rng_test_SEC();
+#endif
+	
+#if WRNG_TEST
+	sec_init();
+	new_setting();
+	wrng_io_multiplex();
+	
+#if SEC_CoreNet_BUS
+
+#else
+	//SEC_AXI_BUS
+	sec_axi_bus();
+#endif		
+	
+	wrng_test_CPU();
+//	wrng_test_SEC_no_bypass();
+//	wrng_test_SEC_bypass();
+#endif
+	
+#if SEC_TEST
+#if SEC_CoreNet_BUS
+
+#else
+	//SEC_AXI_BUS
+	sec_axi_bus();
+#endif		
+	new_setting();
+//	sec_test();
+	bn_test();
+#endif
+	
+#if FUSE_TEST
+	fuse_command_test();
+	fuse_DECO_test();
+	fuse_otpmk_hw();
+	fuse_mpumk_hw();
+	fuse_secmon_otpmk_bad_key_sv_test();
+#endif
+
+#if SECMON_TEST
+	secmon_nonsecure_state_test();
+	secmon_disable_nonsecure_state_test();
+//	secmon_ssm_st_dis_test();		//st is the status secure -> trusted
+//	secmon_reg_test();
+//	secmon_lock_hac_test();
+//	secmon_hac_counter_test();
+//	secmon_acu_sv_test();
+//	secmon_bad_key_sv_test();
+
+//	secmon_rtic_ae_sv_test();		//no rtic
+//	secmon_rtic_mis_sv_test();		//no rtic
+#endif
+	
+#if EBC_CLEAR_DOWNLOAD
+	//download OEM
+	//erase flash
+#if 0
+	//all 32M
+	daddr_l = 0xF8000000;		
+	datalen = 0x2000000;
+#else
+	//only the last sector
+	daddr_l = 0xF9F80000;		
+	datalen = 0x80000;
+		
+#endif
+	for(i=0; i<datalen; i+=0x20000)
+	{
+		uart_printf("addr:%x \n", daddr_l+i);
+		spansionSectorErase(daddr_l+i);
+	}
+	
+	//copy bin to cpu0_jmp_addr, restore -b D:/Users/ccore/Desktop/S1022_EVB_EBC_BOOT.bin i:0x4e0060000
+	//copy bin to cpu0_jmp_addr, restore -b D:/Users/ccore/Desktop/S1022_EVB_EBC_BIN.bin i:0x4e0060000
+	
+	//program 
+	daddr_l = 0xF9FE0000;		//128K, for EBC_Boot
+//	daddr_l = 0xF9F80000;		//128K, for SRAM_Inc
+
+	datalen = 0x20000;			//128K
+//	cpu0_jmp_addr = 0x00b00000;	
+//	daddr_l = 0xFBFF0000;		//64K
+//	datalen = 0x10000;			//64K
+	cpu0_jmp_addr = 0xe0060000;
+	
+	for(i=0;i<datalen;i+=4)		//program to ebc_flash
+	{
+		//32bit/ 16bit  *2 						
+		spansionProgram(daddr_l + i, *(unsigned int*)(cpu0_jmp_addr+i));
+	}
+	
+#endif
+	
+#if GPIO_M0_M1_TEST
+	
+	GPIO_init();
+	W32(GPIO_M_BASE_ADDR	|GPIO_OUT_OFFSET,	(reg & 0xfffffffc)|0x03 );		//GPIO_M0 M1 all High
+	delay(0x1000);
+	W32(GPIO_M_BASE_ADDR	|GPIO_OUT_OFFSET,	(reg & 0xfffffffc)|0x00 );		//GPIO_M0 M1 all Low
+	delay(0x1000);
+	
+#endif
+	//asm ("mfatbl %0" : "=r" (proc_id));	
+	//printf("Core%lu: Welcome to CodeWarrior!\r\n", proc_id>>5);
+	//MFSPR(atbl,ATBL);
+//	MFSPR(atbu,ATBU);	
+	//printf("ATBU: %lu, ATBL:  %lu \n", atbl,atbu);
+//	MFSPR(atbl,ATBL);
+//	MFSPR(atbu,ATBU);	
+//	printf("ATBU: %lu, ATBL:  %lu \n", atbl,atbu);		
+	
+	while (1) { i++; 
+	
+	aa = i+1;
+	aa+= 10;
+	asm("nop");
+	asm("nop");
+	asm("nop");
+	asm("nop");	
+	asm("nop");
+	asm("nop");	
+	asm("nop");
+	asm("nop");
+	asm("dnh 10,10");
+//	IO_WRITE32(0x10000,0xaabbccdd);
+//	IO_WRITE32(0x10010,0x12345678);	
+	asm("nop");	
+	asm("nop");
+	asm("nop");		
+	} // loop forever
+}
+

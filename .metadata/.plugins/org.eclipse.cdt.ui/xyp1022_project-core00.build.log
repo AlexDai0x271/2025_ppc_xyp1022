@@ -1,0 +1,5 @@
+
+**** Build of configuration RAM for project xyp1022_project-core00 ****
+
+C:\Freescale\CW_PA_v10.5.1\gnu\bin\mingw32-make -j32 all 
+mingw32-make: Nothing to be done for `all'.

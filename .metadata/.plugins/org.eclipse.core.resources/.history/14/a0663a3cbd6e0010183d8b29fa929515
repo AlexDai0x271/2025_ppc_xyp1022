@@ -1,0 +1,8 @@
+FatFS/ffunicode.o: \
+ C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ffunicode.c \
+ C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ff.h \
+ C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ffconf.h
+
+C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ff.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ffconf.h:

@@ -1,0 +1,11 @@
+#ifndef AXI_LAW_H
+#define AXI_LAW_H
+
+#define AXI_LAW_BASE_ADDR 0xEB00B000ull
+#define AXI_LAW_BAR_BASE  (0x000 + AXI_LAW_BASE_ADDR)
+#define AXI_LAW_BARH_BASE (0x400 + AXI_LAW_BASE_ADDR)
+#define AXI_LAW_AR_BASE   (0x800 + AXI_LAW_BASE_ADDR)
+#define AXI_LAW_UPDATE    (0xC00 + AXI_LAW_BASE_ADDR)
+
+
+#endif

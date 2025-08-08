@@ -1,0 +1,84 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(SOURCE)/diskio.c" \
+"$(SOURCE)/ff.c" \
+"$(SOURCE)/ffsystem.c" \
+"$(SOURCE)/ffunicode.c" \
+
+C_SRCS += \
+$(SOURCE)/diskio.c \
+$(SOURCE)/ff.c \
+$(SOURCE)/ffsystem.c \
+$(SOURCE)/ffunicode.c \
+
+OBJS += \
+./FatFS/diskio.o \
+./FatFS/ff.o \
+./FatFS/ffsystem.o \
+./FatFS/ffunicode.o \
+
+C_DEPS += \
+./FatFS/diskio.d \
+./FatFS/ff.d \
+./FatFS/ffsystem.d \
+./FatFS/ffunicode.d \
+
+OBJS_QUOTED += \
+"./FatFS/diskio.o" \
+"./FatFS/ff.o" \
+"./FatFS/ffsystem.o" \
+"./FatFS/ffunicode.o" \
+
+OBJS_OS_FORMAT += \
+./FatFS/diskio.o \
+./FatFS/ff.o \
+./FatFS/ffsystem.o \
+./FatFS/ffunicode.o \
+
+C_DEPS_QUOTED += \
+"./FatFS/diskio.d" \
+"./FatFS/ff.d" \
+"./FatFS/ffsystem.d" \
+"./FatFS/ffunicode.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+FatFS/diskio.o: $(SOURCE)/diskio.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #93 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FatFS/diskio.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FatFS/diskio.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FatFS/ff.o: $(SOURCE)/ff.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #94 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FatFS/ff.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FatFS/ff.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FatFS/ffsystem.o: $(SOURCE)/ffsystem.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #95 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FatFS/ffsystem.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FatFS/ffsystem.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FatFS/ffunicode.o: $(SOURCE)/ffunicode.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #96 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FatFS/ffunicode.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FatFS/ffunicode.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

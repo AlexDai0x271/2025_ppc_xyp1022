@@ -1,0 +1,123 @@
+// u_axi_sub.u_ccsr_s11_mpu.
+// CCSR S11 : MPU
+#define  C0_8KSRAM_BASE_ADDR   0xEB740000     // S9:  ~ 0xEB741FFF : 2^13 = 8K : c0 ram
+#define  C0_32KSRAM_BASE_ADDR  0xEB742000     // S10: ~ 0xEB749FFF : 32K       : c0 rom
+#define  MPU_BASE_ADDR         0xEB74A000     // S11: ~ 0xEB74AFFF : 2^12 = 4K
+#define  MPU_RGN0_H     (MPU_BASE_ADDR + 0x0000)
+#define  MPU_RGN0_L     (MPU_BASE_ADDR + 0x0004)
+#define  MPU_RGN1_H     (MPU_BASE_ADDR + 0x0008)
+#define  MPU_RGN1_L     (MPU_BASE_ADDR + 0x000C)
+#define  MPU_RGN2_H     (MPU_BASE_ADDR + 0x0010)
+#define  MPU_RGN2_L     (MPU_BASE_ADDR + 0x0014)
+#define  MPU_RGN3_H     (MPU_BASE_ADDR + 0x0018)
+#define  MPU_RGN3_L     (MPU_BASE_ADDR + 0x001C)
+#define  MPU_RGN4_H     (MPU_BASE_ADDR + 0x0020)
+#define  MPU_RGN4_L     (MPU_BASE_ADDR + 0x0024)
+#define  MPU_RGN5_H     (MPU_BASE_ADDR + 0x0028)
+#define  MPU_RGN5_L     (MPU_BASE_ADDR + 0x002C)
+#define  MPU_RGN6_H     (MPU_BASE_ADDR + 0x0030)
+#define  MPU_RGN6_L     (MPU_BASE_ADDR + 0x0034)
+#define  MPU_RGN7_H     (MPU_BASE_ADDR + 0x0038)
+#define  MPU_RGN7_L     (MPU_BASE_ADDR + 0x003C)
+
+#define  MPU_SEED       (MPU_BASE_ADDR + 0x0040)
+#define  MPU_LOCK_INT   (MPU_BASE_ADDR + 0x0040)
+#define  MPU_CR         (MPU_BASE_ADDR + 0x0044)
+#define  MPU_SR         (MPU_BASE_ADDR + 0x0048)
+
+#define  FLASH_INT      (MPU_BASE_ADDR + 0x004C)
+#define  FLASH_CMD      (MPU_BASE_ADDR + 0x0050)
+#define  FLASH_ADDR     (MPU_BASE_ADDR + 0x0054)
+#define  FLASH_DATA     (MPU_BASE_ADDR + 0x0058)
+#define  FLASH_STATUS   (MPU_BASE_ADDR + 0x005C)
+#define  C0_DONE        (MPU_BASE_ADDR + 0x0060)
+#define  C0_DONE_INTEN  (MPU_BASE_ADDR + 0x0064)
+#define  C0_32KSRAM_WRITE_DISABLE	 (MPU_BASE_ADDR + 0x0068)
+#define  FLASH_BUF_LEN     (MPU_BASE_ADDR + 0x006C)
+#define  FLASH_BUF_SRC     (MPU_BASE_ADDR + 0x0070)
+#define  FLASH_BUF_DST     (MPU_BASE_ADDR + 0x0074)
+// Following is added for AES
+#define  AES_CR0           (MPU_BASE_ADDR + 0x0078)
+#define  AES_CR1           (MPU_BASE_ADDR + 0x007C)
+#define  FLASH_DATA_AES_W0 (MPU_BASE_ADDR + 0x0080)
+#define  FLASH_DATA_AES_W1 (MPU_BASE_ADDR + 0x0084)
+#define  FLASH_DATA_AES_W2 (MPU_BASE_ADDR + 0x0088)
+#define  FLASH_DATA_AES_W3 (MPU_BASE_ADDR + 0x008C)
+#define  FLASH_ADDR_AES_W0 (MPU_BASE_ADDR + 0x0090)
+#define  FLASH_ADDR_AES_W1 (MPU_BASE_ADDR + 0x0094)
+#define  FLASH_ADDR_AES_W2 (MPU_BASE_ADDR + 0x0098)
+#define  FLASH_ADDR_AES_W3 (MPU_BASE_ADDR + 0x009C)
+#define  START_SHA_KEY     (MPU_BASE_ADDR + 0x00A0)
+// Following is added for SSI
+#define  SSI_INT           (MPU_BASE_ADDR + 0x00A4)
+#define  SSI_CR            (MPU_BASE_ADDR + 0x00A8)
+#define  SSI_OPCODE        (MPU_BASE_ADDR + 0x00AC)
+#define  SSI_DATA          (MPU_BASE_ADDR + 0x00B0)
+#define  SSI_ADDR          (MPU_BASE_ADDR + 0x00B4)
+#define  SSI_RETURN_STATUS (MPU_BASE_ADDR + 0x00B8)
+#define  SSI_RETURN_DATA   (MPU_BASE_ADDR + 0x00BC)
+#define  SSI_DATA_AES_W0   (MPU_BASE_ADDR + 0x00C0)
+#define  SSI_DATA_AES_W1   (MPU_BASE_ADDR + 0x00C4)
+#define  SSI_DATA_AES_W2   (MPU_BASE_ADDR + 0x00C8)
+#define  SSI_DATA_AES_W3   (MPU_BASE_ADDR + 0x00CC)
+#define  SSI_ADDR_AES_W0   (MPU_BASE_ADDR + 0x00D0)
+#define  SSI_ADDR_AES_W1   (MPU_BASE_ADDR + 0x00D4)
+#define  SSI_ADDR_AES_W2   (MPU_BASE_ADDR + 0x00D8)
+#define  SSI_ADDR_AES_W3   (MPU_BASE_ADDR + 0x00DC)
+#define  SHADOW_FUSE_SSI_MPU_EN   (MPU_BASE_ADDR + 0x00E0)
+
+#define  MPU_DUMMY_REG  (MPU_BASE_ADDR + 0x00A8)
+#define  MPU_DUMMY_REG1 (MPU_BASE_ADDR + 0x00A0)
+#define  MPU_DUMMY_REGn (MPU_BASE_ADDR + 0x0FFF)
+
+#define KEY_DONE         0x00000001
+#define MPU_GLOBAL_EN    0x80000000  // MPU_CR[31]
+#define RGN7_ADDR_EN     0x00800000  // MPU_CR[23]  
+#define RGN6_ADDR_EN     0x00400000  // MPU_CR[22]
+#define RGN5_ADDR_EN     0x00200000  // MPU_CR[21]
+#define RGN4_ADDR_EN     0x00100000  // MPU_CR[20]
+#define RGN3_ADDR_EN     0x00080000  // MPU_CR[19]  
+#define RGN2_ADDR_EN     0x00040000  // MPU_CR[18]
+#define RGN1_ADDR_EN     0x00020000  // MPU_CR[17]
+#define RGN0_ADDR_EN     0x00010000  // MPU_CR[16]
+#define RGN7_DATA_EN     0x00008000  // MPU_CR[15]  
+#define RGN6_DATA_EN     0x00004000  // MPU_CR[14]
+#define RGN5_DATA_EN     0x00002000  // MPU_CR[13]
+#define RGN4_DATA_EN     0x00001000  // MPU_CR[12]
+#define RGN3_DATA_EN     0x00000800  // MPU_CR[11]  
+#define RGN2_DATA_EN     0x00000400  // MPU_CR[10]
+#define RGN1_DATA_EN     0x00000200  // MPU_CR[9]
+#define RGN0_DATA_EN     0x00000100  // MPU_CR[8]
+#define REGION7_EN       0x00000080  // MPU_CR[7]  
+#define REGION6_EN       0x00000040  // MPU_CR[6]
+#define REGION5_EN       0x00000020  // MPU_CR[5]
+#define REGION4_EN       0x00000010  // MPU_CR[4]
+#define REGION3_EN       0x00000008  // MPU_CR[3]
+#define REGION2_EN       0x00000004  // MPU_CR[2]
+#define REGION1_EN       0x00000002  // MPU_CR[1]
+#define REGION0_EN       0x00000001  // MPU_CR[0]
+
+#define CMD_CHIP_ERASE      0x00000001
+#define CMD_BLOCK_ERASE     0x00000002
+#define CMD_SECTOR_ERASE    0x00000003
+#define CMD_PROGRAM_FLASH   0x00000004
+#define CMD_PROGRAM_SRAM    0x00000005
+#define CMD_PROGRAM_SRAMNW   0x00000006
+#define CMD_PROGRAM_FLASHNW  0x00000007
+#define CMD_PROGRAM_FLASH_BUF 0x00000008
+#define CMD_PROGRAM_AES       0x00000010
+#define CMD_PROGRAM_AES_SRAM  0x00000011
+#define CMD_PROGRAM_AES_SRAMNW     0x00000012
+#define CMD_PROGRAM_AES_FLASHNW    0x00000013
+#define CMD_PROGRAM_AES_FLASH_BUF  0x00000014
+#define CMD_PROGRAM_AES_DEBUG      0x00000020
+
+//#define INT_NUM_PLB_WRITE_ERR      21
+#define INT_NUM_SSI_HANDLER_DONE   115
+#define INT_NUM_EBC_HANDLER_DONE   116
+#define INT_NUM_C0_WRITE_LOCK      3
+#define INT_NUM_C0_READ_LOCK       3
+#define INT_NUM_CPU_WRITE_LOCK     3
+#define INT_NUM_CPU_READ_LOCK      3
+#define INT_NUM_READ_WHEN_WRITE    3
+#define INT_NUM_C0_INIT_DONE       4

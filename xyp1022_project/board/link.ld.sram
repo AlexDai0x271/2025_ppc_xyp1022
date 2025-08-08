@@ -1,0 +1,215 @@
+OUTPUT_FORMAT("elf64-powerpc", "elf64-powerpc", "elf64-powerpc")
+OUTPUT_ARCH(powerpc:common64)
+
+ENTRY(__start)
+
+_INST_START_ADDR = 0xE0000000;
+
+_STACK_SIZE = 32k;
+_HEAP_SIZE = 32k;
+
+MEMORY
+{
+    INST    (rwx) :  ORIGIN = 0xE0000000,    LENGTH = 0x00050000
+    DATA    (rwx) :  ORIGIN = 0xE0050000,    LENGTH = 0x00030000
+    DRAM    (rwx) :  ORIGIN = 0x00000000,    LENGTH = 0x01000000
+}
+
+SECTIONS
+{
+    /*-------------------------------------------------------------------------+
+    |    X                          X
+    |   XX                         XX
+    |  XXXXX    XXXXX   XX   XX   XXXXX
+    |   XX     XX    X   XX XX     XX
+    |   XX     XXXXXXX    XXX      XX
+    |   XX XX  XX        XX XX     XX XX
+    |    XXX    XXXXX   XX   XX     XXX
+    +-------------------------------------------------------------------------*/
+
+    . = _INST_START_ADDR;
+
+    . = ALIGN(16);
+    PROVIDE (__stext = .);
+
+    .init :
+    {
+        KEEP(*(.init))
+    } > INST
+
+    .text :
+    {
+        . = ALIGN(16);
+        *__start_e5500_64bit_crt0.o(.text);
+        *intr.o(.text);
+        *exp_default.o(.text);
+        *main.o(.text);
+        *(.stub);
+        *(.text);
+        *(.text.*);
+        *(.gnu.warning);
+        *(.gnu.linkonce.t.*);
+
+        . = ALIGN(16);
+        *(.interp)
+        *(.hash)
+        *(.dynsym)
+        *(.dynstr)
+        *(.gnu.version)
+        *(.gnu.version_d)
+        *(.gnu.version_r)
+        *(.rel.*)
+        *(.rela.*)
+        *(.plt)
+
+        . = ALIGN(16);
+        *(.opd)
+
+        . = ALIGN(16);
+        CONSTRUCTORS
+    } > INST
+
+    .fini :
+    {
+        KEEP(*(.fini))
+    } > INST
+
+    .rodata :
+    {
+        . = ALIGN(16);
+        _rodata_start = .;
+
+        *init_chip.o(.text_ram)
+        *(.rodata)
+        *(.rodata.*)
+        *(.rodata1)
+        *(.rodata1.*)
+        *(.gnu.linkonce.r.*)
+
+        . = ALIGN(16);
+        _rodata_end = .;
+    } > INST
+
+    .got :
+    {
+        . = ALIGN(16);
+        __toc_start_rom = .; /* not corfirm! */
+        __toc_start_ram = .; /* not corfirm! */
+        *(.got.plt)
+        *(.got)
+        *(.got1)
+        *(.got2)
+    } > INST
+
+    . = ALIGN(16);
+    PROVIDE (etext = .);
+    PROVIDE (_etext = .);
+    PROVIDE (__etext = .);
+
+    /*-------------------------------------------------------------------------+
+    |    XXX               X
+    |     XX              XX
+    |     XX    XXXXX    XXXXX    XXXXX
+    |  XXXXX        X     XX          X
+    | XX  XX   XXXXXX     XX     XXXXXX
+    | XX  XX   X   XX     XX XX  X   XX
+    |  XXXX X  XXXXX X     XXX   XXXXX X
+    +-------------------------------------------------------------------------*/
+
+    .data :
+    {
+        . = ALIGN(16);
+        __data_lma = LOADADDR(.data);
+        __data_start = .;
+
+        __etext = LOADADDR(.data);
+        __sdata = .;
+
+        . = ALIGN(16);
+        *(.sdata)
+        *(.sdata.*)
+        *(.gnu.linkonce.s.*)
+        *(.sdata2)
+        *(.sdata2.*)
+        *(.gnu.linkonce.s2.*)
+
+        . = ALIGN(16);
+        *(.data)
+        *(.data.*)
+        *(.data1)
+        *(.data1.*)
+        *(.gnu.linkonce.d.*)
+
+        . = ALIGN(16);
+        *(.intvec)
+        *(.branch_lt)
+        KEEP(*(.eh_frame))
+        *(.gcc_except_table)
+        *(.fixup)
+        *(.dynamic)
+
+        . = ALIGN(16);
+        __data_end = .;
+
+        __edata = .;
+    } > INST
+
+    /*-------------------------------------------------------------------------+
+    | XXX
+    |  XX
+    |  XX      XXXXXXX  XXXXXXX
+    |  XXXXX   XX       XX
+    |  XX  XX  XXXXXXX  XXXXXXX
+    |  XX  XX       XX       XX
+    | XXXXXX   XXXXXXX  XXXXXXX
+    +-------------------------------------------------------------------------*/
+
+    .bss :
+    {
+        . = ALIGN(16);
+        PROVIDE (__sbss = .);
+
+        . = ALIGN(16);
+        *(.dynsbss)
+        *(.sbss)
+        *(.sbss.*)
+        *(.gnu.linkonce.sb.*)
+        *(.sbss2)
+        *(.sbss2.*)
+        *(.gnu.linkonce.sb2.*)
+        *(.scommon)
+
+        . = ALIGN(16);
+        *(.dynbss)
+        *(.bss)
+        *(.bss.*)
+        *(.gnu.linkonce.b.*)
+        *(COMMON)
+
+        . = ALIGN(16);
+        PROVIDE (__ebss = .);
+    } > DATA
+
+    .heap :
+    {
+        . = ALIGN(16);
+        PROVIDE	(_heap_addr = .);
+        PROVIDE (_heap_start = .);
+
+        . = . + _HEAP_SIZE;
+        . = ALIGN(16);
+        PROVIDE (_heap_end = .);
+    } > DATA
+
+    .stack :
+    {
+        . = ALIGN(16);
+        PROVIDE (__stack_addr = .);
+        PROVIDE (__stack_end = .);
+
+        . = . + _STACK_SIZE;
+        . = ALIGN(16);
+        PROVIDE (__stack_start = .);
+        PROVIDE (__stack = .);
+    } > DATA
+}

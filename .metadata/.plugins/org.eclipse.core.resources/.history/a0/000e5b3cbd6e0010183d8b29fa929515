@@ -1,0 +1,11 @@
+Sources/drv_gmac_crc.o: \
+ C:/PPC/project_0721/xyp1022_project/driver/drv_gmac_crc.c \
+ C:/PPC/project_0721/xyp1022_project/driver/drv_gmac_crc.h \
+ C:/PPC/project_0721/xyp1022_project/board/XYP1022.h \
+ C:/PPC/project_0721/xyp1022_project/ppc_driver/sysclock.h
+
+C:/PPC/project_0721/xyp1022_project/driver/drv_gmac_crc.h:
+
+C:/PPC/project_0721/xyp1022_project/board/XYP1022.h:
+
+C:/PPC/project_0721/xyp1022_project/ppc_driver/sysclock.h:

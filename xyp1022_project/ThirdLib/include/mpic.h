@@ -1,0 +1,954 @@
+/*------- general description ------- 
+  All rights reserved by C*Core Corporation
+  date:   2019.3.21
+  author: nzhang
+ 
+  This header defines MPIC macros.
+------- ------- ------- ------- */
+
+//#define MPIC_BASE_ADDR 0xfe040000
+#define MPIC_BASE_ADDR (0xe8040000ull)
+
+// ------- global config reg ------ {{{
+#define MPIC_GCR	(0x01020 + MPIC_BASE_ADDR)
+#define MPIC_GCR_RST	0x80000000   //mpic reset
+#define MPIC_GCR_PTM	0x00000000   //mpic pass through mode
+#define MPIC_GCR_MM	0x20000000   //mpic mix mode
+#define MPIC_GCR_REV	0x40000000   //mpic mode reserved
+#define MPIC_GCR_EPM	0x60000000   //mpic external proxy facility mode
+
+// ------- block revision1 reg ------
+#define MPIC_BRR1	(0x0000 + MPIC_BASE_ADDR)
+
+// ------- block revision2 reg ------
+#define MPIC_BRR2	(0x0010 + MPIC_BASE_ADDR)
+
+// ------- vendor identification reg ------
+#define MPIC_VIR	(0x01080 + MPIC_BASE_ADDR)
+
+// ------- global timer current cnt reg groupA------
+#define MPIC_GTCCRA0	(0x01100 + MPIC_BASE_ADDR)
+#define MPIC_GTCCRA1	(0x01140 + MPIC_BASE_ADDR)
+#define MPIC_GTCCRA2	(0x01180 + MPIC_BASE_ADDR)
+#define MPIC_GTCCRA3	(0x011c0 + MPIC_BASE_ADDR)
+#define MPIC_GTBCRA0    (MPIC_BASE_ADDR + 0x01110)
+#define MPIC_GTBCRA1    (MPIC_BASE_ADDR + 0x01150)
+#define MPIC_GTBCRA2    (MPIC_BASE_ADDR + 0x01190)
+#define MPIC_GTBCRA3    (MPIC_BASE_ADDR + 0x011d0)
+#define MPIC_TCRA       (MPIC_BASE_ADDR + 0x01300)
+
+// ------- shared msg signaled int reg bankA------
+#define MPIC_MSIRA0	(0x01600 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA1	(0x01610 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA2	(0x01620 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA3	(0x01630 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA4	(0x01640 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA5	(0x01650 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA6	(0x01660 + MPIC_BASE_ADDR)
+#define MPIC_MSIRA7	(0x01670 + MPIC_BASE_ADDR)
+
+// ------- shared msg signaled int status reg bankA------
+#define MPIC_MSISRA	(0x01720 + MPIC_BASE_ADDR)
+
+// ------- shared msg signaled int reg bankB------
+#define MPIC_MSIRB0	(0x01800 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB1	(0x01810 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB2	(0x01820 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB3	(0x01830 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB4	(0x01840 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB5	(0x01850 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB6	(0x01860 + MPIC_BASE_ADDR)
+#define MPIC_MSIRB7	(0x01870 + MPIC_BASE_ADDR)
+
+// ------- shared msg signaled int status reg bankB------
+#define MPIC_MSISRB	(0x01920 + MPIC_BASE_ADDR)
+
+// ------- shared msg signaled int reg bankC------
+#define MPIC_MSIRC0	(0x01a00 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC1	(0x01a10 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC2	(0x01a20 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC3	(0x01a30 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC4	(0x01a40 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC5	(0x01a50 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC6	(0x01a60 + MPIC_BASE_ADDR)
+#define MPIC_MSIRC7	(0x01a70 + MPIC_BASE_ADDR)
+
+// ------- shared msg signaled int status reg bankC------
+#define MPIC_MSISRC	(0x01b20 + MPIC_BASE_ADDR)
+
+// ------- global timer current cnt reg grpB------
+#define MPIC_GTCCRB0	(0x02100 + MPIC_BASE_ADDR)
+#define MPIC_GTCCRB1	(0x02140 + MPIC_BASE_ADDR)
+#define MPIC_GTCCRB2	(0x02180 + MPIC_BASE_ADDR)
+#define MPIC_GTCCRB3	(0x021c0 + MPIC_BASE_ADDR)
+#define MPIC_GTBCRB0    (MPIC_BASE_ADDR + 0x02110)
+#define MPIC_GTBCRB1    (MPIC_BASE_ADDR + 0x02150)
+#define MPIC_GTBCRB2    (MPIC_BASE_ADDR + 0x02190)
+#define MPIC_GTBCRB3    (MPIC_BASE_ADDR + 0x021d0)
+#define MPIC_TCRB       (MPIC_BASE_ADDR + 0x02300)
+
+#define MPIC_SVR	(MPIC_BASE_ADDR + 0x010e0)
+
+// ------- external int summary reg ------
+#define MPIC_ERQSR	(0x03800 + MPIC_BASE_ADDR)
+
+// ------- err int summary reg0 ------
+#define MPIC_EISR0	(0x03900 + MPIC_BASE_ADDR)
+
+// ------- cint summary reg0 ------
+#define MPIC_CISR0	(0x03B00 + MPIC_BASE_ADDR)
+
+// ------- cint summary reg1 ------
+#define MPIC_CISR1	(0x03B40 + MPIC_BASE_ADDR)
+
+// ------- cint summary reg2 ------
+#define MPIC_CISR2	(0x03B50 + MPIC_BASE_ADDR)
+
+// ------- cint summary reg3 ------
+#define MPIC_CISR3	(0x03B60 + MPIC_BASE_ADDR)
+
+// ------- cint summary reg4 ------
+#define MPIC_CISR4	(0x03B70 + MPIC_BASE_ADDR)
+
+// ------- mc summary reg0 ------
+#define MPIC_MCSR0	(0x03C00 + MPIC_BASE_ADDR)
+
+// ------- mc summary reg1 ------
+#define MPIC_MCSR1	(0x03C40 + MPIC_BASE_ADDR)
+
+// ------- mc summary reg2 ------
+#define MPIC_MCSR2	(0x03C50 + MPIC_BASE_ADDR)
+
+// ------- mc summary reg3 ------
+#define MPIC_MCSR3	(0x03C60 + MPIC_BASE_ADDR)
+
+// ------- mc summary reg4 ------
+#define MPIC_MCSR4	(0x03C70 + MPIC_BASE_ADDR)
+
+// ------- IRQ/SIE summary reg0 ------
+#define MPIC_IRQSIESR0	(0x03D00 + MPIC_BASE_ADDR)
+
+// ------- IRQ/SIE summary reg1 ------
+#define MPIC_IRQSIESR1	(0x03D40 + MPIC_BASE_ADDR)
+
+// ------- IRQ/SIE summary reg2 ------
+#define MPIC_IRQSIESR2	(0x03D50 + MPIC_BASE_ADDR)
+
+// ------- IRQ/SIE summary reg3 ------
+#define MPIC_IRQSIESR3	(0x03D60 + MPIC_BASE_ADDR)
+
+// ------- IRQ/SIE summary reg4 ------
+#define MPIC_IRQSIESR4	(0x03D70 + MPIC_BASE_ADDR)
+
+// ------- processor NMI reg ------
+#define MPIC_PNMIR	(0x01098 + MPIC_BASE_ADDR)
+
+// ------- processor init reg ------
+#define MPIC_PIR	(0x01090 + MPIC_BASE_ADDR)
+#define MPIC_TFRRA	(0x010F0 + MPIC_BASE_ADDR)
+// ------- feature reporting reg ------
+#define MPIC_FRR	(0x01000 + MPIC_BASE_ADDR)
+#define MPIC_FRR_NIRQ_S	0x07ff0000   //read only,number of interrupts
+#define MPIC_FRR_NCPU_S	0x00001f00   //read only,number of CPUs
+#define MPIC_FRR_VID_S	0x000000ff   //read only,Version ID
+
+// ------- current task priority reg ------
+#define MPIC_CTPR	(0x00080 + MPIC_BASE_ADDR)
+#define MPIC_CTPR0	(0x20080 + MPIC_BASE_ADDR)
+#define MPIC_CTPR1	(0x21080 + MPIC_BASE_ADDR)
+#define MPIC_CTPR2	(0x22080 + MPIC_BASE_ADDR)
+#define MPIC_CTPR3	(0x23080 + MPIC_BASE_ADDR)
+#define MPIC_CTPR_PRI_0 	0x00000000      // task priority
+#define MPIC_CTPR_PRI_1 	0x00000001
+#define MPIC_CTPR_PRI_2 	0x00000002
+#define MPIC_CTPR_PRI_3 	0x00000003
+#define MPIC_CTPR_PRI_4 	0x00000004
+#define MPIC_CTPR_PRI_5 	0x00000005
+#define MPIC_CTPR_PRI_6 	0x00000006
+#define MPIC_CTPR_PRI_7 	0x00000007
+#define MPIC_CTPR_PRI_8 	0x00000008
+#define MPIC_CTPR_PRI_9 	0x00000009
+#define MPIC_CTPR_PRI_10	0x0000000A
+#define MPIC_CTPR_PRI_11	0x0000000B
+#define MPIC_CTPR_PRI_12	0x0000000C
+#define MPIC_CTPR_PRI_13	0x0000000D
+#define MPIC_CTPR_PRI_14	0x0000000E
+#define MPIC_CTPR_PRI_15	0x0000000F
+
+// ------- who am I reg ------- 
+#define MPIC_WAI	(0x00090 + MPIC_BASE_ADDR)
+#define MPIC_WAI0	(0x20090 + MPIC_BASE_ADDR)
+#define MPIC_WAI1	(0x21090 + MPIC_BASE_ADDR)
+#define MPIC_WAI2	(0x22090 + MPIC_BASE_ADDR)
+#define MPIC_WAI3	(0x23090 + MPIC_BASE_ADDR)
+#define MPIC_WAI_S	0x0000000f	// read only
+
+// ------- interrupt ack reg ------- 
+#define MPIC_IACK	(0x000A0 + MPIC_BASE_ADDR)
+#define MPIC_IACK0	(0x200A0 + MPIC_BASE_ADDR)
+#define MPIC_IACK1	(0x210A0 + MPIC_BASE_ADDR)
+#define MPIC_IACK2	(0x220A0 + MPIC_BASE_ADDR)
+#define MPIC_IACK3	(0x230A0 + MPIC_BASE_ADDR)
+#define MPIC_IACK_S	0x0000ffff	// read only
+
+// ------- end of interrupt reg ------- 
+#define MPIC_EOI	(0x000B0 + MPIC_BASE_ADDR)
+#define MPIC_EOI0	(0x200B0 + MPIC_BASE_ADDR)
+#define MPIC_EOI1	(0x210B0 + MPIC_BASE_ADDR)
+#define MPIC_EOI2	(0x220B0 + MPIC_BASE_ADDR)
+#define MPIC_EOI3	(0x230B0 + MPIC_BASE_ADDR)
+#define MPIC_EOI_END	0x00000000	// can only write 0
+// ------- ------- ------- }}}
+
+
+//-------external interrupt vector/priority reg ------- 
+#define MPIC_EIVPR0	(0x10000 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR1	(0x10020 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR2	(0x10040 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR3	(0x10060 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR4	(0x10080 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR5	(0x100A0 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR6	(0x100C0 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR7	(0x100E0 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR8	(0x10100 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR9	(0x10120 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR10	(0x10140 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR11	(0x10160 + MPIC_BASE_ADDR)
+#define MPIC_EIVPR_MSK	        0x80000000      // external interrupt mask
+#define MPIC_EIVPR_ACT_S	0x40000000	// read only,intterupt activity
+#define MPIC_EIVPR_POR_HIGH     0x00800000	// external interrupt polarity high/positive
+#define MPIC_EIVPR_SEN_LEVEL    0x00400000	// external interrupt sense level/edge
+#define MPIC_EIVPR_PRI_0	0x00000000      // external interrupt priority
+#define MPIC_EIVPR_PRI_1	0x00010000
+#define MPIC_EIVPR_PRI_2	0x00020000
+#define MPIC_EIVPR_PRI_3	0x00030000
+#define MPIC_EIVPR_PRI_4	0x00040000
+#define MPIC_EIVPR_PRI_5	0x00050000
+#define MPIC_EIVPR_PRI_6	0x00060000
+#define MPIC_EIVPR_PRI_7	0x00070000
+#define MPIC_EIVPR_PRI_8	0x00080000
+#define MPIC_EIVPR_PRI_9	0x00090000
+#define MPIC_EIVPR_PRI_10	0x000A0000
+#define MPIC_EIVPR_PRI_11	0x000B0000
+#define MPIC_EIVPR_PRI_12	0x000C0000
+#define MPIC_EIVPR_PRI_13	0x000D0000
+#define MPIC_EIVPR_PRI_14	0x000E0000
+#define MPIC_EIVPR_PRI_15	0x000F0000
+
+//-------External interrupt n level reg ------- 
+#define MPIC_EILR0	(0x10018 + MPIC_BASE_ADDR)
+#define MPIC_EILR1	(0x10038 + MPIC_BASE_ADDR)
+#define MPIC_EILR2	(0x10058 + MPIC_BASE_ADDR)
+#define MPIC_EILR3	(0x10078 + MPIC_BASE_ADDR)
+#define MPIC_EILR4	(0x10098 + MPIC_BASE_ADDR)
+#define MPIC_EILR5	(0x100B8 + MPIC_BASE_ADDR)
+#define MPIC_EILR6	(0x100D8 + MPIC_BASE_ADDR)
+#define MPIC_EILR7	(0x100F8 + MPIC_BASE_ADDR)
+#define MPIC_EILR8	(0x10118 + MPIC_BASE_ADDR)
+#define MPIC_EILR9	(0x10138 + MPIC_BASE_ADDR)
+#define MPIC_EILR10	(0x10158 + MPIC_BASE_ADDR)
+#define MPIC_EILR11	(0x10178 + MPIC_BASE_ADDR)
+#define MPIC_EILR_inttgt_int	0x00000000      // int
+#define MPIC_EILR_inttgt_cint	0x00000001      // cint
+#define MPIC_EILR_inttgt_mcp	0x00000002      // mcp
+#define MPIC_EILR_inttgt_sie0	0x000000f0      // sie0
+#define MPIC_EILR_inttgt_sie1	0x000000f1      // sie1
+#define MPIC_EILR_inttgt_sie2	0x000000f2      // sie2
+#define MPIC_EILR_inttgt_IO	0x000000ff      // IRQ_OUT
+
+//-------internal interrupt vector/priority reg ------- 
+#define MPIC_IIVPR0	(0x10200 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR1	(0x10220 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR2	(0x10240 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR3	(0x10260 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR4	(0x10280 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR5	(0x102A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR6	(0x102C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR7	(0x102E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR8	(0x10300 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR9	(0x10320 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR10	(0x10340 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR11	(0x10360 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR12	(0x10380 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR13	(0x103A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR14	(0x103C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR15	(0x103E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR16	(0x10400 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR17	(0x10420 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR18	(0x10440 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR19	(0x10460 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR20	(0x10480 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR21	(0x104A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR22	(0x104C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR23	(0x104E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR24	(0x10500 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR25	(0x10520 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR26	(0x10540 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR27	(0x10560 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR28	(0x10580 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR29	(0x105A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR30	(0x105C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR31	(0x105E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR32	(0x10600 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR33	(0x10620 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR34	(0x10640 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR35	(0x10660 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR36	(0x10680 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR37	(0x106A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR38	(0x106C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR39	(0x106E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR40	(0x10700 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR41	(0x10720 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR42	(0x10740 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR43	(0x10760 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR44	(0x10780 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR45	(0x107A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR46	(0x107C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR47	(0x107E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR48	(0x10800 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR49	(0x10820 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR50	(0x10840 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR51	(0x10860 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR52	(0x10880 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR53	(0x108A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR54	(0x108C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR55	(0x108E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR56	(0x10900 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR57	(0x10920 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR58	(0x10940 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR59	(0x10960 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR60	(0x10980 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR61	(0x109A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR62	(0x109C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR63	(0x109E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR64	(0x10A00 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR65	(0x10A20 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR66	(0x10A40 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR67	(0x10A60 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR68	(0x10A80 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR69	(0x10AA0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR70	(0x10AC0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR71	(0x10AE0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR72	(0x10B00 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR73	(0x10B20 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR74	(0x10B40 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR75	(0x10B60 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR76	(0x10B80 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR77	(0x10BA0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR78	(0x10BC0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR79	(0x10BE0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR80	(0x10C00 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR81	(0x10C20 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR82	(0x10C40 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR83	(0x10C60 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR84	(0x10C80 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR85	(0x10CA0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR86	(0x10CC0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR87	(0x10CE0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR88	(0x10D00 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR89	(0x10D20 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR90	(0x10D40 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR91	(0x10D60 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR92	(0x10D80 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR93	(0x10DA0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR94	(0x10DC0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR95	(0x10DE0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR96	(0x10E00 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR97	(0x10E20 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR98	(0x10E40 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR99	(0x10E60 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR100	(0x10E80 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR101	(0x10EA0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR102	(0x10EC0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR103	(0x10EE0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR104	(0x10F00 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR105	(0x10F20 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR106	(0x10F40 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR107	(0x10F60 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR108	(0x10F80 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR109	(0x10FA0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR110	(0x10FC0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR111	(0x10FE0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR112	(0x11000 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR113	(0x11020 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR114	(0x11040 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR115	(0x11060 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR116	(0x11080 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR117	(0x110A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR118	(0x110C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR119	(0x110E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR120	(0x11100 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR121	(0x11120 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR122	(0x11140 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR123	(0x11160 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR124	(0x11180 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR125	(0x111A0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR126	(0x111C0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR127	(0x111E0 + MPIC_BASE_ADDR)
+#define MPIC_IIVPR_MSK	        0x80000000      // internal interrupt mask
+#define MPIC_IIVPR_ACT_S	0x40000000	// read only,intterupt activity
+#define MPIC_IIVPR_POR_S        0x00800000	// internal interrupt polarity
+//#define MPIC_IIVPR_SEN	        0x00400000	// internal interrupt sense
+#define MPIC_IIVPR_PRI_0	0x00000000      // internal interrupt priority
+#define MPIC_IIVPR_PRI_1	0x00010000
+#define MPIC_IIVPR_PRI_2	0x00020000
+#define MPIC_IIVPR_PRI_3	0x00030000
+#define MPIC_IIVPR_PRI_4	0x00040000
+#define MPIC_IIVPR_PRI_5	0x00050000
+#define MPIC_IIVPR_PRI_6	0x00060000
+#define MPIC_IIVPR_PRI_7	0x00070000
+#define MPIC_IIVPR_PRI_8	0x00080000
+#define MPIC_IIVPR_PRI_9	0x00090000
+#define MPIC_IIVPR_PRI_10	0x000A0000
+#define MPIC_IIVPR_PRI_11	0x000B0000
+#define MPIC_IIVPR_PRI_12	0x000C0000
+#define MPIC_IIVPR_PRI_13	0x000D0000
+#define MPIC_IIVPR_PRI_14	0x000E0000
+#define MPIC_IIVPR_PRI_15	0x000F0000
+
+//-------internal interrupt n level reg ------- 
+#define MPIC_IILR0	(0x10218 + MPIC_BASE_ADDR)
+#define MPIC_IILR1	(0x10238 + MPIC_BASE_ADDR)
+#define MPIC_IILR2	(0x10258 + MPIC_BASE_ADDR)
+#define MPIC_IILR3	(0x10278 + MPIC_BASE_ADDR)
+#define MPIC_IILR4	(0x10298 + MPIC_BASE_ADDR)
+#define MPIC_IILR5	(0x102B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR6	(0x102D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR7	(0x102F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR8	(0x10318 + MPIC_BASE_ADDR)
+#define MPIC_IILR9	(0x10338 + MPIC_BASE_ADDR)
+#define MPIC_IILR10	(0x10358 + MPIC_BASE_ADDR)
+#define MPIC_IILR11	(0x10378 + MPIC_BASE_ADDR)
+#define MPIC_IILR12	(0x10398 + MPIC_BASE_ADDR)
+#define MPIC_IILR13	(0x103B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR14	(0x103D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR15	(0x103F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR16	(0x10418 + MPIC_BASE_ADDR)
+#define MPIC_IILR17	(0x10438 + MPIC_BASE_ADDR)
+#define MPIC_IILR18	(0x10458 + MPIC_BASE_ADDR)
+#define MPIC_IILR19	(0x10478 + MPIC_BASE_ADDR)
+#define MPIC_IILR20	(0x10498 + MPIC_BASE_ADDR)
+#define MPIC_IILR21	(0x104B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR22	(0x104D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR23	(0x104F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR24	(0x10518 + MPIC_BASE_ADDR)
+#define MPIC_IILR25	(0x10538 + MPIC_BASE_ADDR)
+#define MPIC_IILR26	(0x10558 + MPIC_BASE_ADDR)
+#define MPIC_IILR27	(0x10578 + MPIC_BASE_ADDR)
+#define MPIC_IILR28	(0x10598 + MPIC_BASE_ADDR)
+#define MPIC_IILR29	(0x105B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR30	(0x105D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR31	(0x105F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR32	(0x10618 + MPIC_BASE_ADDR)
+#define MPIC_IILR33	(0x10638 + MPIC_BASE_ADDR)
+#define MPIC_IILR34	(0x10658 + MPIC_BASE_ADDR)
+#define MPIC_IILR35	(0x10678 + MPIC_BASE_ADDR)
+#define MPIC_IILR36	(0x10698 + MPIC_BASE_ADDR)
+#define MPIC_IILR37	(0x106B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR38	(0x106D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR39	(0x106F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR40	(0x10718 + MPIC_BASE_ADDR)
+#define MPIC_IILR41	(0x10738 + MPIC_BASE_ADDR)
+#define MPIC_IILR42	(0x10758 + MPIC_BASE_ADDR)
+#define MPIC_IILR43	(0x10778 + MPIC_BASE_ADDR)
+#define MPIC_IILR44	(0x10798 + MPIC_BASE_ADDR)
+#define MPIC_IILR45	(0x107B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR46	(0x107D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR47	(0x107F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR48	(0x10818 + MPIC_BASE_ADDR)
+#define MPIC_IILR49	(0x10838 + MPIC_BASE_ADDR)
+#define MPIC_IILR50	(0x10858 + MPIC_BASE_ADDR)
+#define MPIC_IILR51	(0x10878 + MPIC_BASE_ADDR)
+#define MPIC_IILR52	(0x10898 + MPIC_BASE_ADDR)
+#define MPIC_IILR53	(0x108B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR54	(0x108D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR55	(0x108F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR56	(0x10918 + MPIC_BASE_ADDR)
+#define MPIC_IILR57	(0x10938 + MPIC_BASE_ADDR)
+#define MPIC_IILR58	(0x10958 + MPIC_BASE_ADDR)
+#define MPIC_IILR59	(0x10978 + MPIC_BASE_ADDR)
+#define MPIC_IILR60	(0x10998 + MPIC_BASE_ADDR)
+#define MPIC_IILR61	(0x109B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR62	(0x109D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR63	(0x109F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR64	(0x10A18 + MPIC_BASE_ADDR)
+#define MPIC_IILR65	(0x10A38 + MPIC_BASE_ADDR)
+#define MPIC_IILR66	(0x10A58 + MPIC_BASE_ADDR)
+#define MPIC_IILR67	(0x10A78 + MPIC_BASE_ADDR)
+#define MPIC_IILR68	(0x10A98 + MPIC_BASE_ADDR)
+#define MPIC_IILR69	(0x10AB8 + MPIC_BASE_ADDR)
+#define MPIC_IILR70	(0x10AD8 + MPIC_BASE_ADDR)
+#define MPIC_IILR71	(0x10AF8 + MPIC_BASE_ADDR)
+#define MPIC_IILR72	(0x10B18 + MPIC_BASE_ADDR)
+#define MPIC_IILR73	(0x10B38 + MPIC_BASE_ADDR)
+#define MPIC_IILR74	(0x10B58 + MPIC_BASE_ADDR)
+#define MPIC_IILR75	(0x10B78 + MPIC_BASE_ADDR)
+#define MPIC_IILR76	(0x10B98 + MPIC_BASE_ADDR)
+#define MPIC_IILR77	(0x10BB8 + MPIC_BASE_ADDR)
+#define MPIC_IILR78	(0x10BD8 + MPIC_BASE_ADDR)
+#define MPIC_IILR79	(0x10BF8 + MPIC_BASE_ADDR)
+#define MPIC_IILR80	(0x10C18 + MPIC_BASE_ADDR)
+#define MPIC_IILR81	(0x10C38 + MPIC_BASE_ADDR)
+#define MPIC_IILR82	(0x10C58 + MPIC_BASE_ADDR)
+#define MPIC_IILR83	(0x10C78 + MPIC_BASE_ADDR)
+#define MPIC_IILR84	(0x10C98 + MPIC_BASE_ADDR)
+#define MPIC_IILR85	(0x10CB8 + MPIC_BASE_ADDR)
+#define MPIC_IILR86	(0x10CD8 + MPIC_BASE_ADDR)
+#define MPIC_IILR87	(0x10CF8 + MPIC_BASE_ADDR)
+#define MPIC_IILR88	(0x10D18 + MPIC_BASE_ADDR)
+#define MPIC_IILR89	(0x10D38 + MPIC_BASE_ADDR)
+#define MPIC_IILR90	(0x10D58 + MPIC_BASE_ADDR)
+#define MPIC_IILR91	(0x10D78 + MPIC_BASE_ADDR)
+#define MPIC_IILR92	(0x10D98 + MPIC_BASE_ADDR)
+#define MPIC_IILR93	(0x10DB8 + MPIC_BASE_ADDR)
+#define MPIC_IILR94	(0x10DD8 + MPIC_BASE_ADDR)
+#define MPIC_IILR95	(0x10DF8 + MPIC_BASE_ADDR)
+#define MPIC_IILR96	(0x10E18 + MPIC_BASE_ADDR)
+#define MPIC_IILR97	(0x10E38 + MPIC_BASE_ADDR)
+#define MPIC_IILR98	(0x10E58 + MPIC_BASE_ADDR)
+#define MPIC_IILR99	(0x10E78 + MPIC_BASE_ADDR)
+#define MPIC_IILR100	(0x10E98 + MPIC_BASE_ADDR)
+#define MPIC_IILR101	(0x10EB8 + MPIC_BASE_ADDR)
+#define MPIC_IILR102	(0x10ED8 + MPIC_BASE_ADDR)
+#define MPIC_IILR103	(0x10EF8 + MPIC_BASE_ADDR)
+#define MPIC_IILR104	(0x10F18 + MPIC_BASE_ADDR)
+#define MPIC_IILR105	(0x10F38 + MPIC_BASE_ADDR)
+#define MPIC_IILR106	(0x10F58 + MPIC_BASE_ADDR)
+#define MPIC_IILR107	(0x10F78 + MPIC_BASE_ADDR)
+#define MPIC_IILR108	(0x10F98 + MPIC_BASE_ADDR)
+#define MPIC_IILR109	(0x10FB8 + MPIC_BASE_ADDR)
+#define MPIC_IILR110	(0x10FD8 + MPIC_BASE_ADDR)
+#define MPIC_IILR111	(0x10FF8 + MPIC_BASE_ADDR)
+#define MPIC_IILR112	(0x11018 + MPIC_BASE_ADDR)
+#define MPIC_IILR113	(0x11038 + MPIC_BASE_ADDR)
+#define MPIC_IILR114	(0x11058 + MPIC_BASE_ADDR)
+#define MPIC_IILR115	(0x11078 + MPIC_BASE_ADDR)
+#define MPIC_IILR116	(0x11098 + MPIC_BASE_ADDR)
+#define MPIC_IILR117	(0x110B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR118	(0x110D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR119	(0x110F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR120	(0x11118 + MPIC_BASE_ADDR)
+#define MPIC_IILR121	(0x11138 + MPIC_BASE_ADDR)
+#define MPIC_IILR122	(0x11158 + MPIC_BASE_ADDR)
+#define MPIC_IILR123	(0x11178 + MPIC_BASE_ADDR)
+#define MPIC_IILR124	(0x11198 + MPIC_BASE_ADDR)
+#define MPIC_IILR125	(0x111B8 + MPIC_BASE_ADDR)
+#define MPIC_IILR126	(0x111D8 + MPIC_BASE_ADDR)
+#define MPIC_IILR127	(0x111F8 + MPIC_BASE_ADDR)
+#define MPIC_IILR_inttgt_int	0x00000000      // int
+#define MPIC_IILR_inttgt_cint	0x00000001      // cint
+#define MPIC_IILR_inttgt_mcp	0x00000002      // mcp
+#define MPIC_IILR_inttgt_sie0	0x000000f0      // sie0
+#define MPIC_IILR_inttgt_sie1	0x000000f1      // sie1
+#define MPIC_IILR_inttgt_sie2	0x000000f2      // sie2
+#define MPIC_IILR_inttgt_IO	0x000000ff      // IRQ_OUT
+
+// ------- IPI vector and priority reg ------- {{{
+#define MPIC_IPIVPR0	(0x010A0 + MPIC_BASE_ADDR)
+#define MPIC_IPIVPR1	(0x010B0 + MPIC_BASE_ADDR)
+#define MPIC_IPIVPR2	(0x010C0 + MPIC_BASE_ADDR)
+#define MPIC_IPIVPR3	(0x010D0 + MPIC_BASE_ADDR)
+#define MPIC_IPIVPR_MSK 	0x80000000
+#define MPIC_IPIVPR_ACT_S	0x40000000	// read only
+#define MPIC_IPIVPR_PRI_0	0x00000000
+#define MPIC_IPIVPR_PRI_1	0x00010000
+#define MPIC_IPIVPR_PRI_2	0x00020000
+#define MPIC_IPIVPR_PRI_3	0x00030000
+#define MPIC_IPIVPR_PRI_4	0x00040000
+#define MPIC_IPIVPR_PRI_5	0x00050000
+#define MPIC_IPIVPR_PRI_6	0x00060000
+#define MPIC_IPIVPR_PRI_7	0x00070000
+#define MPIC_IPIVPR_PRI_8	0x00080000
+#define MPIC_IPIVPR_PRI_9	0x00090000
+#define MPIC_IPIVPR_PRI_10	0x000A0000
+#define MPIC_IPIVPR_PRI_11	0x000B0000
+#define MPIC_IPIVPR_PRI_12	0x000C0000
+#define MPIC_IPIVPR_PRI_13	0x000D0000
+#define MPIC_IPIVPR_PRI_14	0x000E0000
+#define MPIC_IPIVPR_PRI_15	0x000F0000
+#define MPIC_CPU0_IPIDR0	(MPIC_BASE_ADDR + 0x20040)
+#define MPIC_CPU0_IPIDR1	(MPIC_BASE_ADDR + 0x20050)
+#define MPIC_CPU0_IPIDR2	(MPIC_BASE_ADDR + 0x20060)
+#define MPIC_CPU0_IPIDR3	(MPIC_BASE_ADDR + 0x20070)
+#define MPIC_CPU1_IPIDR0	(MPIC_BASE_ADDR + 0x21040)
+#define MPIC_CPU1_IPIDR1	(MPIC_BASE_ADDR + 0x21050)
+#define MPIC_CPU1_IPIDR2	(MPIC_BASE_ADDR + 0x21060)
+#define MPIC_CPU1_IPIDR3	(MPIC_BASE_ADDR + 0x21070)
+#define MPIC_CPU2_IPIDR0	(MPIC_BASE_ADDR + 0x22040)
+#define MPIC_CPU2_IPIDR1	(MPIC_BASE_ADDR + 0x22050)
+#define MPIC_CPU2_IPIDR2	(MPIC_BASE_ADDR + 0x22060)
+#define MPIC_CPU2_IPIDR3	(MPIC_BASE_ADDR + 0x22070)
+#define MPIC_CPU3_IPIDR0	(MPIC_BASE_ADDR + 0x23040)
+#define MPIC_CPU3_IPIDR1	(MPIC_BASE_ADDR + 0x23050)
+#define MPIC_CPU3_IPIDR2	(MPIC_BASE_ADDR + 0x23060)
+#define MPIC_CPU3_IPIDR3	(MPIC_BASE_ADDR + 0x23070)
+// ------- ------- ------- }}}
+
+// ------- global timer vector priority reg-groupA ------- {{{
+#define MPIC_GTVPRA0	(0x01120 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRA1	(0x01160 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRA2	(0x011A0 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRA3	(0x011E0 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRA_MSK 	0x80000000
+#define MPIC_GTVPRA_ACT_S	0x40000000	// read only
+#define MPIC_GTVPRA_PRI_0	0x00000000
+#define MPIC_GTVPRA_PRI_1	0x00010000
+#define MPIC_GTVPRA_PRI_2	0x00020000
+#define MPIC_GTVPRA_PRI_3	0x00030000
+#define MPIC_GTVPRA_PRI_4	0x00040000
+#define MPIC_GTVPRA_PRI_5	0x00050000
+#define MPIC_GTVPRA_PRI_6	0x00060000
+#define MPIC_GTVPRA_PRI_7	0x00070000
+#define MPIC_GTVPRA_PRI_8	0x00080000
+#define MPIC_GTVPRA_PRI_9	0x00090000
+#define MPIC_GTVPRA_PRI_10	0x000A0000
+#define MPIC_GTVPRA_PRI_11	0x000B0000
+#define MPIC_GTVPRA_PRI_12	0x000C0000
+#define MPIC_GTVPRA_PRI_13	0x000D0000
+#define MPIC_GTVPRA_PRI_14	0x000E0000
+#define MPIC_GTVPRA_PRI_15	0x000F0000
+// ------- ------- ------- }}}
+
+// ------- global timer vector priority reg-groupB ------- {{{
+#define MPIC_GTVPRB0	(0x02120 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRB1	(0x02160 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRB2	(0x021A0 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRB3	(0x021E0 + MPIC_BASE_ADDR)
+#define MPIC_GTVPRB_MSK 	0x80000000
+#define MPIC_GTVPRB_ACT_S	0x40000000	// read only
+#define MPIC_GTVPRB_PRI_0	0x00000000
+#define MPIC_GTVPRB_PRI_1	0x00010000
+#define MPIC_GTVPRB_PRI_2	0x00020000
+#define MPIC_GTVPRB_PRI_3	0x00030000
+#define MPIC_GTVPRB_PRI_4	0x00040000
+#define MPIC_GTVPRB_PRI_5	0x00050000
+#define MPIC_GTVPRB_PRI_6	0x00060000
+#define MPIC_GTVPRB_PRI_7	0x00070000
+#define MPIC_GTVPRB_PRI_8	0x00080000
+#define MPIC_GTVPRB_PRI_9	0x00090000
+#define MPIC_GTVPRB_PRI_10	0x000A0000
+#define MPIC_GTVPRB_PRI_11	0x000B0000
+#define MPIC_GTVPRB_PRI_12	0x000C0000
+#define MPIC_GTVPRB_PRI_13	0x000D0000
+#define MPIC_GTVPRB_PRI_14	0x000E0000
+#define MPIC_GTVPRB_PRI_15	0x000F0000
+// ------- ------- ------- }}}
+
+// ------- msg interrupt vector priority reg-groupA ------- {{{
+#define MPIC_MIVPRA0	(0x11600 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRA1	(0x11620 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRA2	(0x11640 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRA3	(0x11660 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRA_MSK 	0x80000000
+#define MPIC_MIVPRA_ACT_S	0x40000000	// read only
+#define MPIC_MIVPRA_PRI_0	0x00000000
+#define MPIC_MIVPRA_PRI_1	0x00010000
+#define MPIC_MIVPRA_PRI_2	0x00020000
+#define MPIC_MIVPRA_PRI_3	0x00030000
+#define MPIC_MIVPRA_PRI_4	0x00040000
+#define MPIC_MIVPRA_PRI_5	0x00050000
+#define MPIC_MIVPRA_PRI_6	0x00060000
+#define MPIC_MIVPRA_PRI_7	0x00070000
+#define MPIC_MIVPRA_PRI_8	0x00080000
+#define MPIC_MIVPRA_PRI_9	0x00090000
+#define MPIC_MIVPRA_PRI_10	0x000A0000
+#define MPIC_MIVPRA_PRI_11	0x000B0000
+#define MPIC_MIVPRA_PRI_12	0x000C0000
+#define MPIC_MIVPRA_PRI_13	0x000D0000
+#define MPIC_MIVPRA_PRI_14	0x000E0000
+#define MPIC_MIVPRA_PRI_15	0x000F0000
+
+
+#define MPIC_MERA         (MPIC_BASE_ADDR + 0x1500)
+#define MPIC_MSRA         (MPIC_BASE_ADDR + 0x1510)
+#define MPIC_MSGRA0       (MPIC_BASE_ADDR + 0x1400)
+#define MPIC_MSGRA1       (MPIC_BASE_ADDR + 0x1410)
+#define MPIC_MSGRA2       (MPIC_BASE_ADDR + 0x1420)
+#define MPIC_MSGRA3       (MPIC_BASE_ADDR + 0x1430)
+// ------- ------- ------- }}}
+#define MPIC_GTDRA0       (MPIC_BASE_ADDR + 0x1130)
+// ------- msg interrupt vector priority reg-groupB ------- {{{
+#define MPIC_MIVPRB0	(0x11680 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRB1	(0x116A0 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRB2	(0x116C0 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRB3	(0x116E0 + MPIC_BASE_ADDR)
+#define MPIC_MIVPRB_MSK 	0x80000000
+#define MPIC_MIVPRB_ACT_S	0x40000000	// read only
+#define MPIC_MIVPRB_PRI_0	0x00000000
+#define MPIC_MIVPRB_PRI_1	0x00010000
+#define MPIC_MIVPRB_PRI_2	0x00020000
+#define MPIC_MIVPRB_PRI_3	0x00030000
+#define MPIC_MIVPRB_PRI_4	0x00040000
+#define MPIC_MIVPRB_PRI_5	0x00050000
+#define MPIC_MIVPRB_PRI_6	0x00060000
+#define MPIC_MIVPRB_PRI_7	0x00070000
+#define MPIC_MIVPRB_PRI_8	0x00080000
+#define MPIC_MIVPRB_PRI_9	0x00090000
+#define MPIC_MIVPRB_PRI_10	0x000A0000
+#define MPIC_MIVPRB_PRI_11	0x000B0000
+#define MPIC_MIVPRB_PRI_12	0x000C0000
+#define MPIC_MIVPRB_PRI_13	0x000D0000
+#define MPIC_MIVPRB_PRI_14	0x000E0000
+#define MPIC_MIVPRB_PRI_15	0x000F0000
+
+#define MPIC_MERB         (MPIC_BASE_ADDR + 0x2500)
+#define MPIC_MSRB         (MPIC_BASE_ADDR + 0x2510)
+#define MPIC_MSGRB0       (MPIC_BASE_ADDR + 0x2400)
+#define MPIC_MSGRB1       (MPIC_BASE_ADDR + 0x2410)
+#define MPIC_MSGRB2       (MPIC_BASE_ADDR + 0x2420)
+#define MPIC_MSGRB3       (MPIC_BASE_ADDR + 0x2430)
+// ------- ------- ------- }}}
+
+// ------- msg shared interrupt vector priority reg-bankA ------- {{{
+#define MPIC_MSIVPRA0	(0x11C00 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRA1	(0x11C20 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRA2	(0x11C40 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRA3	(0x11C60 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRA4	(0x11C80 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRA5	(0x11CA0 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRA6	(0x11CC0 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRA7	(0x11CE0 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRA_MSK 	0x80000000
+#define MPIC_MSIVPRA_ACT_S	0x40000000	// read only
+#define MPIC_MSIVPRA_PRI_0	0x00000000
+#define MPIC_MSIVPRA_PRI_1	0x00010000
+#define MPIC_MSIVPRA_PRI_2	0x00020000
+#define MPIC_MSIVPRA_PRI_3	0x00030000
+#define MPIC_MSIVPRA_PRI_4	0x00040000
+#define MPIC_MSIVPRA_PRI_5	0x00050000
+#define MPIC_MSIVPRA_PRI_6	0x00060000
+#define MPIC_MSIVPRA_PRI_7	0x00070000
+#define MPIC_MSIVPRA_PRI_8	0x00080000
+#define MPIC_MSIVPRA_PRI_9	0x00090000
+#define MPIC_MSIVPRA_PRI_10	0x000A0000
+#define MPIC_MSIVPRA_PRI_11	0x000B0000
+#define MPIC_MSIVPRA_PRI_12	0x000C0000
+#define MPIC_MSIVPRA_PRI_13	0x000D0000
+#define MPIC_MSIVPRA_PRI_14	0x000E0000
+#define MPIC_MSIVPRA_PRI_15	0x000F0000
+// ------- ------- ------- }}}
+
+// ------- msg shared interrupt vector priority reg-bankB ------- {{{
+#define MPIC_MSIVPRB0	(0x11D00 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRB1	(0x11D20 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRB2	(0x11D40 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRB3	(0x11D60 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRB4	(0x11D80 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRB5	(0x11DA0 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRB6	(0x11DC0 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRB7	(0x11DE0 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRB_MSK 	0x80000000
+#define MPIC_MSIVPRB_ACT_S	0x40000000	// read only
+#define MPIC_MSIVPRB_PRI_0	0x00000000
+#define MPIC_MSIVPRB_PRI_1	0x00010000
+#define MPIC_MSIVPRB_PRI_2	0x00020000
+#define MPIC_MSIVPRB_PRI_3	0x00030000
+#define MPIC_MSIVPRB_PRI_4	0x00040000
+#define MPIC_MSIVPRB_PRI_5	0x00050000
+#define MPIC_MSIVPRB_PRI_6	0x00060000
+#define MPIC_MSIVPRB_PRI_7	0x00070000
+#define MPIC_MSIVPRB_PRI_8	0x00080000
+#define MPIC_MSIVPRB_PRI_9	0x00090000
+#define MPIC_MSIVPRB_PRI_10	0x000A0000
+#define MPIC_MSIVPRB_PRI_11	0x000B0000
+#define MPIC_MSIVPRB_PRI_12	0x000C0000
+#define MPIC_MSIVPRB_PRI_13	0x000D0000
+#define MPIC_MSIVPRB_PRI_14	0x000E0000
+#define MPIC_MSIVPRB_PRI_15	0x000F0000
+// ------- ------- ------- }}}
+
+// ------- msg shared interrupt vector priority reg-bankC ------- {{{
+#define MPIC_MSIVPRC0	(0x11E00 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRC1	(0x11E20 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRC2	(0x11E40 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRC3	(0x11E60 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRC4	(0x11E80 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRC5	(0x11EA0 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRC6	(0x11EC0 + MPIC_BASE_ADDR)
+//#define MPIC_MSIVPRC7	(0x11EE0 + MPIC_BASE_ADDR)
+#define MPIC_MSIVPRC_MSK 	0x80000000
+#define MPIC_MSIVPRC_ACT_S	0x40000000	// read only
+#define MPIC_MSIVPRC_PRI_0	0x00000000
+#define MPIC_MSIVPRC_PRI_1	0x00010000
+#define MPIC_MSIVPRC_PRI_2	0x00020000
+#define MPIC_MSIVPRC_PRI_3	0x00030000
+#define MPIC_MSIVPRC_PRI_4	0x00040000
+#define MPIC_MSIVPRC_PRI_5	0x00050000
+#define MPIC_MSIVPRC_PRI_6	0x00060000
+#define MPIC_MSIVPRC_PRI_7	0x00070000
+#define MPIC_MSIVPRC_PRI_8	0x00080000
+#define MPIC_MSIVPRC_PRI_9	0x00090000
+#define MPIC_MSIVPRC_PRI_10	0x000A0000
+#define MPIC_MSIVPRC_PRI_11	0x000B0000
+#define MPIC_MSIVPRC_PRI_12	0x000C0000
+#define MPIC_MSIVPRC_PRI_13	0x000D0000
+#define MPIC_MSIVPRC_PRI_14	0x000E0000
+#define MPIC_MSIVPRC_PRI_15	0x000F0000
+// ------- ------- ------- }}}
+//#define MPIC_MSIRA0       (MPIC_BASE_ADDR + 0x1600)
+//#define MPIC_MSIRA1       (MPIC_BASE_ADDR + 0x1610)
+//#define MPIC_MSIRA2       (MPIC_BASE_ADDR + 0x1620)
+//#define MPIC_MSIRA3       (MPIC_BASE_ADDR + 0x1630)
+//#define MPIC_MSIRA4       (MPIC_BASE_ADDR + 0x1640)
+//#define MPIC_MSIRA5       (MPIC_BASE_ADDR + 0x1650)
+//#define MPIC_MSIRA6       (MPIC_BASE_ADDR + 0x1660)
+//#define MPIC_MSIRA7       (MPIC_BASE_ADDR + 0x1670)
+//#define MPIC_MSISRA       (MPIC_BASE_ADDR + 0x1720)
+#define MPIC_MSIIRA       (MPIC_BASE_ADDR + 0x1740)
+
+//#define MPIC_MSIRB0       (MPIC_BASE_ADDR + 0x1800)
+//#define MPIC_MSIRB1       (MPIC_BASE_ADDR + 0x1810)
+//#define MPIC_MSIRB2       (MPIC_BASE_ADDR + 0x1820)
+//#define MPIC_MSIRB3       (MPIC_BASE_ADDR + 0x1830)
+//#define MPIC_MSIRB4       (MPIC_BASE_ADDR + 0x1840)
+//#define MPIC_MSIRB5       (MPIC_BASE_ADDR + 0x1850)
+//#define MPIC_MSIRB6       (MPIC_BASE_ADDR + 0x1860)
+//#define MPIC_MSIRB7       (MPIC_BASE_ADDR + 0x1870)
+//#define MPIC_MSISRB       (MPIC_BASE_ADDR + 0x1920)
+#define MPIC_MSIIRB       (MPIC_BASE_ADDR + 0x1940)
+
+//#define MPIC_MSIRC0       (MPIC_BASE_ADDR + 0x1a00)
+//#define MPIC_MSIRC1       (MPIC_BASE_ADDR + 0x1a10)
+//#define MPIC_MSIRC2       (MPIC_BASE_ADDR + 0x1a20)
+//#define MPIC_MSIRC3       (MPIC_BASE_ADDR + 0x1a30)
+//#define MPIC_MSIRC4       (MPIC_BASE_ADDR + 0x1a40)
+//#define MPIC_MSIRC5       (MPIC_BASE_ADDR + 0x1a50)
+//#define MPIC_MSIRC6       (MPIC_BASE_ADDR + 0x1a60)
+//#define MPIC_MSIRC7       (MPIC_BASE_ADDR + 0x1a70)
+//#define MPIC_MSISRC       (MPIC_BASE_ADDR + 0x1b20)
+#define MPIC_MSIIRC       (MPIC_BASE_ADDR + 0x1b40)
+
+
+/*
+//-----------------------------------------------------
+//------- SPRG0-7 ------- {{{
+#define SPRG0 0x110
+#define SPRG1 0x111
+#define SPRG2 0x112
+#define SPRG3 0x113
+#define SPRG4 0x114
+#define SPRG5 0x115
+#define SPRG6 0x116
+#define SPRG7 0x117
+#define SPRG4_U 0x104
+#define SPRG5_U 0x105
+#define SPRG6_U 0x106
+#define SPRG7_U 0x107
+//------- ------- ------- }}}
+//
+#define LONG_JUMP2FAILED  asm("lis 16, failed@h"); \
+		          asm("ori 16, 16, failed@l"); \
+		          asm("mtctr 16 "); \
+		          asm("bctr")
+
+//------- ------- Interrupt SPRs ------- ------- {{{
+#define SRR0 	0x01A
+#define SRR1 	0x01B
+#define CSRR0 	0x03A
+#define CSRR1 	0x03B
+#define MCSRR0 	0x23A
+#define MCSRR1 	0x23B
+
+#define IVPR 	0x03F
+#define IVPR_MASK	0xFFFF0000
+
+//------- IVOR ------- {{{
+#define IVOR0	0x190	
+#define IVOR1	0x191	
+#define IVOR2	0x192	
+#define IVOR3	0x193	
+#define IVOR4	0x194	
+#define IVOR5	0x195	
+#define IVOR6	0x196	
+#define IVOR7	0x197	
+#define IVOR8	0x198	
+#define IVOR9	0x199	
+#define IVOR10	0x19A	
+#define IVOR11	0x19B	
+#define IVOR12	0x19C	
+#define IVOR13	0x19D	
+#define IVOR14	0x19E	
+#define IVOR15	0x19F	
+#define IVOR_MASK	0x0000FFF0
+//------- ------- ------- }}}
+
+//------- ESR ------- {{{
+#define ESR	0x3E
+#define ESR_ISMC_MASK	0x80000000
+#define ESR_SS_MASK	0x40000000
+#define ESR_POT1_MASK	0x20000000
+#define ESR_POT2_MASK	0x10000000
+#define ESR_PIL_MASK	0x08000000
+#define ESR_PPR_MASK	0x04000000
+#define ESR_PTR_MASK	0x02000000
+#define ESR_FP_MASK	0x01000000
+#define ESR_ST_MASK	0x00800000
+#define ESR_DLK_MASK	0x00300000
+#define ESR_AP_MASK	0x00080000
+#define ESR_PUO_MAS	0x00040000
+#define ESR_BO_MASK	0x00020000
+#define ESR_PIE_MASK	0x00010000
+#define ESR_PCRE_MASK	0x00000010
+#define ESR_PCMP_MASK	0x00000008
+#define ESR_PCRF_MASK	0x00000007
+//------- ------- ------- }}}
+
+//------- MCSR ------- {{{
+#define MCSR	0x23C
+#define MCSR_C	0x33C
+#define MCSR_MSC_MASK	0x80000000
+#define MCSR_TLB_MASK	0x08000000
+#define MCSR_IC_MASK	0x04000000
+#define MCSR_DC_MASK	0x02000000
+#define MCSR_GPR_MASK	0x01000000
+#define MCSR_FPR_MASK	0x00800000
+#define MCSR_IMP_MASK	0x00400000
+#define MCSR_L2_MASK	0x00200000
+#define MCSR_DCR_MASK	0x00100000
+//------- ------- ------- }}}
+#define DEAR 	0x03D
+
+#define MTDCR(dcr,data)  asm volatile("mtdcrx %0,%1" : : "r" (dcr), "r" (data))
+#define COMMENT(String)  	(CPRNT_COMMENT) = (volatile)(String)
+#define MFSPR(data,spr) asm volatile("mfspr %0,%1" : "=r" (data) : "n" (spr))
+#define CPRINTW(data)\
+do {\
+    CPRNT_32BIT = (volatile unsigned int)(data);\
+} while( 0 )
+#define EXTRACT(result,source,start_bit,end_bit)  asm volatile("extrwi. \
+ %0,%1,%2,%3" :"=r"(result):"r"(source),"n"(end_bit-start_bit+1),"n"(start_bit))
+#define CPRNT_COMMENT		(*(unsigned int volatile *)0xF6000034)
+#define CPRNT_32BIT		(*(unsigned int volatile *)0xF6000038)
+#define CPRNT_16BIT		(*(unsigned int volatile *)0xF600003C)
+#define CPRNT_8BIT		(*(unsigned int volatile *)0xF6000040)
+#define MTSPR(spr,data) asm volatile("mtspr %0,%1" : : "n" (spr), "r" (data))
+// declare 4 interrupt handler entrance address table for each cpu	
+extern void (* volatile vec_table0[])(void);
+extern void (* volatile vec_table1[])(void);
+extern void (* volatile vec_table2[])(void);
+extern void (* volatile vec_table3[])(void);
+
+// Installs a user defined function into the vec_table as the handler for an interrupt
+// Example Call: InstallInterruptHandler0( BUSERR, bus_error_handler );
+// where, $bus_error_handler is the user defined inteerrupt handler for $BUSERR interrupt
+#define InstallInterruptHandler0( VectorNum, Fxn )\
+do{\
+  vec_table0[ (VectorNum) ] =  (Fxn);\
+}while(0)
+
+#define InstallInterruptHandler1( VectorNum, Fxn )\
+do{\
+  vec_table1[ (VectorNum) ] =  (Fxn);\
+}while(0)
+
+#define InstallInterruptHandler2( VectorNum, Fxn )\
+do{\
+  vec_table2[ (VectorNum) ] =  (Fxn);\
+}while(0)
+
+#define InstallInterruptHandler3( VectorNum, Fxn )\
+do{\
+  vec_table3[ (VectorNum) ] =  (Fxn);\
+}while(0)	
+*/
+

@@ -1,0 +1,64 @@
+LwIP-ipv4/autoip.o: C:/PPC/project_0721/LwIP/src/core/ipv4/autoip.c \
+ C:/PPC/project_0721/LwIP/src/include/lwip/opt.h \
+ C:/PPC/project_0721/xyp1022_project/projects/lwipopts.h \
+ C:/PPC/project_0721/xyp1022_project/board/xyp1022.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h \
+ C:/PPC/project_0721/xyp1022_project/projects/FreeRTOSConfig.h \
+ C:/PPC/project_0721/xyp1022_project/board/XYP1022.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/projdefs.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/portable.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portmacro.h \
+ C:/PPC/project_0721/xyp1022_project/libs/xprintf.h \
+ C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/semphr.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/task.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/list.h \
+ C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/debug.h \
+ C:/PPC/project_0721/LwIP/src/include/lwip/arch.h \
+ C:/PPC/project_0721/xyp1022_project/projects/arch/cc.h
+
+C:/PPC/project_0721/LwIP/src/include/lwip/opt.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/lwipopts.h:
+
+C:/PPC/project_0721/xyp1022_project/board/xyp1022.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/FreeRTOSConfig.h:
+
+C:/PPC/project_0721/xyp1022_project/board/XYP1022.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/projdefs.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/portable.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portmacro.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/xprintf.h:
+
+C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/semphr.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/task.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/list.h:
+
+C:/PPC/project_0721/FreeRTOS/FreeRTOS-Kernel/include/queue.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/debug.h:
+
+C:/PPC/project_0721/LwIP/src/include/lwip/arch.h:
+
+C:/PPC/project_0721/xyp1022_project/projects/arch/cc.h:

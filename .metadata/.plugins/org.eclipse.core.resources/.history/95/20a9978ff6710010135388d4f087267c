@@ -1,0 +1,10 @@
+Sources/drv_uart.o: C:/A_MAZHI/xyp1022_project/driver/drv_uart.c \
+ C:/A_MAZHI/xyp1022_project/driver/drv_uart.h \
+ C:/A_MAZHI/xyp1022_project/board/XYP1022.h \
+ C:/A_MAZHI/xyp1022_project/ppc_driver/sysclock.h
+
+C:/A_MAZHI/xyp1022_project/driver/drv_uart.h:
+
+C:/A_MAZHI/xyp1022_project/board/XYP1022.h:
+
+C:/A_MAZHI/xyp1022_project/ppc_driver/sysclock.h:

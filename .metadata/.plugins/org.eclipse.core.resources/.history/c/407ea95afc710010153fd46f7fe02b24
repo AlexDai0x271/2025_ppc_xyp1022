@@ -1,0 +1,114 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(COREMARK)/core_list_join.c" \
+"$(COREMARK)/core_main.c" \
+"$(COREMARK)/core_matrix.c" \
+"$(COREMARK)/core_portme.c" \
+"$(COREMARK)/core_state.c" \
+"$(COREMARK)/core_util.c" \
+
+C_SRCS += \
+$(COREMARK)/core_list_join.c \
+$(COREMARK)/core_main.c \
+$(COREMARK)/core_matrix.c \
+$(COREMARK)/core_portme.c \
+$(COREMARK)/core_state.c \
+$(COREMARK)/core_util.c \
+
+OBJS += \
+./Utilities-Coremark/core_list_join.o \
+./Utilities-Coremark/core_main.o \
+./Utilities-Coremark/core_matrix.o \
+./Utilities-Coremark/core_portme.o \
+./Utilities-Coremark/core_state.o \
+./Utilities-Coremark/core_util.o \
+
+C_DEPS += \
+./Utilities-Coremark/core_list_join.d \
+./Utilities-Coremark/core_main.d \
+./Utilities-Coremark/core_matrix.d \
+./Utilities-Coremark/core_portme.d \
+./Utilities-Coremark/core_state.d \
+./Utilities-Coremark/core_util.d \
+
+OBJS_QUOTED += \
+"./Utilities-Coremark/core_list_join.o" \
+"./Utilities-Coremark/core_main.o" \
+"./Utilities-Coremark/core_matrix.o" \
+"./Utilities-Coremark/core_portme.o" \
+"./Utilities-Coremark/core_state.o" \
+"./Utilities-Coremark/core_util.o" \
+
+OBJS_OS_FORMAT += \
+./Utilities-Coremark/core_list_join.o \
+./Utilities-Coremark/core_main.o \
+./Utilities-Coremark/core_matrix.o \
+./Utilities-Coremark/core_portme.o \
+./Utilities-Coremark/core_state.o \
+./Utilities-Coremark/core_util.o \
+
+C_DEPS_QUOTED += \
+"./Utilities-Coremark/core_list_join.d" \
+"./Utilities-Coremark/core_main.d" \
+"./Utilities-Coremark/core_matrix.d" \
+"./Utilities-Coremark/core_portme.d" \
+"./Utilities-Coremark/core_state.d" \
+"./Utilities-Coremark/core_util.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Utilities-Coremark/core_list_join.o: $(COREMARK)/core_list_join.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #1 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities-Coremark/core_list_join.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities-Coremark/core_list_join.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities-Coremark/core_main.o: $(COREMARK)/core_main.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #2 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities-Coremark/core_main.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities-Coremark/core_main.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities-Coremark/core_matrix.o: $(COREMARK)/core_matrix.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #3 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities-Coremark/core_matrix.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities-Coremark/core_matrix.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities-Coremark/core_portme.o: $(COREMARK)/core_portme.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #4 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities-Coremark/core_portme.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities-Coremark/core_portme.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities-Coremark/core_state.o: $(COREMARK)/core_state.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #5 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities-Coremark/core_state.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities-Coremark/core_state.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities-Coremark/core_util.o: $(COREMARK)/core_util.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #6 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities-Coremark/core_util.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities-Coremark/core_util.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

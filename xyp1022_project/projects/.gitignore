@@ -1,0 +1,23 @@
+# gitignore
+
+*.o
+*.i
+
+!CW
+CW/*
+!CW/xyp1022_project-core00
+CW/xyp1022_project-core00/*
+!CW/xyp1022_project-core00/.settings
+!CW/xyp1022_project-core00/Debug_Settings
+!CW/xyp1022_project-core00/Referenced Systems
+!CW/xyp1022_project-core00/.project
+!CW/xyp1022_project-core00/.cwGeneratedFileSetLog
+!CW/xyp1022_project-core00/.cproject
+
+!CW/xyp1022_project-core00/Lib
+
+!CW/xyp1022_project-core00/RAM
+CW/xyp1022_project-core00/RAM/*
+!CW/xyp1022_project-core00/RAM/makefile
+!CW/xyp1022_project-core00/RAM/*.mk
+!CW/xyp1022_project-core00/RAM/*.local

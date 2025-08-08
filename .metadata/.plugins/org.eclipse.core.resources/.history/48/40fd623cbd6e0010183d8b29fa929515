@@ -1,0 +1,11 @@
+ThirdLib-Sources/acu.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Sources/acu.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/acu.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ppclib.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/acu.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ppclib.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:

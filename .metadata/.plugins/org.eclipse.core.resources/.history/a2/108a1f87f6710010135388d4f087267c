@@ -1,0 +1,86 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+#Progress monitor hint: 96
+first : all
+-include ../makefile.init
+
+# This file contains definitions of environment variables used in the makefiles and .args files if exist.
+-include makefile.local
+
+RM := "$(GNU_Make_Install_DirEnv)/rm" -f
+
+# All of the sources participating in the build are defined here
+-include sources.mk
+-include subdir.mk
+-include Utilities-Coremark/subdir.mk
+-include Utilities/subdir.mk
+-include ThirdLib-Sources/subdir.mk
+-include ThirdLib/subdir.mk
+-include Sources/subdir.mk
+-include Lwip-arch/subdir.mk
+-include LwIP-netif/subdir.mk
+-include LwIP-ipv4/subdir.mk
+-include LwIP-core/subdir.mk
+-include LwIP-api/subdir.mk
+-include FreeRTOS/subdir.mk
+-include FatFS/subdir.mk
+-include objects.mk
+
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+ifneq ($(strip $(SX_DEPS)),)
+-include $(SX_DEPS)
+endif
+ifneq ($(strip $(S_UPPER_DEPS)),)
+-include $(S_UPPER_DEPS)
+endif
+endif
+
+-include ../makefile.defs
+
+# Add inputs and outputs from these tool invocations to the build variables 
+EXECUTABLES += \
+xyp1022_project-core00.elf \
+
+EXECUTABLES_QUOTED += \
+"xyp1022_project-core00.elf" \
+
+EXECUTABLES_OS_FORMAT += \
+xyp1022_project-core00.elf \
+
+
+# All Target
+all: warning-messages explicit-dependencies xyp1022_project-core00.elf
+
+# Tool invocations
+xyp1022_project-core00.elf: $(OBJS) $(USER_OBJS) $(BOARD)/link.ld
+	@echo 'Building target: $@'
+	@echo 'Executing target #97 $@'
+	@echo 'Invoking: PowerPC AEABI e5500 C Linker'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc"  $(USER_OBJS_QUOTED)  @"xyp1022_project-core00.args" -o"xyp1022_project-core00.elf"
+	@echo 'Finished building target: $@'
+	@echo ' '
+	"$(MAKE)" --no-print-directory post-build
+
+# Other Targets
+clean:
+	-$(RM) "./*/*.o"  $(SX_DEPS_QUOTED) $(EXECUTABLES_QUOTED) "./*/*.d"  "./*/*.d"  $(ProjDirPath)/RAM/xyp1022_project-core00.elf
+	-@echo ' '
+
+post-build:
+	-"C:\Freescale\CW_PA_v10.5.1\eclipse\../Cross_Tools/gcc-4.9.2-Ee5500-aeabi/bin/powerpc-aeabi-objdump" -D -S  xyp1022_project-core00.elf > xyp1022_project-core00.elf.asm && "C:\Freescale\CW_PA_v10.5.1\eclipse\../Cross_Tools/gcc-4.9.2-Ee5500-aeabi/bin/powerpc-aeabi-nm" -C -n -l  xyp1022_project-core00.elf > xyp1022_project-core00.sym && "C:\Freescale\CW_PA_v10.5.1\eclipse\../Cross_Tools/gcc-4.9.2-Ee5500-aeabi/bin/powerpc-aeabi-objcopy" -S -O binary xyp1022_project-core00.elf xyp1022_project-core00.bin && "C:\Freescale\CW_PA_v10.5.1\eclipse\../Cross_Tools/gcc-4.9.2-Ee5500-aeabi/bin/powerpc-aeabi-size" xyp1022_project-core00.elf
+	-@echo ' '
+
+.PHONY: all clean dependents explicit-dependencies warning-messages
+.SECONDARY: post-build
+
+-include ../makefile.targets
+
+explicit-dependencies: $(BOARD)/link.ld 
+
+warning-messages: 
+

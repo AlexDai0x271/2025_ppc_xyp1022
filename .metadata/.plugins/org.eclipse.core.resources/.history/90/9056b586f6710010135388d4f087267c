@@ -1,0 +1,84 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(LIBS1)/xprintf.c" \
+"$(LIBS1)/xshell.c" \
+"$(LIBS1)/xshell_command.c" \
+"$(LIBS1)/ymodem.c" \
+
+C_SRCS += \
+$(LIBS1)/xprintf.c \
+$(LIBS1)/xshell.c \
+$(LIBS1)/xshell_command.c \
+$(LIBS1)/ymodem.c \
+
+OBJS += \
+./Utilities/xprintf.o \
+./Utilities/xshell.o \
+./Utilities/xshell_command.o \
+./Utilities/ymodem.o \
+
+C_DEPS += \
+./Utilities/xprintf.d \
+./Utilities/xshell.d \
+./Utilities/xshell_command.d \
+./Utilities/ymodem.d \
+
+OBJS_QUOTED += \
+"./Utilities/xprintf.o" \
+"./Utilities/xshell.o" \
+"./Utilities/xshell_command.o" \
+"./Utilities/ymodem.o" \
+
+OBJS_OS_FORMAT += \
+./Utilities/xprintf.o \
+./Utilities/xshell.o \
+./Utilities/xshell_command.o \
+./Utilities/ymodem.o \
+
+C_DEPS_QUOTED += \
+"./Utilities/xprintf.d" \
+"./Utilities/xshell.d" \
+"./Utilities/xshell_command.d" \
+"./Utilities/ymodem.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+Utilities/xprintf.o: $(LIBS1)/xprintf.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #7 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities/xprintf.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities/xprintf.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities/xshell.o: $(LIBS1)/xshell.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #8 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities/xshell.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities/xshell.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities/xshell_command.o: $(LIBS1)/xshell_command.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #9 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities/xshell_command.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities/xshell_command.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Utilities/ymodem.o: $(LIBS1)/ymodem.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #10 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"Utilities/ymodem.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"Utilities/ymodem.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

@@ -1,0 +1,56 @@
+#ifndef CCM_CC_H
+#define CCM_CC_H
+
+#define CCM_CC_BASE_ADDR 0xE8070000ull
+
+#define CIT_CFG_ADDR        (0x0  + CCM_CC_BASE_ADDR)
+#define CIP0_CFG_ADDR       (0x4  + CCM_CC_BASE_ADDR)
+#define CIP1_CFG_ADDR       (0x8  + CCM_CC_BASE_ADDR)
+#define CIR0_CFG_ADDR       (0xC  + CCM_CC_BASE_ADDR)
+#define CIR1_CFG_ADDR       (0x10 + CCM_CC_BASE_ADDR)
+
+#define CIR0_MISC0_ADDR     (0x20 + CCM_CC_BASE_ADDR)
+#define CIR1_MISC0_ADDR     (0x24 + CCM_CC_BASE_ADDR)
+#define CIP0_MISC0_ADDR     (0x28 + CCM_CC_BASE_ADDR)
+#define CIP1_MISC0_ADDR     (0x2C + CCM_CC_BASE_ADDR)
+
+#define STAT_MISC0_ADDR     (0x40 + CCM_CC_BASE_ADDR)
+#define STAT_MISC1_ADDR     (0x44 + CCM_CC_BASE_ADDR)
+#define STAT_MISC2_ADDR     (0x48 + CCM_CC_BASE_ADDR)
+#define STAT_MISC3_ADDR     (0x4C + CCM_CC_BASE_ADDR)
+#define STAT_MISC4_ADDR     (0x50 + CCM_CC_BASE_ADDR)
+#define STAT_MISC5_ADDR     (0x54 + CCM_CC_BASE_ADDR)
+#define STAT_MISC6_ADDR     (0x58 + CCM_CC_BASE_ADDR)
+#define STAT_MISC7_ADDR     (0x5C + CCM_CC_BASE_ADDR)
+
+#define DCFG_DDRTQCR1_ADDR  (0x60 + CCM_CC_BASE_ADDR)
+#define DCFG_DDRTQCR2_ADDR  (0x64 + CCM_CC_BASE_ADDR)
+#define DCFG_DDRTQCR3_ADDR  (0x68 + CCM_CC_BASE_ADDR)
+#define DCFG_DDRTQCR4_ADDR  (0x6C + CCM_CC_BASE_ADDR)
+
+#define CFG0_DDR_ADDR       (0x70 + CCM_CC_BASE_ADDR) 
+#define CFG1_DDR_ADDR       (0x74 + CCM_CC_BASE_ADDR) 
+#define CFG2_DDR_ADDR       (0x78 + CCM_CC_BASE_ADDR) 
+#define CFG3_DDR_ADDR       (0x7C + CCM_CC_BASE_ADDR) 
+#define CFG4_DDR_ADDR       (0x80 + CCM_CC_BASE_ADDR) 
+#define CFG5_DDR_ADDR       (0x84 + CCM_CC_BASE_ADDR) 
+#define CFG6_DDR_ADDR       (0x88 + CCM_CC_BASE_ADDR) 
+#define CFG7_DDR_ADDR       (0x8C + CCM_CC_BASE_ADDR) 
+#define CFG8_DDR_ADDR       (0x90 + CCM_CC_BASE_ADDR) 
+#define CFG9_DDR_ADDR       (0x94 + CCM_CC_BASE_ADDR) 
+#define CFG10_DDR_ADDR      (0x98 + CCM_CC_BASE_ADDR) 
+#define CFG11_DDR_ADDR      (0x9C + CCM_CC_BASE_ADDR) 
+#define CFG12_DDR_ADDR      (0xA0 + CCM_CC_BASE_ADDR) 
+#define CFG13_DDR_ADDR      (0xA4 + CCM_CC_BASE_ADDR) 
+#define CFG14_DDR_ADDR      (0xA8 + CCM_CC_BASE_ADDR) 
+#define CFG15_DDR_ADDR      (0xAC + CCM_CC_BASE_ADDR) 
+#define CFG16_DDR_ADDR      (0xB0 + CCM_CC_BASE_ADDR) 
+#define CFG17_DDR_ADDR      (0xB4 + CCM_CC_BASE_ADDR) 
+#define CFG18_DDR_ADDR      (0xB8 + CCM_CC_BASE_ADDR) 
+#define CFG19_DDR_ADDR      (0xBC + CCM_CC_BASE_ADDR) 
+#define CFG20_DDR_ADDR      (0xC0 + CCM_CC_BASE_ADDR) 
+#define CFG21_DDR_ADDR      (0xC4 + CCM_CC_BASE_ADDR) 
+#define CFG22_DDR_ADDR      (0xC8 + CCM_CC_BASE_ADDR) 
+#define CFG23_DDR_ADDR      (0xCC + CCM_CC_BASE_ADDR) 
+
+#endif

@@ -1,0 +1,110 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS_QUOTED += \
+"$(LIB)/cpr_init.c" \
+"$(LIB)/ddr34_init.c" \
+
+C_SRCS += \
+$(LIB)/cpr_init.c \
+$(LIB)/ddr34_init.c \
+
+S_SRCS += \
+$(LIB)/init.s \
+$(LIB)/init_chip.s \
+$(LIB)/intr.s \
+$(LIB)/start.s \
+
+S_SRCS_QUOTED += \
+"$(LIB)/init.s" \
+"$(LIB)/init_chip.s" \
+"$(LIB)/intr.s" \
+"$(LIB)/start.s" \
+
+OBJS += \
+./ThirdLib/cpr_init.o \
+./ThirdLib/ddr34_init.o \
+./ThirdLib/init.o \
+./ThirdLib/init_chip.o \
+./ThirdLib/intr.o \
+./ThirdLib/start.o \
+
+C_DEPS += \
+./ThirdLib/cpr_init.d \
+./ThirdLib/ddr34_init.d \
+
+OBJS_QUOTED += \
+"./ThirdLib/cpr_init.o" \
+"./ThirdLib/ddr34_init.o" \
+"./ThirdLib/init.o" \
+"./ThirdLib/init_chip.o" \
+"./ThirdLib/intr.o" \
+"./ThirdLib/start.o" \
+
+OBJS_OS_FORMAT += \
+./ThirdLib/cpr_init.o \
+./ThirdLib/ddr34_init.o \
+./ThirdLib/init.o \
+./ThirdLib/init_chip.o \
+./ThirdLib/intr.o \
+./ThirdLib/start.o \
+
+C_DEPS_QUOTED += \
+"./ThirdLib/cpr_init.d" \
+"./ThirdLib/ddr34_init.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+ThirdLib/cpr_init.o: $(LIB)/cpr_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #25 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib/cpr_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib/cpr_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib/ddr34_init.o: $(LIB)/ddr34_init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #26 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"ThirdLib/ddr34_init.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"ThirdLib/ddr34_init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib/init.o: $(LIB)/init.s
+	@echo 'Building file: $<'
+	@echo 'Executing target #27 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 Assembler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-as" "$<" -g -I"$(THIRDLIB)/include" -a64 -me5500 -o"ThirdLib/init.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib/init_chip.o: $(LIB)/init_chip.s
+	@echo 'Building file: $<'
+	@echo 'Executing target #28 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 Assembler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-as" "$<" -g -I"$(THIRDLIB)/include" -a64 -me5500 -o"ThirdLib/init_chip.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib/intr.o: $(LIB)/intr.s
+	@echo 'Building file: $<'
+	@echo 'Executing target #29 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 Assembler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-as" "$<" -g -I"$(THIRDLIB)/include" -a64 -me5500 -o"ThirdLib/intr.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ThirdLib/start.o: $(LIB)/start.s
+	@echo 'Building file: $<'
+	@echo 'Executing target #30 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 Assembler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-as" "$<" -g -I"$(THIRDLIB)/include" -a64 -me5500 -o"ThirdLib/start.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

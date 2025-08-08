@@ -1,0 +1,11 @@
+ThirdLib-Sources/sst_flash.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Sources/sst_flash.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sst_flash.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ebc.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/sst_flash.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ebc.h:

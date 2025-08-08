@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 此文件保存所有被项目
+引用的RSE系统的副本。这样一来，项目被导入到新的工作区时，系统能够自动重新被生成。
+此文件被Eclipse IDE自动生成和更新。-->
+<APSC_Memento>
+<host>
+<properties>
+<property key="host.address" value=""/>
+<property key="host.defaultEncoding" value=""/>
+<property key="host.defaultUser" value="Lyons"/>
+<property key="host.description" value=""/>
+<property key="host.name" value="T1022RDB_RAM"/>
+<property key="host.promptable" value="false"/>
+<property key="host.type" value="com.freescale.cdt.debug.cw.core.ui.rse.systemtype.bareboard.hardware.system"/>
+<property key="propertySet.[OptionalPropertySet].enableConnectorServicesPropertyPage" value="false"/>
+<property key="propertySet.[OptionalPropertySet].enableGenericHostPropertyPage" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.0.e5500.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.0.e5500.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.0.e5500.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.0.e5500.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.0.e5500.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.0.e5500.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.1.e5500.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.1.e5500.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.1.e5500.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.1.e5500.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.1.e5500.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.1.e5500.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].com.freescale.cw.system.eppc.T1022.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].enableHSSTIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].enableNetworkIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].enableSerialIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].enableStopTransferIOModelConfig" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].ethernetController" value="Ethernet Controller 1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].executePerProcessorReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].executeReset" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].networkDebuggerAddress" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].networkGateway" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].networkMACAddress" value="**-**-**-**-**-**"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].networkNetMask" value="255.255.255.255"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].networkTargetAddress" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].networkUDPPort" value="1234"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].noIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].targetIsPalladium" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].useNetworkGateway" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].useNetworkMACAddress" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.TEMPLATE].useNetworkUDPPort" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.initPath" value="E:\0_Project\rep_local\proj-dev-2024\project\xyp1022_project\CFG\T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.memConfigPath" value="E:\0_Project\rep_local\proj-dev-2024\project\xyp1022_project\CFG\T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.resetOrder" value="0"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.0.e5500.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.resetOrder" value="1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.useInitFile" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.1.e5500.useMemoryConfigFile" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].com.freescale.cw.system.eppc.T1022.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].enableHSSTIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].enableNetworkIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].enableSerialIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].enableStopTransferIOModelConfig" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].ethernetController" value="Ethernet Controller 1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].executePerProcessorReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].executeReset" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].networkDebuggerAddress" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].networkGateway" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].networkMACAddress" value="**-**-**-**-**-**"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].networkNetMask" value="255.255.255.255"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].networkTargetAddress" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].networkUDPPort" value="1234"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].noIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].targetIsPalladium" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].useNetworkGateway" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].useNetworkMACAddress" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.ondemand].useNetworkUDPPort" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.0.e5500.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.0.e5500.initPath" value="C:\PPC\project_0721\xyp1022_project\CFG\T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.0.e5500.memConfigPath" value="C:\PPC\project_0721\xyp1022_project\CFG\T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.0.e5500.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.0.e5500.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.0.e5500.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.1.e5500.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.1.e5500.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.1.e5500.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.1.e5500.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.1.e5500.useInitFile" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.1.e5500.useMemoryConfigFile" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.executePerCoreReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.initPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/QorIQ_T1/T1022RDB_init_core.tcl"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.memConfigPath" value="${PA_TOOLS_HOME}/PA_Support/Initialization_Files/Memory/T1022RDB.mem"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.runOutOfReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.useInitFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].com.freescale.cw.system.eppc.T1022.useMemoryConfigFile" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].enableHSSTIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].enableNetworkIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].enableSerialIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].enableStopTransferIOModelConfig" value="true"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].ethernetController" value="Ethernet Controller 1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].executePerProcessorReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].executeReset" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].networkDebuggerAddress" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].networkGateway" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].networkMACAddress" value="**-**-**-**-**-**"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].networkNetMask" value="255.255.255.255"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].networkTargetAddress" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].networkUDPPort" value="1234"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].noIOModelConfig" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].targetIsPalladium" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useNetworkGateway" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useNetworkMACAddress" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useNetworkUDPPort" value="false"/>
+<property key="propertySet.[cw.dbg.main.TEMPLATE].systemType" value="com.freescale.cw.system.eppc.T1022"/>
+<property key="propertySet.[cw.dbg.main.TEMPLATE].systemTypeDataSource" value=""/>
+<property key="propertySet.[cw.dbg.main].systemType" value="com.freescale.cw.system.eppc.T1022"/>
+<property key="propertySet.[cw.dbg.main].systemTypeDataSource" value=""/>
+<property key="propertySet.[cw.dbg.main].templateId" value="com.freescale.cdt.debug.cw.pa.template.system.t1022.rdb.ram"/>
+<property key="propertySet.[cw.ide.settingscache].hidden.HostID" value="com.freescale.cdt.debug.cw.core.ui.rse.systemtype.bareboard.hardware.system.241105232034+0800"/>
+<property key="propertySet.[cw.ide.settingscache].hidden.TimeStamp" value="1753105938174"/>
+</properties>
+</host>
+</APSC_Memento>

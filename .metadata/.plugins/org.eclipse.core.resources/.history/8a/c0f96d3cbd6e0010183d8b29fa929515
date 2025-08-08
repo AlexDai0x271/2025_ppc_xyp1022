@@ -1,0 +1,17 @@
+Utilities-Coremark/core_list_join.o: \
+ C:/PPC/project_0721/xyp1022_project/libs/coremark/core_list_join.c \
+ C:/PPC/project_0721/xyp1022_project/libs/coremark/coremark.h \
+ C:/PPC/project_0721/xyp1022_project/libs/coremark/core_portme.h \
+ C:/PPC/project_0721/xyp1022_project/libs/xprintf.h \
+ C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h \
+ C:/PPC/project_0721/xyp1022_project/board/XYP1022.h
+
+C:/PPC/project_0721/xyp1022_project/libs/coremark/coremark.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/coremark/core_portme.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/xprintf.h:
+
+C:/PPC/project_0721/xyp1022_project/driver/drv_uart.h:
+
+C:/PPC/project_0721/xyp1022_project/board/XYP1022.h:

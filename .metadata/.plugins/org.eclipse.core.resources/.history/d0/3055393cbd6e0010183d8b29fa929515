@@ -1,0 +1,10 @@
+FatFS/ff.o: C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ff.c \
+ C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ff.h \
+ C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ffconf.h \
+ C:/PPC/project_0721/xyp1022_project/libs/ff15/source/diskio.h
+
+C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ff.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/ff15/source/ffconf.h:
+
+C:/PPC/project_0721/xyp1022_project/libs/ff15/source/diskio.h:

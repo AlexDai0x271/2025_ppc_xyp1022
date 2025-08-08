@@ -1,0 +1,28 @@
+################################################################################
+# 生成文件和参数文件使用这些宏。
+# 如果在路径中包含空格与不能使用引号（"），
+# 一个使用反斜杠（\）来转义空格的宏的_ESCAPE版本被加上。
+################################################################################
+
+export NETIF=D:/ppc_xyp1022_XD/LwIP/src/netif
+export GNU_Make_Install_DirEnv=$(CWInstallLocationEnv)/gnu/bin
+export ProjDirPath=D:/ppc_xyp1022_XD/xyp1022_project/projects/CW/xyp1022_project-core00
+export CWInstallLocationEnv=C:/Freescale/CW_PA_v10.5.1
+export PAGccAeabiE5500DirEnv=$(CWInstallLocationEnv)/Cross_Tools/gcc-4.9.2-Ee5500-aeabi/bin
+export BOARD=D:/ppc_xyp1022_XD/xyp1022_project/board
+export COREMARK=D:/ppc_xyp1022_XD/xyp1022_project/libs/coremark
+export MEMMANG=D:/ppc_xyp1022_XD/FreeRTOS/FreeRTOS-Kernel/portable/MemMang
+export IPV4=D:/ppc_xyp1022_XD/LwIP/src/core/ipv4
+export LIBS1=D:/ppc_xyp1022_XD/xyp1022_project/libs
+export DRIVER=D:/ppc_xyp1022_XD/xyp1022_project/driver
+export SOURCES=D:/ppc_xyp1022_XD/xyp1022_project/ThirdLib/Sources
+export CORE=D:/ppc_xyp1022_XD/LwIP/src/core
+export API=D:/ppc_xyp1022_XD/LwIP/src/api
+export SOURCE=D:/ppc_xyp1022_XD/xyp1022_project/libs/ff15/source
+export ARCH=D:/ppc_xyp1022_XD/xyp1022_project/projects/arch
+export THIRDLIB=D:/ppc_xyp1022_XD/xyp1022_project/ThirdLib
+export PPC=D:/ppc_xyp1022_XD/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC
+export FREERTOS_KERNEL=D:/ppc_xyp1022_XD/FreeRTOS/FreeRTOS-Kernel
+export LIB=D:/ppc_xyp1022_XD/xyp1022_project/ThirdLib/Lib
+export PROJECTS=D:/ppc_xyp1022_XD/xyp1022_project/projects
+export PPC_DRIVER=D:/ppc_xyp1022_XD/xyp1022_project/ppc_driver

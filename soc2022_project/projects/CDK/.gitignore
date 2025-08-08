@@ -1,0 +1,9 @@
+# gitignore
+
+*
+!.gitignore
+!*.cdkws
+!*/
+
+*/*
+!*.cdkproj

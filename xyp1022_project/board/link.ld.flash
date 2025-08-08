@@ -1,0 +1,786 @@
+/* Default linker script for PowerPC 440, for normal executables 
+
+Copyright (c) 2008, 2009 Xilinx, Inc.  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+1.  Redistributions source code must retain the above copyright notice,
+this list of conditions and the following disclaimer. 
+
+2.  Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution. 
+
+3.  Neither the name of Xilinx nor the names of its contributors may be
+used to endorse or promote products derived from this software without
+specific prior written permission. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+/* Default linker script, for normal executables */
+OUTPUT_FORMAT("elf64-powerpc", "elf64-powerpc",
+	      "elf64-powerpc")
+OUTPUT_ARCH(powerpc:common64)
+ENTRY(__start)
+
+/* ROM  or EBC end */
+_ROM_START_ADDR = 0x00100000;
+_RAM_START_ADDR = 0x00000000;
+_HEAP_MAIN_ADDR = 0x00080000;
+
+_STACK_SIZE = 24k;
+_ALT_STACK_SIZE = 0k;
+_HEAP_SIZE = 16k;
+
+MEMORY
+{
+  ROM	    (r x) : ORIGIN = 0x00100000,  LENGTH = 0x00100000
+  RAM       (rwx) : ORIGIN = 0x00000000,  LENGTH = 0x00080000
+  HEAP_MAIN	(rw ) : ORIGIN = 0x00080000,  LENGTH = 0x00080000
+}
+
+/*----------------------------------------------------------------------------+
+| Sections originally taken from default GNU LD script.
++----------------------------------------------------------------------------*/
+SECTIONS
+{
+
+   /*-------------------------------------------------------------------------+
+   |    X                          X
+   |   XX                         XX
+   |  XXXXX    XXXXX   XX   XX   XXXXX
+   |   XX     XX    X   XX XX     XX
+   |   XX     XXXXXXX    XXX      XX
+   |   XX XX  XX        XX XX     XX XX
+   |    XXX    XXXXX   XX   XX     XXX
+   +-------------------------------------------------------------------------*/
+
+   /*-------------------------------------------------------------------------+
+   | Create variable holding the value of the start of the text.
+   +-------------------------------------------------------------------------*/
+   . = _ROM_START_ADDR;
+   . = ALIGN(16);
+   __stext = . ;
+
+   .interp     			:
+   {
+     *(.interp)
+   } > ROM
+
+   .hash          		: 
+   {
+      *(.hash)         
+   } > ROM
+
+   .dynsym        		: 
+   {
+      *(.dynsym)        
+   } > ROM
+
+   .dynstr        		: 
+   {
+      *(.dynstr)        
+   } > ROM
+
+   .gnu.version   		:
+   { 
+      *(.gnu.version)   
+   } > ROM
+
+   .gnu.version_d   		: 
+   {
+      *(.gnu.version_d)       
+   } > ROM
+
+   .gnu.version_r   		: 
+   {
+      *(.gnu.version_r)       
+   } > ROM
+
+   .rel.init      		: 
+   {
+      *(.rel.init)      
+   } > ROM
+
+   .rela.init     		: 
+   {
+      *(.rela.init)     
+   } > ROM
+
+   .rel.text      		:
+   {
+      *(.rel.text)
+      *(.rel.text.*)
+      *(.rel.gnu.linkonce.t.*)
+   } > ROM
+
+   .rela.text     		:
+   {
+      *(.rela.text)
+      *(.rela.text.*)
+      *(.rela.gnu.linkonce.t.*)
+   } > ROM
+
+   .rel.fini      		: 
+   {
+      *(.rel.fini)      
+   } > ROM
+
+   .rela.fini     		: 
+   {
+      *(.rela.fini)     
+   } > ROM
+
+   .rel.rodata    		:
+   {
+      *(.rel.rodata)
+      *(.rel.rodata.*)
+      *(.rel.gnu.linkonce.r.*)
+   } > ROM
+
+   .rela.rodata   		:
+   {
+      *(.rela.rodata)
+      *(.rela.rodata.*)
+      *(.rela.gnu.linkonce.r.*)
+   } > ROM
+
+   .rel.data      		:
+   {
+      *(.rel.data)
+      *(.rel.data.*)
+      *(.rel.gnu.linkonce.d.*)
+   } > ROM
+
+   .rela.data     		:
+   {
+      *(.rela.data)
+      *(.rela.data.*)
+      *(.rela.gnu.linkonce.d.*)
+   } > ROM
+
+   .rel.ctors     		: 
+   {
+      *(.rel.ctors)     
+   } > ROM
+
+   .rela.ctors    		: 
+   {
+      *(.rela.ctors)    
+   } > ROM
+
+   .rel.dtors     		: 
+   {
+      *(.rel.dtors)     
+   } > ROM
+
+   .rela.dtors    		: 
+   {
+      *(.rela.dtors)     
+   } > ROM
+
+   .rel.got       		: 
+   {
+      *(.rel.got)               
+   } > ROM
+
+   .rela.got      		: 
+   {
+      *(.rela.got)              
+   } > ROM
+
+   .rel.sdata     		:
+   {
+      *(.rel.sdata)
+      *(.rel.sdata.*)
+      *(.rel.gnu.linkonce.s.*)
+   } > ROM
+
+   .rela.sdata     		:
+   {
+      *(.rela.sdata)
+      *(.rela.sdata.*)
+      *(.rela.gnu.linkonce.s.*)
+   } > ROM
+
+   .rel.sbss      		:
+   {
+      *(.rel.sbss)
+      *(.rel.sbss.*)
+      *(.rel.gnu.linkonce.sb.*)
+   } > ROM
+
+   .rela.sbss     		:
+   {
+      *(.rela.sbss)
+      *(.rela.sbss.*)
+      *(.rel.gnu.linkonce.sb.*)
+   } > ROM
+
+   .rel.sdata2    		:
+   {
+      *(.rel.sdata2)
+      *(.rel.sdata2.*)
+      *(.rel.gnu.linkonce.s2.*)
+   } > ROM
+
+   .rela.sdata2   		:
+   {
+      *(.rela.sdata2)
+      *(.rela.sdata2.*)
+      *(.rela.gnu.linkonce.s2.*)
+   } > ROM
+
+   .rel.sbss2     		:
+   {
+      *(.rel.sbss2)
+      *(.rel.sbss2.*)
+      *(.rel.gnu.linkonce.sb2.*)
+   } > ROM
+
+   .rela.sbss2    		:
+   {
+      *(.rela.sbss2)
+      *(.rela.sbss2.*)
+      *(.rela.gnu.linkonce.sb2.*)
+   } > ROM
+
+   .rel.bss       		:
+   {
+      *(.rel.bss)
+      *(.rel.bss.*)
+      *(.rel.gnu.linkonce.b.*)
+   } > ROM
+
+   .rela.bss      		:
+   {
+      *(.rela.bss)
+      *(.rela.bss.*)
+      *(.rela.gnu.linkonce.b.*)
+   } > ROM
+
+   .rel.plt       		:
+   {
+      *(.rel.plt)               
+   } > ROM
+
+   .rela.plt      		: 
+   {
+      *(.rela.plt)              
+   } > ROM
+
+   /*-------------------------------------------------------------------------+
+   | Keep the .init sections even if they are not referenced.  Fill in the 
+   | space (if any) in the .init serctions with 0.
+   +-------------------------------------------------------------------------*/
+   .init          		:
+   {
+      *start.o(.text_init);
+      KEEP(*(.init))
+   } > ROM = 0
+
+   .text      			:
+   {
+      *__start_e5500_64bit_crt0.o(.text);
+      *intr.o(.text);
+      *exp_default.o(.text);
+      *main.o(.text);
+      *(.stub);
+      *(.text);
+      *(.gnu.warning);
+      *(.gnu.linkonce.t.*);
+   } > ROM = 0
+
+   .fini      			:
+   {
+      KEEP(*(.fini))
+   } > ROM = 0
+   
+
+   /*-------------------------------------------------------------------------+
+   | Create variable holding the value of the end of the text.
+   +-------------------------------------------------------------------------*/
+   . = ALIGN(16);
+   PROVIDE (etext = .);
+   PROVIDE (_etext = .);
+   PROVIDE (__etext = .);
+   
+   /*-------------------------------------------------------------------------+
+   |    XXX               X
+   |     XX              XX
+   |     XX    XXXXX    XXXXX    XXXXX
+   |  XXXXX        X     XX          X
+   | XX  XX   XXXXXX     XX     XXXXXX
+   | XX  XX   X   XX     XX XX  X   XX
+   |  XXXX X  XXXXX X     XXX   XXXXX X 
+   +-------------------------------------------------------------------------*/ 
+
+/*-------------------------------------------------------------------------+
+   | Create variable holding the value of the start of the data.
+   | Logically we place the data after text.  In order for all the sections 
+   | to show up in the file "LONG(0x00000000)" was added.
+   +-------------------------------------------------------------------------*/
+
+   . = _RAM_START_ADDR;
+   PROVIDE (sdata = .);
+   PROVIDE (_sdata = .);
+   PROVIDE (__sdata = .);
+   . = ALIGN(16);
+   .rodata .                    :AT(__etext)
+   {
+      *init_chip.o(.text_ram)
+      *(.rodata)
+      *(.rodata.*)
+      *(.gnu.linkonce.r.*)
+   } > RAM
+   __lma_rodata = __etext + SIZEOF(.rodata);
+
+   .rodata1 .                   :AT(__lma_rodata)
+   {
+      *(.rodata1)
+   } > RAM
+   __lma_rodata1 = __lma_rodata + SIZEOF(.rodata1);
+
+   PROVIDE (__SDATA2_START__ = .);
+   .sdata2 . 			:AT(__lma_rodata1)
+   {
+      *(.sdata2) 
+      *(.sdata2.*) 
+      *(.gnu.linkonce.s2.*)
+   } > RAM
+   __lma_sdata2 = __lma_rodata1 + SIZEOF(.sdata2);
+
+   PROVIDE (__SDATA2_END__  = .);   
+
+   PROVIDE (__SBSS2_START__ = .); 
+   .sbss2 . 			:AT(__lma_sdata2)
+   {
+      *(.sbss2)
+      *(.sbss2.*)
+      *(.gnu.linkonce.sb2.*)
+      . = ALIGN(4);
+   } > RAM
+   __lma_sbss2 = __lma_sdata2 + SIZEOF(.sbss2);
+   PROVIDE ( __SBSS2_END__ = .); 
+
+   .data .  			:AT(__lma_sbss2)
+   {
+      *(.data)
+      *(.data.*)
+      *(.gnu.linkonce.d.*)
+      CONSTRUCTORS
+   } > RAM
+   __lma_data = __lma_sbss2 + SIZEOF(.data);
+   .intvec .  			:AT(__lma_data)
+   {
+      *(.intvec)
+   } > RAM
+   __lma_intvec = __lma_data + SIZEOF(.intvec);
+   
+   .branch_lt .  			:AT(__lma_intvec)
+   {
+      *(.branch_lt)
+   } > RAM
+   __lma_branch_lt = __lma_intvec + SIZEOF(.branch_lt);
+   
+   .opd .  			:AT(__lma_branch_lt)
+   {
+      *(.opd)
+   } > RAM
+   __lma_opd = __lma_branch_lt + SIZEOF(.opd);
+   .data1 . 			:AT(__lma_opd)
+
+   {
+      *(.data1)
+   } > RAM
+   __lma_data1 = __lma_opd + SIZEOF(.data1);
+
+   .eh_frame .			:AT(__lma_data1)
+   {
+      KEEP(*(.eh_frame))
+   } > RAM
+   __lma_eh_frame = __lma_data1 + SIZEOF(.eh_frame);
+
+   .gcc_except_table .		:AT(__lma_eh_frame)
+   {
+      *(.gcc_except_table)
+   } > RAM
+   __lma_gcc_except_table = __lma_eh_frame + SIZEOF(.gcc_except_table);
+   
+
+   PROVIDE (_FIXUP_START_ = .);
+   PROVIDE (__FIXUP_START_ = .);
+   .fixup .	      		:AT(__lma_gcc_except_table)
+   {
+      *(.fixup)
+   } > RAM
+   __lma_fixup = __lma_gcc_except_table + SIZEOF(.fixup);
+   PROVIDE (_FIXUP_END_ = .);
+   PROVIDE (__FIXUP_END_ = .);
+
+   .got1 .       		:AT(__lma_fixup)
+   {
+      *(.got1)
+   } > RAM
+   __lma_got1 = __lma_fixup + SIZEOF(.got1);
+
+   PROVIDE (_GOT2_START_ = .);
+   PROVIDE (__GOT2_START_ = .);
+   .got2 .       		:AT(__lma_got1)
+   {
+      *(.got2)
+   } > RAM
+   __lma_got2 = __lma_got1 + SIZEOF(.got2);
+   PROVIDE (_GOT2_END_ = .);
+   PROVIDE (__GOT2_END_ = .);
+   /*-------------------------------------------------------------------------+
+   | C++ static constructors.  GCC uses crtbegin.o to find the start of the 
+   | constructors, so we make sure it is first.  Because this is a wildcard, it 
+   | doesn't matter if the user does not actually link against crtbegin.o; the 
+   | linker won't look for a file to match a wildcard.  The wildcard also means 
+   | that it doesn't matter which directory crtbegin.o is in.  We don't want to 
+   | include the .ctor section from from the crtend.o file until after the 
+   | sorted ctors.  The .ctor section from the crtend file contains the end of 
+   | ctors marker and it must be last.
+   +-------------------------------------------------------------------------*/
+   PROVIDE (__CTOR_LIST__ = .);
+   PROVIDE (___CTOR_LIST__ = .);
+   .ctors . 			:AT(__lma_got2)
+   {
+      KEEP(*crtbegin.o(.ctors))
+      KEEP(*(EXCLUDE_FILE(*crtend.o).ctors))
+      KEEP(*(SORT(.ctors.*)))
+      KEEP(*(.ctors))
+   } > RAM
+   __lma_ctors = __lma_got2 + SIZEOF(.ctors);
+   PROVIDE (__CTOR_END__ = .);
+   PROVIDE (___CTOR_END__ = .);
+   
+   /*-------------------------------------------------------------------------+
+   | C++ static destructors.
+   +-------------------------------------------------------------------------*/
+   PROVIDE (__DTOR_LIST__ = .);
+   PROVIDE (___DTOR_LIST__ = .);
+   .dtors .       		:AT(__lma_ctors)
+   {
+      KEEP(*crtbegin.o(.dtors))
+      KEEP(*(EXCLUDE_FILE(*crtend.o).dtors))
+      KEEP(*(SORT(.dtors.*)))
+      KEEP(*(.dtors))
+   } > RAM
+   __lma_dtors = __lma_ctors + SIZEOF(.dtors);
+   PROVIDE (__DTOR_END__ = .);
+   PROVIDE (___DTOR_END__ = .);
+
+   PROVIDE (_GOT_START_ = .);
+   PROVIDE (__GOT_START_ = .);
+   __toc_start_rom = __lma_dtors;
+   .got .          		:AT(__lma_dtors)
+   {
+      . = ALIGN(16);
+   	  __toc_start_ram = .;
+      *(.got.plt)
+      *(.got)
+   } > RAM
+   __lma_got = __lma_dtors + SIZEOF(.got);
+   PROVIDE (_GOT_END_ = .);
+   PROVIDE (__GOT_END_ = .);
+   
+   .dynamic .     		:AT(__lma_got)
+   {
+      *(.dynamic)
+   } > RAM
+   __lma_dynamic = __lma_got + SIZEOF(.dynamic);
+
+   /*-------------------------------------------------------------------------+
+   | We want the small data sections together, so single-instruction offsets
+   | can access them all, and initialized data all before uninitialized, so
+   | we can shorten the on-disk segment size. 
+   +-------------------------------------------------------------------------*/
+   PROVIDE (__SDATA_START__ = .);
+   PROVIDE (_SDA_BASE_ = .);
+   .sdata .   			:AT(__lma_dynamic)
+   {
+      *(.sdata)
+      *(.sdata.*)
+      *(.gnu.linkonce.s.*)
+      . = ALIGN(32);
+   } > RAM
+   __lma_sdata = __lma_dynamic + SIZEOF(.sdata);
+   PROVIDE (__SDATA_END__ = .); 
+    
+   /*-------------------------------------------------------------------------+
+   | Create variable holding the value of the end of the data.
+   +-------------------------------------------------------------------------*/
+   PROVIDE (edata = .);
+   PROVIDE (_edata = .);
+   PROVIDE (__edata = .);
+
+/*-------------------------------------------------------------------------+
+   | XXX
+   |  XX
+   |  XX      XXXXXXX  XXXXXXX
+   |  XXXXX   XX       XX
+   |  XX  XX  XXXXXXX  XXXXXXX
+   |  XX  XX       XX       XX
+   | XXXXXX   XXXXXXX  XXXXXXX
+   +-------------------------------------------------------------------------*/
+
+   /*-------------------------------------------------------------------------+
+   | Create variable holding the value of the start of the bss.
+   +-------------------------------------------------------------------------*/
+   . = ALIGN(32);
+   PROVIDE (__sbss = .);
+   .sbss      			:
+   {
+      __sbss_start = .;
+      ___sbss_start = .;
+      *(.dynsbss)
+      *(.sbss)
+      *(.sbss.*)
+      *(.gnu.linkonce.sb.*)
+      *(.scommon)
+      __sbss_end = .;
+      ___sbss_end = .;
+   } > RAM
+
+   .plt      			:
+   {
+      *(.plt)
+   } > RAM
+
+   /*-------------------------------------------------------------------------+
+   | Common symbols are placed in the BSS section.
+   +-------------------------------------------------------------------------*/
+   .bss       			:
+   {
+      __fsl_bss_start = .;
+      __bss_start = .;
+      ___bss_start = .;
+      *(.dynbss)
+      *(.bss)
+      *(.bss.*)
+      *(.gnu.linkonce.b.*)
+      *(COMMON)
+      . = ALIGN(16);
+      __fsl_bss_end = .;
+      __bss_end = .;
+      ___bss_end = .;
+   } > RAM
+
+   /*-------------------------------------------------------------------------+
+   | Create variable holding the value of the end of the bss.
+   +-------------------------------------------------------------------------*/
+   PROVIDE (__ebss = .);
+   
+   
+   /*-------------------------------------------------------------------------+
+   | Create variables describing the stack.  
+   | 
+   +-------------------------------------------------------------------------*/
+
+   PROVIDE (__stack_end1 = .);
+   .stack1     :
+   { 
+     . = . + _STACK_SIZE;
+     . = ALIGN(0x100);
+   } > RAM
+   PROVIDE (__stack_start1 = .);
+   PROVIDE (__stack1 = .);
+
+   PROVIDE (_stack_end = .);
+   .stack     :
+   { 
+     . = . + _STACK_SIZE;
+     . = ALIGN(16); 
+   } > RAM
+   PROVIDE (_stack_addr = .);
+   PROVIDE (__stack_start = .);
+   PROVIDE (__stack = .);
+
+   PROVIDE (_alt_stack_end = .);
+   .alt_stack     :
+   {
+     . = . + _ALT_STACK_SIZE;
+     . = ALIGN(16);
+   } > RAM
+   PROVIDE (_alt_stack_start = .);
+   PROVIDE (__alt_stack = .);
+   /*-------------------------------------------------------------------------+
+   | Create variables describing the heap.  
+   | 
+   +-------------------------------------------------------------------------*/
+
+   .heap      : 
+   {
+      PROVIDE (_end = . );
+   	PROVIDE (end = .);
+   	PROVIDE (__end = .);
+   	PROVIDE (_heap_start = .);
+   	PROVIDE (_heap_addr = .);
+     . = . + _HEAP_SIZE;
+     . = ALIGN(16);
+     _heap_end = .;
+   } > HEAP_MAIN
+   PROVIDE (_heap_end = .);
+
+   .tdata   : 
+   {
+     *(.tdata)
+     *(.tdata.*)
+     *(.gnu.linkonce.td.*)
+   } > RAM
+   .tbss   : 
+   {
+     *(.tbss)
+     *(.gnu.linkonce.tb.*)
+   } > RAM
+   
+    /*-------------------------------------------------------------------------+
+   |    XXX            XXX
+   |     XX             XX
+   |     XX    XXXXX    XX      XX  XXX   XXXX XX
+   |  XXXXX   XX    X   XXXXX   XX  XX   XX   XX
+   | XX  XX   XXXXXXX   XX  XX  XX  XX   XX   XX
+   | XX  XX   XX        XX  XX  XX  XX    XXXXXX
+   |  XXXX X   XXXXX   XXXXXX    XXX XX       X
+   |                                      XXXXX
+   +-------------------------------------------------------------------------*/
+
+   /*-------------------------------------------------------------------------+
+   | Stabs.  Symbols in the following sections are relative to the beginning
+   | of the section so we begin them at 0.
+   +-------------------------------------------------------------------------*/
+   .stab 0 			:
+   {
+      *(.stab)
+   }
+
+   .stabstr 0 			: 
+   {
+      *(.stabstr)
+   }
+
+   .stab.excl 0 		: 
+   {
+      *(.stab.excl)
+   }
+
+   .stab.exclstr 0 		: 
+   { 
+      *(.stab.exclstr)
+   }
+
+   .stab.index 0 		: 
+   { 
+      *(.stab.index)
+   }
+
+   .stab.indexstr 0 		: 
+   { 
+      *(.stab.indexstr)
+   }
+
+   .comment 0 			: 
+   { 
+      *(.comment)
+   }
+
+   /*-------------------------------------------------------------------------+
+   | DWARF 1 debug sections.
+   +-------------------------------------------------------------------------*/
+   .debug 0 			:
+   {
+      *(.debug)
+   }
+
+   .line 0 			:
+   {
+      *(.line)
+   }
+
+   /*-------------------------------------------------------------------------+
+   | GNU DWARF 1 extensions.
+   +-------------------------------------------------------------------------*/
+   .debug_srcinfo 0 		: 
+   {
+      *(.debug_srcinfo)
+   }
+
+   .debug_sfnames 0 		:
+   {
+      *(.debug_sfnames)
+   }
+
+   /*-------------------------------------------------------------------------+
+   | DWARF 1.1 and DWARF 2.
+   +-------------------------------------------------------------------------*/
+   .debug_aranges 0 		: 
+   {
+      *(.debug_aranges)
+   }
+
+   .debug_pubnames 0 		: 
+   {
+      *(.debug_pubnames)
+   }
+
+   /*-------------------------------------------------------------------------+
+   | DWARF 2.
+   +-------------------------------------------------------------------------*/
+   .debug_info 0 		: 
+   {
+      *(.debug_info)
+      *(.gnu.linkonce.wi.*)
+   }
+
+   .debug_abbrev 0 		: 
+   {
+      *(.debug_abbrev)
+   }
+
+   .debug_line 0 		: 
+   {
+      *(.debug_line)
+   }
+
+   .debug_frame 0 		: 
+   { 
+      *(.debug_frame)
+   }
+
+   .debug_str 0 		: 
+   {
+      *(.debug_str)
+   }
+
+   .debug_loc 0 		: 
+   { 
+      *(.debug_loc)
+   }
+
+   .debug_macinfo 0 		: 
+   {
+      *(.debug_macinfo)
+   }  
+
+}
+
+/*
+powerpc-eabi-objdump -D P2040_ROMBOOT_V1.elf > P2040_ROMBOOT_V1.obj&powerpc-eabi-objcopy -O binary P2040_ROMBOOT_V1.elf P2040_ROMBOOT_V1.bin
+*/
+
+

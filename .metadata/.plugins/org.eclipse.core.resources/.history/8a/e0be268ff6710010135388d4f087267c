@@ -1,0 +1,67 @@
+LwIP-api/netdb.o: C:/A_MAZHI/LwIP/src/api/netdb.c \
+ C:/A_MAZHI/LwIP/src/include/lwip/netdb.h \
+ C:/A_MAZHI/LwIP/src/include/lwip/opt.h \
+ C:/A_MAZHI/xyp1022_project/projects/lwipopts.h \
+ C:/A_MAZHI/xyp1022_project/board/xyp1022.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h \
+ C:/A_MAZHI/xyp1022_project/projects/FreeRTOSConfig.h \
+ C:/A_MAZHI/xyp1022_project/board/XYP1022.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/projdefs.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/portable.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portmacro.h \
+ C:/A_MAZHI/xyp1022_project/libs/xprintf.h \
+ C:/A_MAZHI/xyp1022_project/driver/drv_uart.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/semphr.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/queue.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/task.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/list.h \
+ C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/queue.h \
+ C:/A_MAZHI/LwIP/src/include/lwip/debug.h \
+ C:/A_MAZHI/LwIP/src/include/lwip/arch.h \
+ C:/A_MAZHI/xyp1022_project/projects/arch/cc.h
+
+C:/A_MAZHI/LwIP/src/include/lwip/netdb.h:
+
+C:/A_MAZHI/LwIP/src/include/lwip/opt.h:
+
+C:/A_MAZHI/xyp1022_project/projects/lwipopts.h:
+
+C:/A_MAZHI/xyp1022_project/board/xyp1022.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/FreeRTOS.h:
+
+C:/A_MAZHI/xyp1022_project/projects/FreeRTOSConfig.h:
+
+C:/A_MAZHI/xyp1022_project/board/XYP1022.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/projdefs.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/portable.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/deprecated_definitions.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/portable/GCC/PPC/portmacro.h:
+
+C:/A_MAZHI/xyp1022_project/libs/xprintf.h:
+
+C:/A_MAZHI/xyp1022_project/driver/drv_uart.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/mpu_wrappers.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/semphr.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/queue.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/task.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/list.h:
+
+C:/A_MAZHI/FreeRTOS/FreeRTOS-Kernel/include/queue.h:
+
+C:/A_MAZHI/LwIP/src/include/lwip/debug.h:
+
+C:/A_MAZHI/LwIP/src/include/lwip/arch.h:
+
+C:/A_MAZHI/xyp1022_project/projects/arch/cc.h:

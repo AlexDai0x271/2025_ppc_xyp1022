@@ -1,0 +1,10 @@
+ThirdLib-Sources/acu.o: C:/A_MAZHI/xyp1022_project/ThirdLib/Sources/acu.c \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/acu.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/ppclib.h \
+ C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/acu.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/ppclib.h:
+
+C:/A_MAZHI/xyp1022_project/ThirdLib/include/common.h:

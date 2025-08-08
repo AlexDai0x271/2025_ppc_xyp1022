@@ -1,0 +1,14 @@
+ThirdLib-Sources/spsFlash.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Sources/spsFlash.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/spsFlash.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ebc.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/spsFlash.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/ebc.h:

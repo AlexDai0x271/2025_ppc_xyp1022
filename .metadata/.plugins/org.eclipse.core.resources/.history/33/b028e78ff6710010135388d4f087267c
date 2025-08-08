@@ -1,0 +1,17 @@
+Utilities-Coremark/core_state.o: \
+ C:/A_MAZHI/xyp1022_project/libs/coremark/core_state.c \
+ C:/A_MAZHI/xyp1022_project/libs/coremark/coremark.h \
+ C:/A_MAZHI/xyp1022_project/libs/coremark/core_portme.h \
+ C:/A_MAZHI/xyp1022_project/libs/xprintf.h \
+ C:/A_MAZHI/xyp1022_project/driver/drv_uart.h \
+ C:/A_MAZHI/xyp1022_project/board/XYP1022.h
+
+C:/A_MAZHI/xyp1022_project/libs/coremark/coremark.h:
+
+C:/A_MAZHI/xyp1022_project/libs/coremark/core_portme.h:
+
+C:/A_MAZHI/xyp1022_project/libs/xprintf.h:
+
+C:/A_MAZHI/xyp1022_project/driver/drv_uart.h:
+
+C:/A_MAZHI/xyp1022_project/board/XYP1022.h:

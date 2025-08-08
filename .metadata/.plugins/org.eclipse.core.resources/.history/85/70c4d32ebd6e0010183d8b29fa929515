@@ -1,0 +1,182 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.local
+
+# Add inputs and outputs from these tool invocations to the build variables 
+S_UPPER_SRCS_QUOTED += \
+"$(PPC)/portASM.S" \
+
+S_UPPER_SRCS += \
+$(PPC)/portASM.S \
+
+C_SRCS_QUOTED += \
+"$(FREERTOS_KERNEL)/croutine.c" \
+"$(FREERTOS_KERNEL)/event_groups.c" \
+"$(MEMMANG)/heap_4.c" \
+"$(FREERTOS_KERNEL)/list.c" \
+"$(PPC)/port.c" \
+"$(FREERTOS_KERNEL)/queue.c" \
+"$(FREERTOS_KERNEL)/stream_buffer.c" \
+"$(FREERTOS_KERNEL)/tasks.c" \
+"$(FREERTOS_KERNEL)/timers.c" \
+
+C_SRCS += \
+$(FREERTOS_KERNEL)/croutine.c \
+$(FREERTOS_KERNEL)/event_groups.c \
+$(MEMMANG)/heap_4.c \
+$(FREERTOS_KERNEL)/list.c \
+$(PPC)/port.c \
+$(FREERTOS_KERNEL)/queue.c \
+$(FREERTOS_KERNEL)/stream_buffer.c \
+$(FREERTOS_KERNEL)/tasks.c \
+$(FREERTOS_KERNEL)/timers.c \
+
+OBJS += \
+./FreeRTOS/croutine.o \
+./FreeRTOS/event_groups.o \
+./FreeRTOS/heap_4.o \
+./FreeRTOS/list.o \
+./FreeRTOS/port.o \
+./FreeRTOS/portASM.o \
+./FreeRTOS/queue.o \
+./FreeRTOS/stream_buffer.o \
+./FreeRTOS/tasks.o \
+./FreeRTOS/timers.o \
+
+C_DEPS += \
+./FreeRTOS/croutine.d \
+./FreeRTOS/event_groups.d \
+./FreeRTOS/heap_4.d \
+./FreeRTOS/list.d \
+./FreeRTOS/port.d \
+./FreeRTOS/queue.d \
+./FreeRTOS/stream_buffer.d \
+./FreeRTOS/tasks.d \
+./FreeRTOS/timers.d \
+
+S_UPPER_DEPS += \
+./FreeRTOS/portASM.d \
+
+OBJS_QUOTED += \
+"./FreeRTOS/croutine.o" \
+"./FreeRTOS/event_groups.o" \
+"./FreeRTOS/heap_4.o" \
+"./FreeRTOS/list.o" \
+"./FreeRTOS/port.o" \
+"./FreeRTOS/portASM.o" \
+"./FreeRTOS/queue.o" \
+"./FreeRTOS/stream_buffer.o" \
+"./FreeRTOS/tasks.o" \
+"./FreeRTOS/timers.o" \
+
+S_UPPER_DEPS_QUOTED += \
+"./FreeRTOS/portASM.d" \
+
+OBJS_OS_FORMAT += \
+./FreeRTOS/croutine.o \
+./FreeRTOS/event_groups.o \
+./FreeRTOS/heap_4.o \
+./FreeRTOS/list.o \
+./FreeRTOS/port.o \
+./FreeRTOS/portASM.o \
+./FreeRTOS/queue.o \
+./FreeRTOS/stream_buffer.o \
+./FreeRTOS/tasks.o \
+./FreeRTOS/timers.o \
+
+C_DEPS_QUOTED += \
+"./FreeRTOS/croutine.d" \
+"./FreeRTOS/event_groups.d" \
+"./FreeRTOS/heap_4.d" \
+"./FreeRTOS/list.d" \
+"./FreeRTOS/port.d" \
+"./FreeRTOS/queue.d" \
+"./FreeRTOS/stream_buffer.d" \
+"./FreeRTOS/tasks.d" \
+"./FreeRTOS/timers.d" \
+
+
+# Each subdirectory must supply rules for building sources it contributes
+FreeRTOS/croutine.o: $(FREERTOS_KERNEL)/croutine.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #83 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/croutine.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/croutine.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/event_groups.o: $(FREERTOS_KERNEL)/event_groups.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #84 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/event_groups.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/event_groups.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/heap_4.o: $(MEMMANG)/heap_4.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #85 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/heap_4.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/heap_4.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/list.o: $(FREERTOS_KERNEL)/list.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #86 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/list.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/list.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/port.o: $(PPC)/port.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #87 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/port.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/port.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/portASM.o: $(PPC)/portASM.S
+	@echo 'Building file: $<'
+	@echo 'Executing target #88 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/portASM.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/portASM.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/queue.o: $(FREERTOS_KERNEL)/queue.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #89 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/queue.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/queue.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/stream_buffer.o: $(FREERTOS_KERNEL)/stream_buffer.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #90 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/stream_buffer.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/stream_buffer.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/tasks.o: $(FREERTOS_KERNEL)/tasks.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #91 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/tasks.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/tasks.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+FreeRTOS/timers.o: $(FREERTOS_KERNEL)/timers.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #92 $<'
+	@echo 'Invoking: PowerPC AEABI e5500 C Compiler'
+	"$(PAGccAeabiE5500DirEnv)/powerpc-aeabi-gcc" "$<" @"FreeRTOS/timers.args" -MMD -MP -MF"$(@:%.o=%.d)" -o"FreeRTOS/timers.o"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

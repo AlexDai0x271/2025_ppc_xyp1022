@@ -1,0 +1,5 @@
+set *(int *)0x0=0x6f
+si
+reset
+
+

@@ -1,0 +1,14 @@
+Sources/iic_test.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Sources/iic_test.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/iic.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mpic.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/types.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/iic.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/mpic.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/types.h:

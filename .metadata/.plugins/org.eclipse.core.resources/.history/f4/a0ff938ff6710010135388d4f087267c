@@ -1,0 +1,10 @@
+Sources/drv_gmac_crc.o: C:/A_MAZHI/xyp1022_project/driver/drv_gmac_crc.c \
+ C:/A_MAZHI/xyp1022_project/driver/drv_gmac_crc.h \
+ C:/A_MAZHI/xyp1022_project/board/XYP1022.h \
+ C:/A_MAZHI/xyp1022_project/ppc_driver/sysclock.h
+
+C:/A_MAZHI/xyp1022_project/driver/drv_gmac_crc.h:
+
+C:/A_MAZHI/xyp1022_project/board/XYP1022.h:
+
+C:/A_MAZHI/xyp1022_project/ppc_driver/sysclock.h:

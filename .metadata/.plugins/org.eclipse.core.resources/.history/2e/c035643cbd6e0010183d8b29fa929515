@@ -1,0 +1,11 @@
+ThirdLib-Sources/axidma_test.o: \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/Sources/axidma_test.c \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/axidma.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h \
+ C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/axidma.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/common.h:
+
+C:/PPC/project_0721/xyp1022_project/ThirdLib/include/e500mc_asm.h:
